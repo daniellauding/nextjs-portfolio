@@ -92,9 +92,13 @@ export default function Skills({ skills, activeTag, onTagClick }: SkillsProps) {
           <motion.button
             onClick={() => setShowAllSkills(!showAllSkills)}
             initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: maxSkillsToShow * 0.05, duration: 0.4 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              delay: showAllSkills 
+                ? (skills.length - 1) * 0.05  // After all visible skills (including expanded ones)
+                : maxSkillsToShow * 0.05,     // After initially visible skills
+              duration: 0.4 
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-5 py-2.5 rounded-full border border-[var(--text-muted)] text-[var(--text-muted)] hover:border-[var(--foreground)] hover:text-[var(--foreground)] text-sm cursor-pointer transition-all"
