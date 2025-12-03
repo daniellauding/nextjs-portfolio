@@ -12,7 +12,7 @@
     "phone": "+46(0) 73 918 44 10",
     "website": "http://www.daniellauding.se",
     "bio": "What started as a childhood fascination with building websites has evolved into 15+ years of crafting digital experiences that matter. From those early days tweaking graphics and rebuilding sites with every new trend, Daniel discovered his passion for the intersection of creativity, technology, and human impact. Today, he's a Design Engineer who thrives on transforming complex problems into elegant, user-centered solutions. Whether co-founding fintech companies serving 400,000+ users or conducting field research in Brazilian favelas for Spotify, Daniel brings a unique blend of strategic thinking, technical execution, and genuine care for the people using what he builds. Currently exploring the frontiers of AI-assisted design and development, he's passionate about leveraging cutting-edge tools to create more meaningful, accessible experiences that truly serve users' needs.",
-    "tools": ["Figma", "Cursor", "Claude Code", "Notion", "Lovable", "React JS/Native", "Design to Code", "Tailwind", "TypeScript", "Git"],
+    "tools": ["Figma", "Cursor", "Supabase", "Claude Code", "Notion", "Lovable", "React JS/Native", "Design to Code", "Tailwind", "TypeScript", "Git"],
     "roles": ["Lead Product Designer", "Frontend Developer", "Design Engineer", "UX/UI Specialist", "Design System Architect", "Vibe coder"],
     "experience": "15+ years • Design to Code • Spotify, Swedbank, Länsförsäkringar • WiFi Tribe nomad • Open for 2026"
   },
