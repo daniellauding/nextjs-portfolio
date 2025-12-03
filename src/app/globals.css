@@ -5,10 +5,11 @@
   --background: #FFFFFF;
   --background-light: #F8F9FA;
   --card: #F8F9FA;
-  --foreground: #1A3D2B;
-  --accent: #1CFDB7;
+  --foreground: #000000;
+  --accent: #D36756;
   --accent-secondary: #E8A87C;
   --accent-tertiary: #C38D9E;
+  --whisp-color: #E0CD5F;
   --text-muted: #6B7280;
   --border: #E5E7EB;
 }
@@ -23,6 +24,7 @@
     --accent: #58B99B;
     --accent-secondary: #E8A87C;
     --accent-tertiary: #C38D9E;
+    --whisp-color: #58B99B;
     --text-muted: #6B9D8A;
     --border: #2A4D3A;
   }

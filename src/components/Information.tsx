@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 interface InformationProps {
   bio: string;
   tools: string[];
+  roles?: string[];
   experience: string;
+  keyContributions?: string[];
 }
 
-export default function Information({ bio, tools, experience }: InformationProps) {
+export default function Information({ bio, tools, roles, experience, keyContributions }: InformationProps) {
   return (
     <section id="about" className="px-6 md:px-12 py-24">
       <motion.div
@@ -46,7 +48,7 @@ export default function Information({ bio, tools, experience }: InformationProps
             </motion.div>
           </div>
 
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 md:pr-32">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -59,10 +61,31 @@ export default function Information({ bio, tools, experience }: InformationProps
                 <p className="text-[var(--foreground)]">{tools.join(", ")}</p>
               </div>
 
-              <div>
+              {roles && (
+                <div>
+                  <h3 className="text-sm text-[var(--text-muted)] mb-2">Roles</h3>
+                  <p className="text-[var(--foreground)]">{roles.join(", ")}</p>
+                </div>
+              )}
+
+              {/* <div>
                 <h3 className="text-sm text-[var(--text-muted)] mb-2">Experience</h3>
                 <p className="text-[var(--foreground)]">{experience}</p>
-              </div>
+              </div> */}
+
+              {keyContributions && (
+                <div>
+                  <h3 className="text-sm text-[var(--text-muted)] mb-2">Key Contributions</h3>
+                  <div className="space-y-2">
+                    {keyContributions.map((contribution, index) => (
+                      <p key={index} className="text-sm text-[var(--foreground)] leading-relaxed">
+                        • {contribution}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              )}
+
             </motion.div>
           </div>
         </div>

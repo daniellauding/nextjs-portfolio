@@ -8,6 +8,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Clients from "@/components/Clients";
 import CV from "@/components/CV";
+import Articles from "@/components/Articles";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";
 import portfolioData from "@/data/portfolio.json";
@@ -39,12 +40,15 @@ export default function Home() {
         <Information
           bio={personal.bio}
           tools={personal.tools}
+          roles={personal.roles}
           experience={personal.experience}
+          keyContributions={cv.keyContributions}
         />
         <Skills skills={skills} activeTag={activeTag} onTagClick={setActiveTag} />
         {/* <Projects projects={filteredProjects} activeTag={activeTag} onTagClick={setActiveTag} /> */}
         <Clients clients={clients} />
         <CV experience={cv.experience} education={cv.education} />
+        <Articles articles={cv.mediumPosts} />
         {/* <Services /> */}
       </main>
       <Footer />

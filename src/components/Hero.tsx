@@ -15,7 +15,7 @@ interface App {
   name: string;
   icon: string;
   description: string;
-  appStoreUrl: string;
+  appStoreUrl: string | null;
   tags: string[];
 }
 
@@ -126,7 +126,7 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
         <motion.div
           className="absolute w-80 h-80 rounded-full blur-3xl opacity-15 dark:opacity-8 cursor-pointer top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
           style={{
-            background: "var(--accent)",
+            background: "var(--whisp-color)",
             mixBlendMode: "normal",
             x: whispPosition.x,
             y: whispPosition.y
@@ -149,7 +149,7 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
       
       <div className="w-full relative z-10">
         <motion.h1
-          className="text-[clamp(3rem,15vw,12rem)] font-light leading-[0.9] tracking-tight text-[var(--foreground)] relative"
+          className="text-[clamp(3rem,15vw,12rem)] font-light leading-[1.0] tracking-tight text-[var(--foreground)] relative"
           initial="hidden"
           animate="visible"
         >
@@ -236,7 +236,7 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
                 <div>
                   <p className="font-medium text-[var(--foreground)] text-sm">Daniel Lauding</p>
                   <p className="text-xs text-[var(--text-muted)]">Design Engineer</p>
-                  <p className="text-xs text-[var(--accent)]">Stockholm, Sweden</p>
+                  <p className="text-xs text-[var(--accent)]">Lund/Stockholm, Sweden</p>
                 </div>
               </div>
             </div>
@@ -295,12 +295,18 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
           >
             <span className="text-sm text-[var(--text-muted)]">My Apps</span>
             <div className="flex gap-4">
-              {apps.map((app, index) => (
-                <motion.a
+              {apps.map((app, index) => {
+                const Component = app.appStoreUrl ? motion.a : motion.div;
+                const linkProps = app.appStoreUrl ? {
+                  href: app.appStoreUrl,
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                } : {};
+                
+                return (
+                <Component
                   key={app.id}
-                  href={app.appStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...linkProps}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.9 + index * 0.1, duration: 0.4, type: "spring", stiffness: 400, damping: 10 }}
@@ -359,8 +365,9 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
                       </div>
                     </motion.div>
                   )}
-                </motion.a>
-              ))}
+                </Component>
+                );
+              })}
             </div>
           </motion.div>
         )}
