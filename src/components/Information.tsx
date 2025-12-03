@@ -24,15 +24,26 @@ export default function Information({ bio, tools, experience }: InformationProps
           </div>
 
           <div className="md:col-span-6">
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-xl md:text-2xl font-light leading-relaxed text-[var(--foreground)]"
+              className="space-y-6"
             >
-              {bio}
-            </motion.p>
+              <p className="text-lg md:text-xl font-light leading-relaxed text-[var(--foreground)]">
+                What started as a childhood fascination with building websites has evolved into 15+ years of crafting digital experiences that matter.
+              </p>
+              <p className="text-lg md:text-xl font-light leading-relaxed text-[var(--foreground)]">
+                From those early days tweaking graphics and rebuilding sites with every new trend, Daniel discovered his passion for the intersection of creativity, technology, and human impact.
+              </p>
+              <p className="text-lg md:text-xl font-light leading-relaxed text-[var(--foreground)]">
+                Today, he's a Design Engineer who thrives on transforming complex problems into elegant, user-centered solutions. Whether co-founding fintech companies serving 400,000+ users or conducting field research in Brazilian favelas for Spotify, Daniel brings a unique blend of strategic thinking, technical execution, and genuine care for the people using what he builds.
+              </p>
+              <p className="text-lg md:text-xl font-light leading-relaxed text-[var(--foreground)]">
+                Currently exploring the frontiers of AI-assisted design and development, he's passionate about leveraging cutting-edge tools to create more meaningful, accessible experiences that truly serve users' needs.
+              </p>
+            </motion.div>
           </div>
 
           <div className="md:col-span-4">

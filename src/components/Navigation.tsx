@@ -26,7 +26,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <motion.a
               href="#"
-              className="flex items-center text-[var(--foreground)]"
+              className="flex items-center justify-center text-[var(--foreground)] cursor-pointer"
               whileHover={{ opacity: 0.7 }}
             >
               <Logo className="text-[var(--accent)]" />
@@ -37,7 +37,7 @@ export default function Navigation() {
 
             <motion.button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-sm text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
+              className="text-sm text-[var(--foreground)] hover:text-[var(--accent)] transition-colors cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

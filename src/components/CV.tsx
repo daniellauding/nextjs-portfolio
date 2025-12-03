@@ -68,7 +68,7 @@ export default function CV({ experience, education }: CVProps) {
                         href={exp.companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[var(--accent)] text-sm mt-1 hover:underline inline-flex items-center gap-1"
+                        className="text-[var(--accent)] text-sm mt-1 hover:underline inline-flex items-center gap-1 cursor-pointer"
                       >
                         {exp.company}
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,7 +96,7 @@ export default function CV({ experience, education }: CVProps) {
                           [itemKey]: !prev[itemKey]
                         }));
                       }}
-                      className="ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors"
+                      className="ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
                       whileTap={{ scale: 0.95 }}
                     >
                       <motion.div
@@ -149,7 +149,7 @@ export default function CV({ experience, education }: CVProps) {
                                       href={url}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="text-[var(--accent)] hover:text-[var(--accent)]/80 transition-colors"
+                                      className="text-[var(--accent)] hover:text-[var(--accent)]/80 transition-colors cursor-pointer"
                                     >
                                       <svg className="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -215,7 +215,7 @@ export default function CV({ experience, education }: CVProps) {
                     href={edu.schoolUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[var(--accent)] text-sm mt-1 hover:underline inline-flex items-center gap-1"
+                    className="text-[var(--accent)] text-sm mt-1 hover:underline inline-flex items-center gap-1 cursor-pointer"
                   >
                     {edu.school}
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

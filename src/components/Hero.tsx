@@ -304,8 +304,9 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.9 + index * 0.1, duration: 0.4 }}
-                  whileHover={{ scale: 1.1, y: -4 }}
+                  whileHover={{ scale: 1.15, y: -6 }}
                   whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="group relative touch-manipulation"
                   onMouseEnter={(e) => {
                     setHoveredApp(app.id);
@@ -331,10 +332,10 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
                       <img 
                         src={app.icon} 
                         alt={app.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                       />
                     ) : (
-                      <span className="text-2xl text-[var(--background)] font-medium">
+                      <span className="text-2xl text-[var(--background)] font-medium flex items-center justify-center w-full h-full">
                         {app.icon}
                       </span>
                     )}
