@@ -27,7 +27,14 @@ export default function Home() {
     <>
       <Navigation />
       <main>
-        <Hero firstName={personal.firstName} lastName={personal.lastName} apps={apps} />
+        <Hero 
+          firstName={personal.firstName} 
+          lastName={personal.lastName} 
+          title={personal.title}
+          subtitle={personal.subtitle}
+          status={personal.status}
+          apps={apps} 
+        />
         <Information
           bio={personal.bio}
           tools={personal.tools}

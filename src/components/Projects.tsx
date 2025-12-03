@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface Project {
   id: string;
+  slug: string;
   name: string;
   type: string;
   date: string;
@@ -26,6 +27,7 @@ interface ProjectsProps {
 export default function Projects({ projects, activeTag, onTagClick }: ProjectsProps) {
   const [activeProject, setActiveProject] = useState<string | null>(null);
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [showAllTags, setShowAllTags] = useState<Record<string, boolean>>({});
 
   return (
     <section id="work" className="px-6 md:px-12 py-24">
@@ -59,12 +61,13 @@ export default function Projects({ projects, activeTag, onTagClick }: ProjectsPr
             onClick={() =>
               setActiveProject(activeProject === project.id ? null : project.id)
             }
-            className="group relative cursor-pointer"
+            className="group relative cursor-pointer touch-manipulation"
           >
             <motion.div
               className="relative aspect-[4/3] rounded-2xl overflow-hidden"
               style={{ backgroundColor: project.color }}
               whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.3 }}
             >
               <motion.div
@@ -99,50 +102,81 @@ export default function Projects({ projects, activeTag, onTagClick }: ProjectsPr
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <button
-                          key={tag}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            onTagClick(activeTag === tag ? null : tag);
-                          }}
-                          className={`px-3 py-1 rounded-full text-xs transition-all ${
-                            activeTag === tag
-                              ? "bg-white text-black"
-                              : "bg-white/20 text-white hover:bg-white/40"
-                          }`}
-                        >
-                          {tag}
-                        </button>
-                      ))}
+                      {(() => {
+                        const maxTagsToShow = 3;
+                        const projectShowAll = showAllTags[project.id] || false;
+                        const tagsToShow = projectShowAll 
+                          ? project.tags 
+                          : project.tags.slice(0, maxTagsToShow);
+                        
+                        return (
+                          <>
+                            {tagsToShow.map((tag) => (
+                              <button
+                                key={tag}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  onTagClick(activeTag === tag ? null : tag);
+                                }}
+                                className={`px-3 py-1 rounded-full text-xs transition-all ${
+                                  activeTag === tag
+                                    ? "bg-white text-black"
+                                    : "bg-white/20 text-white hover:bg-white/40"
+                                }`}
+                              >
+                                {tag}
+                              </button>
+                            ))}
+                            {project.tags.length > maxTagsToShow && (
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setShowAllTags(prev => ({
+                                    ...prev,
+                                    [project.id]: !projectShowAll
+                                  }));
+                                }}
+                                className="px-3 py-1 rounded-full text-xs bg-white/10 text-white/80 hover:bg-white/20 transition-all"
+                              >
+                                {projectShowAll 
+                                  ? "..." 
+                                  : `+${project.tags.length - maxTagsToShow}`
+                                }
+                              </button>
+                            )}
+                          </>
+                        );
+                      })()}
                     </div>
-                    {project.readMore && (
-                      <Link
-                        href={project.readMore}
-                        onClick={(e) => e.stopPropagation()}
-                        className="mt-3 inline-flex items-center gap-2 text-sm text-white hover:text-[var(--accent)] transition-colors"
-                      >
-                        Read more
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </Link>
-                    )}
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="mt-3 inline-flex items-center gap-2 text-sm text-white hover:text-[var(--accent)] transition-colors"
+                    >
+                      View Case Study
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
             </motion.div>
 
             <div className="mt-4">
-              <h3 className="text-lg font-medium text-[var(--foreground)]">
-                {project.name}
-              </h3>
-              <p className="text-sm text-[var(--text-muted)]">
-                {project.type} – {project.date}
-              </p>
-              <p className="text-xs text-[var(--text-muted)] mt-1">
-                {project.location}
-              </p>
+              <div className="flex items-start justify-between">
+                <div>
+                  <h3 className="text-lg font-medium text-[var(--foreground)]">
+                    {project.name}
+                  </h3>
+                  <p className="text-sm text-[var(--text-muted)]">
+                    {project.type} – {project.date}
+                  </p>
+                  <p className="text-xs text-[var(--text-muted)] mt-1">
+                    {project.location}
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.article>
         ))}
@@ -155,9 +189,6 @@ export default function Projects({ projects, activeTag, onTagClick }: ProjectsPr
         transition={{ delay: 0.4, duration: 0.6 }}
         className="mt-16 pt-12 border-t border-[var(--text-muted)]"
       >
-        <span className="inline-block px-4 py-1.5 rounded-full border border-[var(--accent)] text-xs text-[var(--accent)] mb-4">
-          TAG
-        </span>
         <h3 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] mb-4">
           Got any project?
         </h3>

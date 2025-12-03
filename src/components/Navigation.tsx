@@ -1,29 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 
 export default function Navigation() {
-  const [time, setTime] = useState<string>("");
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const stockholmTime = now.toLocaleTimeString("en-US", {
-        timeZone: "Europe/Stockholm",
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true,
-      });
-      setTime(stockholmTime);
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   const menuItems = [
     { label: "Work", href: "#work" },
@@ -41,40 +23,17 @@ export default function Navigation() {
         className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6"
       >
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center">
             <motion.a
               href="#"
-              className="flex items-center gap-3 text-[var(--foreground)]"
+              className="flex items-center text-[var(--foreground)]"
               whileHover={{ opacity: 0.7 }}
             >
               <Logo className="text-[var(--accent)]" />
-              <span className="text-sm font-medium">Instinctly</span>
             </motion.a>
-            <span className="hidden md:block text-sm text-[var(--text-muted)]">
-              Product Design
-            </span>
           </div>
 
           <div className="flex items-center gap-8">
-            <div className="hidden md:flex items-center gap-2 text-sm text-[var(--text-muted)]">
-              <span>Stockholm</span>
-              <span className="flex items-center gap-1">
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                </svg>
-                {time}
-              </span>
-            </div>
 
             <motion.button
               onClick={() => setMenuOpen(!menuOpen)}

@@ -1,13 +1,31 @@
 @import "tailwindcss";
 
+/* Light theme (default) */
 :root {
-  --background: #0D2818;
-  --background-light: #1A3D2B;
-  --foreground: #A8E6CF;
+  --background: #FFFFFF;
+  --background-light: #F8F9FA;
+  --card: #F8F9FA;
+  --foreground: #1A3D2B;
   --accent: #58B99B;
   --accent-secondary: #E8A87C;
   --accent-tertiary: #C38D9E;
-  --text-muted: #6B9D8A;
+  --text-muted: #6B7280;
+  --border: #E5E7EB;
+}
+
+/* Dark theme for users who prefer it */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0D2818;
+    --background-light: #1A3D2B;
+    --card: #1A3D2B;
+    --foreground: #A8E6CF;
+    --accent: #58B99B;
+    --accent-secondary: #E8A87C;
+    --accent-tertiary: #C38D9E;
+    --text-muted: #6B9D8A;
+    --border: #2A4D3A;
+  }
 }
 
 @theme inline {
@@ -30,6 +48,52 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Ensure minimum text sizes for accessibility */
+.text-xs {
+  font-size: max(0.75rem, 14px);
+}
+
+.text-sm {
+  font-size: max(0.875rem, 14px);
+}
+
+/* Improve focus visibility */
+*:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Better touch interactions */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Improve tap targets for mobile */
+button,
+a,
+[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Better hover states on touch devices */
+@media (hover: hover) {
+  .hover-only:hover {
+    opacity: 0.7;
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  /* Ensure tooltips work on mobile */
+  .tooltip {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
 }
 
 ::selection {

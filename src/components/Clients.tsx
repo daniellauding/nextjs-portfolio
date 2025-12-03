@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 interface Client {
   id: string;
   name: string;
-  logo: string;
+  url?: string;
 }
 
 interface ClientsProps {
@@ -30,22 +30,46 @@ export default function Clients({ clients }: ClientsProps) {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-        {clients.map((client, index) => (
-          <motion.div
-            key={client.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.6 }}
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center justify-center h-24 rounded-xl border border-[var(--text-muted)]/30 bg-[var(--background)] transition-colors hover:border-[var(--accent)]"
-          >
-            <span className="text-lg font-medium text-[var(--foreground)]">
-              {client.name}
-            </span>
-          </motion.div>
-        ))}
+      <div className="overflow-hidden">
+        <motion.div
+          animate={{ x: [0, -50, 0] }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 20,
+            ease: "linear"
+          }}
+          className="flex flex-wrap gap-x-8 gap-y-4 text-[var(--text-muted)] whitespace-nowrap"
+        >
+          {clients.map((client, index) => (
+            client.url ? (
+              <motion.a
+                key={client.id}
+                href={client.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.03, duration: 0.4 }}
+                className="text-xl md:text-2xl font-medium hover:text-[var(--foreground)] transition-colors cursor-pointer"
+                whileHover={{ y: -2 }}
+              >
+                {client.name}
+              </motion.a>
+            ) : (
+              <motion.span
+                key={client.id}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.03, duration: 0.4 }}
+                className="text-xl md:text-2xl font-medium hover:text-[var(--foreground)] transition-colors cursor-default"
+              >
+                {client.name}
+              </motion.span>
+            )
+          ))}
+        </motion.div>
       </div>
     </section>
   );

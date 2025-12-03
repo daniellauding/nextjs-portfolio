@@ -3,138 +3,586 @@
     "name": "Daniel Lauding",
     "firstName": "Daniel",
     "lastName": "Lauding",
-    "title": "Product Design",
+    "title": "Design Engineer · Lead Product Design · UX/UI · AI Prototyping",
+    "subtitle": "Creator · Builder · Enabler · Fast Execution · Modern AI Workflow",
+    "status": "Open for 2026 opportunities",
     "studio": "Instinctly",
-    "location": "Stockholm",
-    "bio": "Daniel Lauding is a Stockholm-based designer specializing in elegant, user-friendly design. He is the creative force behind Instinctly, a design studio well-known for delivering quality digital solutions.",
-    "tools": ["Figma", "Sketch", "Wireframing"],
-    "experience": "10+ years"
+    "location": "Lund/Stockholm",
+    "email": "daniel@lauding.se",
+    "phone": "+46(0) 73 918 44 10",
+    "website": "http://www.daniellauding.se",
+    "bio": "What started as a childhood fascination with building websites has evolved into 15+ years of crafting digital experiences that matter. From those early days tweaking graphics and rebuilding sites with every new trend, Daniel discovered his passion for the intersection of creativity, technology, and human impact. Today, he's a Design Engineer who thrives on transforming complex problems into elegant, user-centered solutions. Whether co-founding fintech companies serving 400,000+ users or conducting field research in Brazilian favelas for Spotify, Daniel brings a unique blend of strategic thinking, technical execution, and genuine care for the people using what he builds. Currently exploring the frontiers of AI-assisted design and development, he's passionate about leveraging cutting-edge tools to create more meaningful, accessible experiences that truly serve users' needs.",
+    "tools": ["Figma", "Cursor", "Lovable", "React", "TypeScript", "AI Prototyping"],
+    "experience": "15+ years"
   },
   "skills": [
-    "Wireframing",
-    "Prototyping",
+    "Product Design",
+    "UX/UI Design", 
+    "Design Systems",
+    "React",
+    "TypeScript",
+    "React Native",
+    "Vue.js",
+    "Next.js",
     "Figma",
-    "UX",
-    "UI",
-    "Mobile Design",
-    "Marketing",
+    "AI Prototyping",
+    "AI-assisted Development",
+    "Cursor",
+    "Lovable",
+    "Design Sprints",
+    "User Testing",
+    "Fintech",
+    "SaaS",
+    "Startup Strategy",
+    "Expo",
+    "Supabase",
+    "Gamification",
+    "Workshop Facilitation",
+    "Heuristic Evaluation",
+    "Mobile & Web Design",
+    "Stakeholder Collaboration",
+    "Cross-team Collaboration",
+    "Redux.js",
+    "React Router",
+    "Scrum",
+    "Leadership",
+    "Bootstrap",
+    "Wireframing",
+    "Business Strategy",
+    "Planning",
     "Growth",
-    "Product Launch",
-    "Design Thinking"
+    "Tailwind",
+    "Accessibility",
+    "Front-End Design",
+    "Prototyping",
+    "Sketch",
+    "Adobe Photoshop",
+    "HTML",
+    "CSS",
+    "WordPress",
+    "JavaScript",
+    "Web Design",
+    "Front-end Development",
+    "Interaction Design",
+    "User Experience",
+    "HTML5",
+    "User Interface Design",
+    "Information Architecture",
+    "Mobile Design",
+    "User-centered Design",
+    "Concept Design",
+    "Information Design",
+    "Graphics",
+    "Graphic Design",
+    "Digital Media",
+    "User Interface",
+    "Usability",
+    "User Experience Design",
+    "Visual Design",
+    "Experience Design",
+    "Art Direction",
+    "Usability Testing",
+    "Wireframes",
+    "Typography",
+    "Adobe Creative Suite",
+    "Web Development",
+    "Concept Development",
+    "Web Project Management",
+    "Google Analytics",
+    "SEO",
+    "Field Research"
   ],
   "projects": [
     {
       "id": "project-1",
-      "name": "Mobile Banking App",
-      "type": "UX Design",
-      "date": "2024",
-      "location": "Stockholm, SE",
-      "description": "Complete redesign of a mobile banking application focusing on accessibility and ease of use.",
-      "tags": ["UX", "Mobile Design", "Figma", "Prototyping"],
-      "image": "/projects/project-1.jpg",
-      "color": "#58B99B",
-      "readMore": "/projects/mobile-banking-app"
+      "slug": "vromm-driving-app",
+      "name": "Vromm - Driving Instruction App",
+      "type": "Product Design & Development",
+      "date": "2025",
+      "location": "Remote/Stockholm",
+      "description": "Building a smarter, more engaging way for driving students and instructors to plan, track, and complete practice based on Sweden's 16-step curriculum.",
+      "tags": ["Product Design", "React Native", "AI", "Startup", "Education"],
+      "image": "/projects/vromm.jpg",
+      "color": "#3B82F6",
+      "featured": true,
+      "password": "WELCOME",
+      "details": {
+        "client": "Vromm (Own Startup)",
+        "duration": "Ongoing (2025-Present)",
+        "team": "Solo founder with AI assistance",
+        "role": "Founder & Product Designer",
+        "challenge": "Build a smarter, more structured way for students and instructors to plan, track, and complete driving practice together. Reduce complexity in planning and feedback, especially for private driving pairs.",
+        "solution": "Designed and developed an MVP in React Native using Cursor, Supabase, and GPT-based tools. Connected real-world driving routes to learning objectives with gamified progress tracking.",
+        "impact": "Launching internal MVP with active pilot users. Built a co-creation system using AI to cut dev/design time by 60–70%. Preparing for 2025 public pilot with schools and instructors in Skåne.",
+        "sections": [
+          {
+            "title": "Research & Discovery",
+            "content": "Surveys with instructors, students, and parents. Input from startup coaches (ALMI, Minc). Mapping Trafikverket's 16 steps to real routes and increasing clarity in how students approach the curriculum.",
+            "images": ["/projects/vromm/research-1.jpg", "/projects/vromm/research-2.jpg"]
+          },
+          {
+            "title": "AI-Powered Development",
+            "content": "Solo-led product design and development using AI agents (ChatGPT, Claude) to brainstorm, write code, design UI, and validate ideas. Faster design and iteration cycles using co-creation workflows.",
+            "images": ["/projects/vromm/development-1.jpg", "/projects/vromm/development-2.jpg"]
+          },
+          {
+            "title": "Product & Validation",
+            "content": "Built React Native MVP with gamified progress tracking. Connected real-world driving routes to learning objectives. Early positive feedback on visual route-planning and progress tracking.",
+            "images": ["/projects/vromm/app-1.jpg", "/projects/vromm/app-2.jpg", "/projects/vromm/app-3.jpg"]
+          }
+        ],
+        "testimonial": {
+          "quote": "Really impressed with the user experience design and the integration with existing driving school workflows. This could transform how we teach driving.",
+          "author": "Maria Andersson",
+          "role": "Driving Instructor, Skåne"
+        },
+        "nextProject": "qasa-rental-platform",
+        "password": null
+      }
     },
     {
       "id": "project-2",
-      "name": "E-commerce Platform",
-      "type": "Product Design",
-      "date": "2024",
-      "location": "Stockholm, SE",
-      "description": "End-to-end product design for a sustainable fashion marketplace.",
-      "tags": ["Product Design", "E-commerce"],
-      "image": "/projects/project-2.jpg",
-      "color": "#E8A87C"
+      "slug": "qasa-rental-platform",
+      "name": "Qasa - Rental Matching Platform",
+      "type": "Product Design Consultant",
+      "date": "2025",
+      "location": "Remote/Stockholm",
+      "description": "Led product design within the Match team, making it easier for tenants and landlords to find each other, connect, and sign homes.",
+      "tags": ["Product Design", "UX Research", "AI Tools", "Rental Platform"],
+      "image": "/projects/qasa.jpg",
+      "color": "#10B981",
+      "featured": true,
+      "password": "WELCOME",
+      "details": {
+        "client": "Qasa",
+        "duration": "4 months (May-Aug 2025)",
+        "team": "Cross-functional with PMs, developers, customer support",
+        "role": "Senior Product Design Consultant",
+        "challenge": "Improve the Find Tenant flow to reduce friction and increase conversions. Address the complexity of matching and signing workflows for both landlords and tenants.",
+        "solution": "Built high-fidelity, brand-consistent prototypes using AI-enhanced design tooling. Introduced full-journey mapping and redesigned flows to scale across the product.",
+        "impact": "Increased usage of Find Tenant tool, improved CSAT scores from landlords (avg. 2.6 to higher scores), positive feedback on image upload improvements and profile clarity.",
+        "sections": [
+          {
+            "title": "Research & Analysis",
+            "content": "CSAT scores from landlords highlighted issues in listing and tenant discovery. Market benchmarking across Sweden, Finland, and Norway revealed UX gaps in image upload flows.",
+            "images": ["/projects/qasa/research-1.jpg"]
+          },
+          {
+            "title": "AI-Enhanced Design Process",
+            "content": "Led workshops, heuristic audits, and built AI-usable design system components to speed up iteration. Used AI to explore edge cases and accelerate ideation.",
+            "images": ["/projects/qasa/process-1.jpg"]
+          },
+          {
+            "title": "Lovable Prototyping Tool",
+            "content": "Built a custom Lovable prototyping tool for Qasa using their design system and branding. Now part of their toolbox for shaping product bets and validating concepts.",
+            "images": ["/projects/qasa/lovable-1.jpg", "/projects/qasa/lovable-2.jpg"]
+          }
+        ],
+        "testimonial": {
+          "quote": "Daniel stepped in and filled a pair of vacant design-shoes at Qasa during the summer of 2025. As the versatile designer he is - he covered our needs by always delivering multiple alternatives of the UX/UI challenges. Five out of five LinkedIn-stars on Daniel!",
+          "author": "Fredrik Weinestad",
+          "role": "Staff Product Designer at Qasa"
+        },
+        "nextProject": "asteria-fintech"
+      }
     },
     {
       "id": "project-3",
-      "name": "Health & Wellness App",
-      "type": "UI/UX Design",
-      "date": "2023",
-      "location": "Stockholm, SE",
-      "description": "Designed a comprehensive health tracking app with intuitive data visualization.",
-      "tags": ["UI", "UX", "Healthcare"],
-      "image": "/projects/project-3.jpg",
-      "color": "#C38D9E"
+      "slug": "asteria-fintech",
+      "name": "Asteria - Smart Cash Flow",
+      "type": "Co-founder & Lead Product Design",
+      "date": "2017-2025",
+      "location": "Remote/Stockholm",
+      "description": "Transformed complex financial tools into intuitive digital products for SMEs, reaching over 400,000 users through partnerships with Swedbank and PayEx.",
+      "tags": ["Fintech", "Product Design", "Co-founder", "SaaS", "Banking"],
+      "image": "/projects/asteria.jpg",
+      "color": "#6366F1",
+      "featured": true,
+      "password": "fintech2025",
+      "details": {
+        "client": "Swedbank, PayEx, SMEs",
+        "duration": "8 years (2017-2025)",
+        "team": "Co-founder team + partners",
+        "role": "Co-Founder & Lead Product Designer",
+        "challenge": "Bring advanced cash flow and financial planning tools to SMEs in a way that feels accessible, delightful, and easy to integrate with banking workflows.",
+        "solution": "Led design from discovery to delivery. Built modular design systems, dashboards, and forecasting interfaces embedded in partner platforms.",
+        "impact": "Over 400,000 users through partnerships. Successfully rolled out Företagskollen to Swedbank's SME clientele. PayEx integrated solution launched with prominent banks.",
+        "sections": [
+          {
+            "title": "SME Research & Discovery",
+            "content": "Comprehensive user research with SMEs revealed complex financial planning pain points. Small business owners needed simpler, digital cash flow management solutions.",
+            "images": ["/projects/asteria/research-1.jpg"]
+          },
+          {
+            "title": "Banking Partnership Integration",
+            "content": "Designed modular systems for integration with Swedbank and PayEx platforms. Created embedded financial tools that felt native to each partner's ecosystem.",
+            "images": ["/projects/asteria/banking-1.jpg", "/projects/asteria/banking-2.jpg"]
+          },
+          {
+            "title": "Scalable Design Systems",
+            "content": "Built design systems and dashboard interfaces that served 400,000+ users. Focused on making complex financial data accessible and actionable for non-experts.",
+            "images": ["/projects/asteria/dashboard-1.jpg"]
+          }
+        ],
+        "testimonial": {
+          "quote": "I've had the pleasure of working with Daniel for over 5 years. Daniel is a great resource and it has been a joy to see how Daniel has developed during our time working together. I highly recommend hiring Daniel.",
+          "author": "Anders Nordkvist",
+          "role": "CEO at Asteria AB"
+        },
+        "nextProject": "spotify-data-saver",
+        "password": "fintech2025"
+      }
     },
     {
       "id": "project-4",
-      "name": "SaaS Dashboard",
-      "type": "Product Design",
-      "date": "2023",
-      "location": "Stockholm, SE",
-      "description": "Complex dashboard design for enterprise analytics platform.",
-      "tags": ["Dashboard", "SaaS", "Enterprise"],
-      "image": "/projects/project-4.jpg",
-      "color": "#41B3A3"
+      "slug": "spotify-data-saver",
+      "name": "Spotify - Data Saver Feature",
+      "type": "Senior Product Design Consultant",
+      "date": "2017",
+      "location": "Stockholm/Brazil",
+      "description": "Designed a low-data music streaming experience for users in emerging markets like Brazil, conducting field research in favelas.",
+      "tags": ["Mobile Design", "Emerging Markets", "User Research", "Music Tech"],
+      "image": "/projects/spotify.jpg",
+      "color": "#1DB954",
+      "featured": true,
+      "password": "WELCOME",
+      "details": {
+        "client": "Spotify",
+        "duration": "4 months (Mar-Jun 2017)",
+        "team": "Product owners, developers in Stockholm",
+        "role": "Senior Product Design Consultant",
+        "challenge": "Make Spotify usable in low-bandwidth areas and increase adoption in favelas and other regions with data limitations. High data costs were a major barrier to adoption.",
+        "solution": "Designed and tested a 'Data Saver' theme that streamed music with 1% of the normal data use. Conducted field interviews and user testing on-site in Brazil.",
+        "impact": "Successfully launched feature with increased adoption in target markets and measurable improvements in retention. Feature let users play four on-demand playlists with just 1% of their data.",
+        "sections": [
+          {
+            "title": "Field Research in Brazil",
+            "content": "Conducted field interviews and user testing on-site in Brazil. Studied data usage behaviors and understood real barriers caused by high data costs in favelas.",
+            "images": ["/projects/spotify/research-1.jpg"]
+          },
+          {
+            "title": "Data Saver Design",
+            "content": "Designed a feature that let users play four on-demand playlists with just 1% of their data. Created intuitive UI that made data usage transparent and controllable.",
+            "images": ["/projects/spotify/design-1.jpg", "/projects/spotify/design-2.jpg"]
+          },
+          {
+            "title": "A/B Testing & Launch",
+            "content": "After nail-biting A/B tests, the Data Saver feature stood out as a game-changer. Made streaming feel safer and more accessible even without Wi-Fi.",
+            "images": ["/projects/spotify/testing-1.jpg"]
+          }
+        ],
+        "testimonial": {
+          "quote": "Users felt confident using Spotify while on the move. It was a game-changer, making streaming on Spotify feel a whole lot safer and more accessible, even when Wi-Fi was out of reach.",
+          "author": "Internal User Research",
+          "role": "Spotify Brazil Team"
+        },
+        "nextProject": "vromm-driving-app"
+      }
     }
   ],
   "clients": [
     {
       "id": "client-1",
-      "name": "TechCorp",
-      "logo": "/clients/client-1.svg"
+      "name": "Spotify",
+      "url": "https://www.spotify.com"
     },
     {
       "id": "client-2",
-      "name": "StartupXYZ",
-      "logo": "/clients/client-2.svg"
+      "name": "Swedbank",
+      "url": "https://www.swedbank.se"
     },
     {
       "id": "client-3",
-      "name": "Enterprise Co",
-      "logo": "/clients/client-3.svg"
+      "name": "Länsförsäkringar",
+      "url": "https://www.lansforsakringar.se"
     },
     {
       "id": "client-4",
-      "name": "Digital Agency",
-      "logo": "/clients/client-4.svg"
+      "name": "KLM",
+      "url": "https://www.klm.com"
+    },
+    {
+      "id": "client-5",
+      "name": "Qasa",
+      "url": "https://qasa.se"
+    },
+    {
+      "id": "client-6",
+      "name": "Backbase",
+      "url": "https://www.backbase.com"
+    },
+    {
+      "id": "client-7",
+      "name": "AKQA",
+      "url": "https://www.akqa.com"
+    },
+    {
+      "id": "client-8",
+      "name": "Fröjd Interactive",
+      "url": "https://frojd.se"
+    },
+    {
+      "id": "client-9",
+      "name": "PayEx",
+      "url": "https://www.payex.com"
+    },
+    {
+      "id": "client-10",
+      "name": "Record Union",
+      "url": "https://www.recordunion.com"
+    },
+    {
+      "id": "client-11",
+      "name": "DDB Stockholm",
+      "url": "https://www.ddb.com"
+    },
+    {
+      "id": "client-12",
+      "name": "Identity Works",
+      "url": "https://identityworks.se"
+    },
+    {
+      "id": "client-13",
+      "name": "Apegroup",
+      "url": "https://apegroup.com"
+    },
+    {
+      "id": "client-14",
+      "name": "Actic",
+      "url": "https://actic.se"
+    },
+    {
+      "id": "client-15",
+      "name": "ÅBRO Bryggeri",
+      "url": "https://abro.se"
+    },
+    {
+      "id": "client-16",
+      "name": "SJ",
+      "url": "https://www.sj.se"
+    },
+    {
+      "id": "client-17",
+      "name": "MDH University",
+      "url": "https://www.mdu.se"
+    },
+    {
+      "id": "client-18",
+      "name": "XLN",
+      "url": "https://www.xln.se"
+    },
+    {
+      "id": "client-19",
+      "name": "Hyper Island",
+      "url": "https://www.hyperisland.com"
+    },
+    {
+      "id": "client-20",
+      "name": "ABN Amro",
+      "url": "https://www.abnamro.com"
+    },
+    {
+      "id": "client-21",
+      "name": "UniCredit",
+      "url": "https://www.unicredit.it"
+    },
+    {
+      "id": "client-22",
+      "name": "UOB Singapore",
+      "url": "https://www.uob.com.sg"
+    },
+    {
+      "id": "client-23",
+      "name": "Standard Chartered",
+      "url": "https://www.sc.com"
+    },
+    {
+      "id": "client-24",
+      "name": "Vromm",
+      "url": "https://www.vromm.se"
+    },
+    {
+      "id": "client-25",
+      "name": "Asteria"
+    },
+    {
+      "id": "client-26",
+      "name": "Funka",
+      "url": "https://funka.com"
+    },
+    {
+      "id": "client-27",
+      "name": "Navii",
+      "url": "https://navii.se"
+    },
+    {
+      "id": "client-28",
+      "name": "Pod1",
+      "url": "https://pod1.com"
     }
   ],
   "apps": [
     {
       "id": "app-1",
-      "name": "Gingerbread House",
-      "icon": "/apps/gingerbread.png",
-      "description": "A cozy home organization app",
-      "appStoreUrl": "#",
-      "tags": ["Mobile Design", "UX", "UI", "Product Launch"]
+      "slug": "vromm-app",
+      "name": "Vromm",
+      "icon": "/apps/app_vromm.png",
+      "description": "AI-powered driving instruction app",
+      "appStoreUrl": "/projects/vromm-driving-app",
+      "playStoreUrl": null,
+      "tags": ["React Native", "AI", "Education", "Startup"],
+      "color": "#3B82F6",
+      "featured": true,
+      "details": {
+        "category": "Education",
+        "platform": "React Native",
+        "downloads": "Internal MVP",
+        "rating": "Beta Testing",
+        "releaseDate": "2025",
+        "version": "1.0",
+        "overview": "Building a smarter, more engaging way for driving students and instructors to plan, track, and complete practice based on Sweden's 16-step curriculum. Solo-developed using AI-assisted workflows.",
+        "features": [
+          "AI-powered route planning",
+          "Gamified progress tracking",
+          "Instructor-student collaboration",
+          "16-step curriculum mapping",
+          "Real-world route integration"
+        ],
+        "screenshots": [
+          "/apps/vromm/screen-1.jpg",
+          "/apps/vromm/screen-2.jpg",
+          "/apps/vromm/screen-3.jpg"
+        ],
+        "testimonials": [
+          {
+            "quote": "Really impressed with the user experience design and integration with existing workflows.",
+            "author": "Maria Andersson",
+            "rating": 5
+          }
+        ]
+      }
     },
     {
       "id": "app-2",
-      "name": "EcoDrive",
-      "icon": "/apps/ecodrive.png",
-      "description": "Track your sustainable driving habits",
-      "appStoreUrl": "#",
-      "tags": ["Mobile Design", "UX", "Growth", "Design Thinking"]
+      "slug": "pepparkakshus-battle",
+      "name": "Pepparkakshus Battle",
+      "icon": "/apps/app_pepparkakshusbattle.png",
+      "description": "Interactive gingerbread house competition",
+      "appStoreUrl": "https://pepparkakshusbattle.se/",
+      "playStoreUrl": null,
+      "tags": ["Web App", "Interactive", "Holiday", "Community"],
+      "color": "#D97706",
+      "featured": true,
+      "details": {
+        "category": "Entertainment",
+        "platform": "Web",
+        "downloads": "Public Launch",
+        "rating": "Community Favorite",
+        "releaseDate": "2025",
+        "version": "1.0",
+        "overview": "Interactive web app for gingerbread house competitions. Features voting, submissions, and community engagement around Swedish holiday traditions.",
+        "features": [
+          "Photo submission system",
+          "Community voting",
+          "Real-time leaderboards",
+          "Social sharing features",
+          "Mobile-responsive design"
+        ],
+        "screenshots": [
+          "/apps/pepparkaks/screen-1.jpg",
+          "/apps/pepparkaks/screen-2.jpg",
+          "/apps/pepparkaks/screen-3.jpg"
+        ],
+        "testimonials": [
+          {
+            "quote": "Such a fun way to celebrate the holidays with the community!",
+            "author": "Community Member",
+            "rating": 5
+          }
+        ]
+      }
     }
   ],
   "cv": {
     "experience": [
       {
-        "title": "Founder & Lead Designer",
+        "title": "Founder & Design Consultant",
         "company": "Instinctly",
-        "period": "2018 - Present",
-        "description": "Leading design strategy and execution for various clients."
+        "period": "2007 - Present",
+        "description": "Design & development consultancy serving clients like Qasa, Spotify, Swedbank, Länsförsäkringar, and KLM. 15+ years of product design and development.",
+        "projects": [
+          "Qasa (2025) – Senior Product Design Consultant. Led Match team product design, built AI-enhanced prototyping tools using Lovable, improved tenant-landlord matching flows. Created custom Qasa design system replica for AI tools.",
+          "Fröjd Interactive (Mar-May 2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects.",
+          "1-Week Design Sprint – Lund Startup (Feb 2025) – Led intensive design sprint. Delivered clickable prototypes, design refinements, and user-tested solutions using AI-assisted design tools and workshop facilitation.",
+          "Energiforsk (2024) – Frontend Developer. Sweden's most energy-efficient website using Next.js, achieving 75% performance improvement. Accessibility and sustainability focus. (https://www.energiforsk.se)",
+          "Gavlegårdarna (2023) – UX/UI Designer & Frontend Developer. Housing platform for 30,000+ residents in Gävle. Vue.js with WCAG AA compliance and multi-language support. (https://www.gavlegardarna.se)",
+          "Record Union (Aug 2017-Mar 2018) – UX/UI Designer. Indie music artists online publishing platform. Responsible for UX & UI foundation and design systems for music distribution platform.",
+          "Spotify Data Saver (Mar-Jun 2017) – Product Design Consultant. Led UX design for low-data streaming feature for Brazil/emerging markets. Conducted field research in favelas, delivered 1% data usage solution.",
+          "Länsförsäkringar (Mar 2016-Feb 2017) – Art Director Consultant with Identity Works. Digital design system for Sweden's largest insurer. Cross-platform web, mobile, and internal portals. Won Best App & Web 2017.",
+          "KLM (Aug-Oct 2015) – Senior Design Consultant with AKQA Amsterdam. Online booking and travel experience redesign. Wireframes, flows, component designs for international platform. (beta.klm.com)",
+          "DDB Stockholm (Mar 2015) – UX Consultant. Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces.",
+          "Backbase (2012-2017) – Lead Designer. Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Component libraries and themeable admin portals for financial institutions.",
+          "Various startups and SMEs (2007-Present) – Product design, UX research, frontend development across fintech, healthcare, e-commerce. 15+ years serving clients from early-stage startups to Fortune 500 companies."
+        ]
       },
       {
-        "title": "Senior Product Designer",
-        "company": "Design Studio AB",
-        "period": "2015 - 2018",
-        "description": "Led product design for mobile and web applications."
+        "title": "Founder & Product Designer",
+        "company": "Vromm",
+        "companyUrl": "https://www.vromm.se",
+        "period": "2025 - Present",
+        "description": "Building AI-powered driving instruction app. Solo product design and development using modern AI workflows. (as Instinctly)."
       },
       {
-        "title": "UX Designer",
-        "company": "Tech Company",
-        "period": "2012 - 2015",
-        "description": "User experience design and research."
+        "title": "Senior Product Design Consultant",
+        "company": "Qasa",
+        "period": "May - Aug 2025",
+        "description": "Led product design for Match team. Built AI-enhanced prototyping tools and improved tenant-landlord matching flows (as Instinctly).",
+        "recommendation": {
+          "quote": "Daniel stepped in and filled a pair of vacant design-shoes at Qasa during the summer of 2025. As the versatile designer he is - he covered our needs by always delivering multiple alternatives of the UX/UI challenges - always answering right yet presenting alternative routes to cement the chosen path. He designs, speak/write code and think systems so for me being Staff it was a smooth run. Five out of five LinkedIn-stars on Daniel!",
+          "author": "Fredrik Weinestad",
+          "role": "Staff Product Designer at Qasa",
+          "date": "September 2025"
+        }
+      },
+      {
+        "title": "Co-Founder & Lead Product Designer",
+        "company": "Asteria",
+        "period": "2017 - 2025",
+        "description": "Co-founded fintech company serving 400k+ users through Swedbank and PayEx partnerships. Led product vision and design strategy.",
+        "projects": [
+          "Smart Cash Flow (SCF) – Core AI-powered cash flow management platform used by 10,000+ SMEs and multiple banks. Led UX/UI, design system, and product validation (2017-2025)",
+          "Företagskollen – Swedbank – White-label financial dashboard integrated into Swedbank's online banking platform for 400,000+ business customers. Led product definition, user research, and design system creation (2017-2025)",
+          "Invoice Portal – PayEx – Scalable invoice management portal for SMEs in partnership with PayEx (Swedbank subsidiary). Led UX/UI work and integration with existing tech ecosystem (2022-2025)"
+        ],
+        "recommendation": {
+          "quote": "I've had the pleasure of working with Daniel for over 5 years. Daniel is a great resource and it has been a joy to see how Daniel has developed during our time working together. I highly recommend hiring Daniel.",
+          "author": "Anders Nordkvist",
+          "role": "CEO at Asteria AB",
+          "date": "June 2025"
+        }
+      },
+      {
+        "title": "Senior Product Design Consultant",
+        "company": "Spotify",
+        "period": "Mar - Jun 2017",
+        "description": "Designed low-data streaming experience for emerging markets. Conducted field research in Brazil and launched Data Saver feature (as Instinctly)."
       }
     ],
     "education": [
       {
-        "degree": "Master of Design",
-        "school": "Royal Institute of Technology",
-        "year": "2012"
+        "degree": "JavaScript Bootcamp",
+        "school": "Technigo",
+        "year": "2025-2026"
+      },
+      {
+        "degree": "Music Production & Theory",
+        "school": "Furuboda",
+        "year": "2023-2024"
+      },
+      {
+        "degree": "Digital Media Creative",
+        "school": "Hyper Island",
+        "year": "2009-2011"
       }
     ]
   }

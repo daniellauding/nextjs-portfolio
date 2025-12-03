@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface SkillsProps {
@@ -9,6 +10,9 @@ interface SkillsProps {
 }
 
 export default function Skills({ skills, activeTag, onTagClick }: SkillsProps) {
+  const [showAllSkills, setShowAllSkills] = useState(false);
+  const maxSkillsToShow = 12;
+  
   const handleClick = (skill: string) => {
     if (activeTag === skill) {
       onTagClick(null);
@@ -16,6 +20,8 @@ export default function Skills({ skills, activeTag, onTagClick }: SkillsProps) {
       onTagClick(skill);
     }
   };
+
+  const skillsToShow = showAllSkills ? skills : skills.slice(0, maxSkillsToShow);
 
   return (
     <section className="px-6 md:px-12 pb-24">
@@ -42,7 +48,8 @@ export default function Skills({ skills, activeTag, onTagClick }: SkillsProps) {
         transition={{ duration: 0.6 }}
         className="flex flex-wrap gap-3"
       >
-        {skills.map((skill, index) => (
+        {/* Initially visible skills */}
+        {skills.slice(0, maxSkillsToShow).map((skill, index) => (
           <motion.button
             key={skill}
             onClick={() => handleClick(skill)}
@@ -50,9 +57,7 @@ export default function Skills({ skills, activeTag, onTagClick }: SkillsProps) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.05, duration: 0.4 }}
-            whileHover={{
-              scale: 1.05,
-            }}
+            whileHover={{ scale: 1.05 }}
             className={`px-5 py-2.5 rounded-full border text-sm cursor-pointer transition-all ${
               activeTag === skill
                 ? "bg-[var(--accent)] border-[var(--accent)] text-[var(--background)]"
@@ -62,6 +67,41 @@ export default function Skills({ skills, activeTag, onTagClick }: SkillsProps) {
             {skill}
           </motion.button>
         ))}
+        
+        {/* Additional skills that appear when expanded */}
+        {showAllSkills && skills.slice(maxSkillsToShow).map((skill, index) => (
+          <motion.button
+            key={skill}
+            onClick={() => handleClick(skill)}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ delay: index * 0.05, duration: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            className={`px-5 py-2.5 rounded-full border text-sm cursor-pointer transition-all ${
+              activeTag === skill
+                ? "bg-[var(--accent)] border-[var(--accent)] text-[var(--background)]"
+                : "border-[var(--foreground)] text-[var(--foreground)] hover:bg-[var(--accent)] hover:border-[var(--accent)] hover:text-[var(--background)]"
+            }`}
+          >
+            {skill}
+          </motion.button>
+        ))}
+        
+        {skills.length > maxSkillsToShow && (
+          <motion.button
+            onClick={() => setShowAllSkills(!showAllSkills)}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: maxSkillsToShow * 0.05, duration: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-5 py-2.5 rounded-full border border-[var(--text-muted)] text-[var(--text-muted)] hover:border-[var(--foreground)] hover:text-[var(--foreground)] text-sm cursor-pointer transition-all"
+          >
+            {showAllSkills ? "Show Less" : `+${skills.length - maxSkillsToShow} more`}
+          </motion.button>
+        )}
       </motion.div>
     </section>
   );
