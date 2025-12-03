@@ -99,6 +99,7 @@
       "slug": "vromm-driving-app",
       "name": "Vromm - Driving Instruction App",
       "type": "Product Design & Development",
+      "url": "https://www.vromm.se",
       "date": "2025",
       "location": "Remote/Stockholm",
       "description": "Building a smarter, more engaging way for driving students and instructors to plan, track, and complete practice based on Sweden's 16-step curriculum.",
@@ -148,6 +149,7 @@
       "type": "Product Design Consultant",
       "date": "2025",
       "location": "Remote/Stockholm",
+      "url": "https://www.qasa.se",
       "description": "Led product design within the Match team, making it easier for tenants and landlords to find each other, connect, and sign homes.",
       "tags": ["Product Design", "UX Research", "AI Tools", "Rental Platform"],
       "image": "/projects/qasa.jpg",
@@ -193,6 +195,7 @@
       "name": "Asteria - Smart Cash Flow",
       "type": "Co-founder & Lead Product Design",
       "date": "2017-2025",
+      "url": "https://www.asteria.ai",
       "location": "Remote/Stockholm",
       "description": "Transformed complex financial tools into intuitive digital products for SMEs, reaching over 400,000 users through partnerships with Swedbank and PayEx.",
       "tags": ["Fintech", "Product Design", "Co-founder", "SaaS", "Banking"],
@@ -405,6 +408,7 @@
     {
       "id": "client-25",
       "name": "Asteria"
+      "url": "https://www.asteria.ai"
     },
     {
       "id": "client-26",
@@ -506,9 +510,9 @@
     {
       "id": "app-3",
       "slug": "plotta",
-      "name": "Plotta",
+      "name": "plotta",
       "icon": "P",
-      "description": "Subtle stealth plotter",
+      "description": "Subtle stealth project",
       "appStoreUrl": null,
       "playStoreUrl": null,
       "tags": ["Stealth", "Tools", "Subtle"],
@@ -521,7 +525,7 @@
         "rating": "Stealth",
         "releaseDate": "Stealth",
         "version": "Stealth",
-        "overview": "Plotta",
+        "overview": "plotta",
         "features": [
           "Subtle functionality",
           "Stealth operations",
@@ -535,6 +539,7 @@
       {
         "title": "Founder & Design Consultant",
         "company": "Instinctly",
+        "companyUrl": "https://www.instinctly.se",
         "period": "2007 - Present",
         "description": "Design & development consultancy serving clients like Qasa, Spotify, Swedbank, Länsförsäkringar, and KLM. 15+ years of product design and development.",
         "projects": [
@@ -562,6 +567,7 @@
       {
         "title": "Senior Product Design Consultant",
         "company": "Qasa",
+        "companyUrl": "https://www.qasa.se",
         "period": "May - Aug 2025",
         "description": "Led product design for Match team. Built AI-enhanced prototyping tools and improved tenant-landlord matching flows (as Instinctly).",
         "recommendation": {
@@ -574,6 +580,7 @@
       {
         "title": "Co-Founder & Lead Product Designer",
         "company": "Asteria",
+        "companyUrl": "https://www.asteria.ai",
         "period": "2017 - 2025",
         "description": "Co-founded fintech company serving 400k+ users through Swedbank and PayEx partnerships. Led product vision and design strategy.",
         "projects": [
@@ -591,12 +598,14 @@
       {
         "title": "Senior Product Design Consultant",
         "company": "Spotify",
+        "companyUrl": "https://www.spotify.com",
         "period": "Mar - Jun 2017",
         "description": "Designed low-data streaming experience for emerging markets. Conducted field research in Brazil and launched Data Saver feature (as Instinctly)."
       },
       {
         "title": "Art Director Consultant",
         "company": "Länsförsäkringar",
+        "companyUrl": "https://www.lansforsakringar.se",
         "period": "Mar 2016 - Feb 2017",
         "description": "Modernized digital identity for one of Sweden's largest insurers. Created cross-platform design system for web, mobile, and internal portals. Won Best App & Web 2017 (as Instinctly)."
       },
@@ -611,16 +620,19 @@
       {
         "degree": "JavaScript Bootcamp",
         "school": "Technigo",
+        "schoolUrl": "https://www.technigo.com",
         "year": "2025-2026"
       },
       {
         "degree": "Music Production & Theory",
         "school": "Furuboda",
+        "schoolUrl": "https://www.furuboda.se",
         "year": "2023-2024"
       },
       {
         "degree": "Digital Media Creative",
         "school": "Hyper Island",
+        "schoolUrl": "https://www.hyperisland.com",
         "year": "2009-2011"
       }
     ],
