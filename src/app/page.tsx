@@ -42,7 +42,7 @@ export default function Home() {
           experience={personal.experience}
         />
         <Skills skills={skills} activeTag={activeTag} onTagClick={setActiveTag} />
-        <Projects projects={filteredProjects} activeTag={activeTag} onTagClick={setActiveTag} />
+        {/* <Projects projects={filteredProjects} activeTag={activeTag} onTagClick={setActiveTag} /> */}
         <Clients clients={clients} />
         <CV experience={cv.experience} education={cv.education} />
         {/* <Services /> */}
