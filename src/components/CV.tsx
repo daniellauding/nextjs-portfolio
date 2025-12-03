@@ -138,7 +138,7 @@ export default function CV({ experience, education }: CVProps) {
                             const urlMatch = project.match(/(https?:\/\/[^\s)]+)/);
                             const hasUrl = urlMatch !== null;
                             const url = urlMatch ? urlMatch[0] : null;
-                            const projectText = hasUrl ? project.replace(url, '').replace(/[()]/g, '').trim() : project;
+                            const projectText = hasUrl && url ? project.replace(url, '').replace(/[()]/g, '').trim() : project;
                             
                             return (
                               <div key={projIndex} className="text-base pl-4 border-l border-[var(--text-muted)]/30 mb-3 leading-relaxed">

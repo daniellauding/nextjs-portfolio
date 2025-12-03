@@ -226,7 +226,7 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
-                      target.nextElementSibling!.style.display = 'flex';
+                      (target.nextElementSibling as HTMLElement)!.style.display = 'flex';
                     }}
                   />
                   <div className="w-full h-full hidden items-center justify-center text-white font-medium text-sm">
@@ -303,10 +303,9 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.9 + index * 0.1, duration: 0.4 }}
+                  transition={{ delay: 0.9 + index * 0.1, duration: 0.4, type: "spring", stiffness: 400, damping: 10 }}
                   whileHover={{ scale: 1.15, y: -6 }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="group relative touch-manipulation"
                   onMouseEnter={(e) => {
                     setHoveredApp(app.id);
