@@ -542,6 +542,12 @@
         "companyUrl": "https://www.instinctly.se",
         "period": "2007 - Present",
         "description": "Design & development consultancy serving clients like Qasa, Spotify, Swedbank, Länsförsäkringar, and KLM. 15+ years of product design and development.",
+        "recommendation": {
+          "quote": "I highly recommend Daniel! He helped us iterate design, prototype and test really fast. Daniel is at the cutting edge by combining a design, user experience understand, using AI coding - and being able to code himself!",
+          "author": "Fredrik Eklöf",
+          "role": "CEO & Founder | Peer Coaching @Emotional Fitness Sweden",
+          "date": "7 months ago"
+        },
         "projects": [
           "Qasa (2025) – Senior Product Design Consultant. Led Match team product design, built AI-enhanced prototyping tools using Lovable, improved tenant-landlord matching flows. Created custom Qasa design system replica for AI tools. (https://www.qasa.se)",
           "Fröjd Interactive (Mar-May 2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects. (https://frojd.se)",
@@ -553,7 +559,7 @@
           "Länsförsäkringar (Mar 2016-Feb 2017) – Art Director Consultant with Identity Works. Digital design system for Sweden's largest insurer. Cross-platform web, mobile, and internal portals. Won Best App & Web 2017. (https://www.lansforsakringar.se)",
           "KLM (Aug-Oct 2015) – Senior Design Consultant with AKQA Amsterdam. Online booking and travel experience redesign. Wireframes, flows, component designs for international platform. (beta.klm.com)",
           "DDB Stockholm (Mar 2015) – UX Consultant. Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces. (https://www.ddb.com)",
-          "Backbase (2012-2017) – Lead Designer. Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Component libraries and themeable admin portals for financial institutions. (https://www.backbase.com)",
+          "Backbase (2012-2017) – Lead Designer. Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Component libraries and themeable admin portals for financial institutions. (https://www.backbase.com) 'Daniel is a very talented designer we have hired for Backbase. He delivers top quality work while being efficient. Daniel is a multi talent who's also a great guy and fun to work with. If I have the opportunity to hire him again in the future, I would certainly do that.' — Wouter Koeleman, Sr Manager Talent Acquisition",
           "Various startups and SMEs (2007-Present) – Product design, UX research, frontend development across fintech, healthcare, e-commerce. 15+ years serving clients from early-stage startups to Fortune 500 companies."
         ]
       },
@@ -607,13 +613,25 @@
         "company": "Länsförsäkringar",
         "companyUrl": "https://www.lansforsakringar.se",
         "period": "Mar 2016 - Feb 2017",
-        "description": "Modernized digital identity for one of Sweden's largest insurers. Created cross-platform design system for web, mobile, and internal portals. Won Best App & Web 2017 (as Instinctly)."
+        "description": "Modernized digital identity for one of Sweden's largest insurers. Created cross-platform design system for web, mobile, and internal portals. Won Best App & Web 2017 (as Instinctly).",
+        "recommendation": {
+          "quote": "Daniel is a skilled Art Director with an eye for detail. He works super fast and comes up with suggestions for new approaches. He maintains a high pace with high quality. Daniel has been part of the process to develop Länsförsäkringar's new digital expression and we have had high pressure but so much fun during the time. Good luck going forward, hope we get to work together again soon :)",
+          "author": "Liza Hansson",
+          "role": "Strategic Lead Designer at Variant Sverige",
+          "date": "February 2017"
+        }
       },
       {
         "title": "Frontend Developer",
         "company": "Various Projects",
         "period": "2008 - Present",
-        "description": "15+ years of frontend development across startups to Fortune 500. HTML, CSS, JavaScript, React, Vue, TypeScript. From IE6 era to modern AI-assisted workflows."
+        "description": "15+ years of frontend development across startups to Fortune 500. HTML, CSS, JavaScript, React, Vue, TypeScript. From IE6 era to modern AI-assisted workflows.",
+        "recommendation": {
+          "quote": "Daniel is a great front end programmer since he always get things done in a swift and effective way, and at the same time pays a lot of attention to details. We worked together for about half a year on different IKEA projects at Futurniture in Stockholm. As an Hyper Island student I'm sure he'll become even more skilled in his area and be part of teams that produce great digital work in the future.",
+          "author": "Simon Källgård",
+          "role": "Digital UX Director",
+          "date": "August 2009"
+        }
       }
     ],
     "education": [
