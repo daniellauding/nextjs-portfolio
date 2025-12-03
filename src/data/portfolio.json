@@ -543,17 +543,17 @@
         "period": "2007 - Present",
         "description": "Design & development consultancy serving clients like Qasa, Spotify, Swedbank, Länsförsäkringar, and KLM. 15+ years of product design and development.",
         "projects": [
-          "Qasa (2025) – Senior Product Design Consultant. Led Match team product design, built AI-enhanced prototyping tools using Lovable, improved tenant-landlord matching flows. Created custom Qasa design system replica for AI tools.",
-          "Fröjd Interactive (Mar-May 2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects.",
+          "Qasa (2025) – Senior Product Design Consultant. Led Match team product design, built AI-enhanced prototyping tools using Lovable, improved tenant-landlord matching flows. Created custom Qasa design system replica for AI tools. (https://www.qasa.se)",
+          "Fröjd Interactive (Mar-May 2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects. (https://frojd.se)",
           "1-Week Design Sprint – Lund Startup (Feb 2025) – Led intensive design sprint. Delivered clickable prototypes, design refinements, and user-tested solutions using AI-assisted design tools and workshop facilitation.",
           "Energiforsk (2024) – Frontend Developer. Sweden's most energy-efficient website using Next.js, achieving 75% performance improvement. Accessibility and sustainability focus. (https://www.energiforsk.se)",
           "Gavlegårdarna (2023) – UX/UI Designer & Frontend Developer. Housing platform for 30,000+ residents in Gävle. Vue.js with WCAG AA compliance and multi-language support. (https://www.gavlegardarna.se)",
-          "Record Union (Aug 2017-Mar 2018) – UX/UI Designer. Indie music artists online publishing platform. Responsible for UX & UI foundation and design systems for music distribution platform.",
-          "Spotify Data Saver (Mar-Jun 2017) – Product Design Consultant. Led UX design for low-data streaming feature for Brazil/emerging markets. Conducted field research in favelas, delivered 1% data usage solution.",
-          "Länsförsäkringar (Mar 2016-Feb 2017) – Art Director Consultant with Identity Works. Digital design system for Sweden's largest insurer. Cross-platform web, mobile, and internal portals. Won Best App & Web 2017.",
+          "Record Union (Aug 2017-Mar 2018) – UX/UI Designer. Indie music artists online publishing platform. Responsible for UX & UI foundation and design systems for music distribution platform. (https://www.recordunion.com)",
+          "Spotify Data Saver (Mar-Jun 2017) – Product Design Consultant. Led UX design for low-data streaming feature for Brazil/emerging markets. Conducted field research in favelas, delivered 1% data usage solution. (https://www.spotify.com)",
+          "Länsförsäkringar (Mar 2016-Feb 2017) – Art Director Consultant with Identity Works. Digital design system for Sweden's largest insurer. Cross-platform web, mobile, and internal portals. Won Best App & Web 2017. (https://www.lansforsakringar.se)",
           "KLM (Aug-Oct 2015) – Senior Design Consultant with AKQA Amsterdam. Online booking and travel experience redesign. Wireframes, flows, component designs for international platform. (beta.klm.com)",
-          "DDB Stockholm (Mar 2015) – UX Consultant. Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces.",
-          "Backbase (2012-2017) – Lead Designer. Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Component libraries and themeable admin portals for financial institutions.",
+          "DDB Stockholm (Mar 2015) – UX Consultant. Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces. (https://www.ddb.com)",
+          "Backbase (2012-2017) – Lead Designer. Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Component libraries and themeable admin portals for financial institutions. (https://www.backbase.com)",
           "Various startups and SMEs (2007-Present) – Product design, UX research, frontend development across fintech, healthcare, e-commerce. 15+ years serving clients from early-stage startups to Fortune 500 companies."
         ]
       },
@@ -584,9 +584,9 @@
         "period": "2017 - 2025",
         "description": "Co-founded fintech company serving 400k+ users through Swedbank and PayEx partnerships. Led product vision and design strategy.",
         "projects": [
-          "Smart Cash Flow (SCF) – Core AI-powered cash flow management platform used by 10,000+ SMEs and multiple banks. Led UX/UI, design system, and product validation (2017-2025)",
-          "Företagskollen – Swedbank – White-label financial dashboard integrated into Swedbank's online banking platform for 400,000+ business customers. Led product definition, user research, and design system creation (2017-2025)",
-          "Invoice Portal – PayEx – Scalable invoice management portal for SMEs in partnership with PayEx (Swedbank subsidiary). Led UX/UI work and integration with existing tech ecosystem (2022-2025)"
+          "Smart Cash Flow (SCF) – Core AI-powered cash flow management platform used by 10,000+ SMEs and multiple banks. Led UX/UI, design system, and product validation (2017-2025) (https://www.asteria.ai)",
+          "Företagskollen – Swedbank – White-label financial dashboard integrated into Swedbank's online banking platform for 400,000+ business customers. Led product definition, user research, and design system creation (2017-2025) (https://www.affarsvarlden.se/native/sa-far-du-battre-koll-pa-ditt-foretags-ekonomi)",
+          "Invoice Portal – PayEx – Scalable invoice management portal for SMEs in partnership with PayEx (Swedbank subsidiary). Led UX/UI work and integration with existing tech ecosystem (2022-2025) (https://www.payex.com)"
         ],
         "recommendation": {
           "quote": "I've had the pleasure of working with Daniel for over 5 years. Daniel is a great resource and it has been a joy to see how Daniel has developed during our time working together. I highly recommend hiring Daniel.",
