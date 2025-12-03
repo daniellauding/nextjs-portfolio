@@ -1,0 +1,141 @@
+{
+  "personal": {
+    "name": "Daniel Lauding",
+    "firstName": "Daniel",
+    "lastName": "Lauding",
+    "title": "Product Design",
+    "studio": "Instinctly",
+    "location": "Stockholm",
+    "bio": "Daniel Lauding is a Stockholm-based designer specializing in elegant, user-friendly design. He is the creative force behind Instinctly, a design studio well-known for delivering quality digital solutions.",
+    "tools": ["Figma", "Sketch", "Wireframing"],
+    "experience": "10+ years"
+  },
+  "skills": [
+    "Wireframing",
+    "Prototyping",
+    "Figma",
+    "UX",
+    "UI",
+    "Mobile Design",
+    "Marketing",
+    "Growth",
+    "Product Launch",
+    "Design Thinking"
+  ],
+  "projects": [
+    {
+      "id": "project-1",
+      "name": "Mobile Banking App",
+      "type": "UX Design",
+      "date": "2024",
+      "location": "Stockholm, SE",
+      "description": "Complete redesign of a mobile banking application focusing on accessibility and ease of use.",
+      "tags": ["UX", "Mobile Design", "Figma", "Prototyping"],
+      "image": "/projects/project-1.jpg",
+      "color": "#58B99B",
+      "readMore": "/projects/mobile-banking-app"
+    },
+    {
+      "id": "project-2",
+      "name": "E-commerce Platform",
+      "type": "Product Design",
+      "date": "2024",
+      "location": "Stockholm, SE",
+      "description": "End-to-end product design for a sustainable fashion marketplace.",
+      "tags": ["Product Design", "E-commerce"],
+      "image": "/projects/project-2.jpg",
+      "color": "#E8A87C"
+    },
+    {
+      "id": "project-3",
+      "name": "Health & Wellness App",
+      "type": "UI/UX Design",
+      "date": "2023",
+      "location": "Stockholm, SE",
+      "description": "Designed a comprehensive health tracking app with intuitive data visualization.",
+      "tags": ["UI", "UX", "Healthcare"],
+      "image": "/projects/project-3.jpg",
+      "color": "#C38D9E"
+    },
+    {
+      "id": "project-4",
+      "name": "SaaS Dashboard",
+      "type": "Product Design",
+      "date": "2023",
+      "location": "Stockholm, SE",
+      "description": "Complex dashboard design for enterprise analytics platform.",
+      "tags": ["Dashboard", "SaaS", "Enterprise"],
+      "image": "/projects/project-4.jpg",
+      "color": "#41B3A3"
+    }
+  ],
+  "clients": [
+    {
+      "id": "client-1",
+      "name": "TechCorp",
+      "logo": "/clients/client-1.svg"
+    },
+    {
+      "id": "client-2",
+      "name": "StartupXYZ",
+      "logo": "/clients/client-2.svg"
+    },
+    {
+      "id": "client-3",
+      "name": "Enterprise Co",
+      "logo": "/clients/client-3.svg"
+    },
+    {
+      "id": "client-4",
+      "name": "Digital Agency",
+      "logo": "/clients/client-4.svg"
+    }
+  ],
+  "apps": [
+    {
+      "id": "app-1",
+      "name": "Gingerbread House",
+      "icon": "/apps/gingerbread.png",
+      "description": "A cozy home organization app",
+      "appStoreUrl": "#",
+      "tags": ["Mobile Design", "UX", "UI", "Product Launch"]
+    },
+    {
+      "id": "app-2",
+      "name": "EcoDrive",
+      "icon": "/apps/ecodrive.png",
+      "description": "Track your sustainable driving habits",
+      "appStoreUrl": "#",
+      "tags": ["Mobile Design", "UX", "Growth", "Design Thinking"]
+    }
+  ],
+  "cv": {
+    "experience": [
+      {
+        "title": "Founder & Lead Designer",
+        "company": "Instinctly",
+        "period": "2018 - Present",
+        "description": "Leading design strategy and execution for various clients."
+      },
+      {
+        "title": "Senior Product Designer",
+        "company": "Design Studio AB",
+        "period": "2015 - 2018",
+        "description": "Led product design for mobile and web applications."
+      },
+      {
+        "title": "UX Designer",
+        "company": "Tech Company",
+        "period": "2012 - 2015",
+        "description": "User experience design and research."
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master of Design",
+        "school": "Royal Institute of Technology",
+        "year": "2012"
+      }
+    ]
+  }
+}
