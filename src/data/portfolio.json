@@ -428,7 +428,7 @@
       "name": "Vromm",
       "icon": "/apps/app_vromm.png",
       "description": "AI-powered driving instruction app",
-      "appStoreUrl": "/projects/vromm-driving-app",
+      "appStoreUrl": "https://www.vromm.se",
       "playStoreUrl": null,
       "tags": ["React Native", "AI", "Education", "Startup"],
       "color": "#3B82F6",
