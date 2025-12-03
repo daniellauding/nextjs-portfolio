@@ -124,7 +124,7 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
         transition={{ duration: 2, delay: 1 }}
       >
         <motion.div
-          className="absolute w-80 h-80 rounded-full blur-3xl opacity-3 dark:opacity-8 cursor-pointer top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
+          className="absolute w-80 h-80 rounded-full blur-3xl opacity-15 dark:opacity-8 cursor-pointer top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
           style={{
             background: "var(--accent)",
             mixBlendMode: "normal",
