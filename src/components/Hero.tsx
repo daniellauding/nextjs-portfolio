@@ -124,7 +124,7 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
         transition={{ duration: 2, delay: 1 }}
       >
         <motion.div
-          className="absolute w-80 h-80 rounded-full blur-3xl opacity-15 dark:opacity-8 cursor-pointer top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
+          className="absolute w-80 h-80 rounded-full blur-3xl opacity-35 dark:opacity-8 cursor-pointer top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
           style={{
             background: "var(--whisp-color)",
             mixBlendMode: "normal",
@@ -149,7 +149,7 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
       
       <div className="w-full relative z-10">
         <motion.h1
-          className="text-[clamp(3rem,15vw,12rem)] font-light leading-[1.0] tracking-tight text-[var(--foreground)] relative"
+          className="text-[clamp(3rem,15vw,12rem)] font-light leading-[1.1] tracking-tight text-[var(--foreground)] relative"
           initial="hidden"
           animate="visible"
         >

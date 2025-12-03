@@ -593,6 +593,18 @@
         "company": "Spotify",
         "period": "Mar - Jun 2017",
         "description": "Designed low-data streaming experience for emerging markets. Conducted field research in Brazil and launched Data Saver feature (as Instinctly)."
+      },
+      {
+        "title": "Art Director Consultant",
+        "company": "Länsförsäkringar",
+        "period": "Mar 2016 - Feb 2017",
+        "description": "Modernized digital identity for one of Sweden's largest insurers. Created cross-platform design system for web, mobile, and internal portals. Won Best App & Web 2017 (as Instinctly)."
+      },
+      {
+        "title": "Frontend Developer",
+        "company": "Various Projects",
+        "period": "2008 - Present",
+        "description": "15+ years of frontend development across startups to Fortune 500. HTML, CSS, JavaScript, React, Vue, TypeScript. From IE6 era to modern AI-assisted workflows."
       }
     ],
     "education": [
