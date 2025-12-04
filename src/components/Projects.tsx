@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackProjectView, trackClick } from "@/lib/tracking";
 
 interface Project {
   id: string;
@@ -150,7 +151,10 @@ export default function Projects({ projects, activeTag, onTagClick }: ProjectsPr
                     </div>
                     <Link
                       href={`/projects/${project.slug}`}
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        trackProjectView(project.name);
+                      }}
                       className="mt-3 inline-flex items-center gap-2 text-sm text-white hover:text-[var(--accent)] transition-colors"
                     >
                       View Case Study

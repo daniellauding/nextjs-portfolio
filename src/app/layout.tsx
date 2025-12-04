@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Providers } from "@/providers/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,12 +46,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Daniel Lauding Portfolio",
+    url: "https://daniellauding.se",
+    images: [
+      {
+        url: "https://daniellauding.se/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Daniel Lauding - Design Engineer & Product Designer",
+      }
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Daniel Lauding | Design Engineer Available for Hire 2026",
     description: "Freelance Design Engineer & Product Designer. 15+ years experience. Available for hire 2026.",
     creator: "@daniellauding",
+    images: ["https://daniellauding.se/og-image.png"],
   },
   alternates: {
     canonical: "https://daniellauding.se",
@@ -160,6 +171,16 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <meta property="og:image" content="https://daniellauding.se/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content="Daniel Lauding - Design Engineer & Product Designer" />
+        <meta property="og:url" content="https://daniellauding.se" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Daniel Lauding | Design Engineer & Product Designer Available for Hire 2026" />
+        <meta property="og:description" content="Freelance Design Engineer with 15+ years experience. Available for hire 2026. Specializing in AI-assisted design, fintech, SaaS. Based in Stockholm, Sweden." />
+        <meta name="twitter:image" content="https://daniellauding.se/og-image.png" />
         <meta name="google-site-verification" content="your-verification-code" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
@@ -172,7 +193,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

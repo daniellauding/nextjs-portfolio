@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Logo from "./Logo";
+import { trackContactAttempt, trackExternalLink } from "@/lib/tracking";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -78,6 +79,7 @@ export default function Footer() {
               href="mailto:daniel@lauding.se"
               className="inline-block text-xl text-[var(--accent)] hover:underline underline-offset-4 mb-6"
               whileHover={{ x: 10 }}
+              onClick={() => trackContactAttempt('email_main')}
             >
               daniel@lauding.se
             </motion.a>
@@ -93,6 +95,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--accent)] text-[var(--background)] rounded-full font-medium hover:opacity-90 transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => trackContactAttempt('email_cta_button')}
               >
                 Let's Build Something Great
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,6 +114,7 @@ export default function Footer() {
                     href={link.url}
                     className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
                     whileHover={{ x: 5 }}
+                    onClick={() => trackExternalLink(link.url, 'social')}
                   >
                     {link.name}
                   </motion.a>

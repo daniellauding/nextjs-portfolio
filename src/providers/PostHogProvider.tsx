@@ -1,0 +1,58 @@
+'use client'
+
+import posthog from 'posthog-js'
+import { PostHogProvider as PHProvider } from 'posthog-js/react'
+import { useEffect, Suspense } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
+import { useConsent } from '@/hooks/useConsent'
+
+function PostHogPageViewInner() {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    if (pathname && posthog) {
+      let url = window.origin + pathname
+      if (searchParams && searchParams.toString()) {
+        url = url + '?' + searchParams.toString()
+      }
+      posthog.capture('$pageview', {
+        $current_url: url,
+      })
+    }
+  }, [pathname, searchParams])
+
+  return null
+}
+
+function PostHogPageView() {
+  return (
+    <Suspense fallback={null}>
+      <PostHogPageViewInner />
+    </Suspense>
+  )
+}
+
+export function PostHogProvider({ children }: { children: React.ReactNode }) {
+  const { hasConsent } = useConsent()
+
+  useEffect(() => {
+    if (hasConsent === true) {
+      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
+        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+        person_profiles: 'identified_only',
+        capture_pageview: false,
+        capture_pageleave: true,
+      })
+    } else if (hasConsent === false) {
+      posthog.opt_out_capturing()
+    }
+  }, [hasConsent])
+
+  return (
+    <PHProvider client={posthog}>
+      <PostHogPageView />
+      {children}
+    </PHProvider>
+  )
+}

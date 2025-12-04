@@ -33,6 +33,31 @@ export default function Information({ bio, tools, roles, experience, keyContribu
               transition={{ delay: 0.2, duration: 0.6 }}
               className="space-y-6"
             >
+              {/* Mobile Avatar Section */}
+              <div className="md:hidden flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-[var(--accent)] to-[var(--accent-secondary)]">
+                  <img 
+                    src="/avatar.png" 
+                    alt="Daniel Lauding"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      if (target.nextElementSibling) {
+                        (target.nextElementSibling as HTMLElement).style.display = 'flex';
+                      }
+                    }}
+                  />
+                  <div className="w-full h-full hidden items-center justify-center text-white font-medium">
+                    DL
+                  </div>
+                </div>
+                <div>
+                  <p className="font-medium text-[var(--foreground)]">Daniel Lauding</p>
+                  <p className="text-sm text-[var(--text-muted)]">Design Engineer • Available 2026</p>
+                </div>
+              </div>
+              
               <p className="text-lg md:text-xl font-light leading-relaxed text-[var(--foreground)]">
                 What started as a childhood fascination with building websites has evolved into 15+ years of crafting digital experiences that matter.
               </p>
