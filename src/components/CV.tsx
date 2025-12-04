@@ -148,7 +148,7 @@ export default function CV({ experience, education, activeTag }: CVProps) {
                     <p className="text-[var(--text-muted)] text-sm mt-1">
                       {exp.period}
                     </p>
-                    <p className="text-[var(--foreground)] text-sm mt-3 opacity-80">
+                    <p className="text-[var(--text-muted)] text-sm mt-3">
                       {highlightText(exp.description, activeTag)}
                     </p>
                   </div>
@@ -164,6 +164,8 @@ export default function CV({ experience, education, activeTag }: CVProps) {
                       }}
                       className="ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
                       whileTap={{ scale: 0.95 }}
+                      aria-label={expandedItems[`exp-${index}`] ? `Collapse ${exp.title} details` : `Expand ${exp.title} details`}
+                      aria-expanded={expandedItems[`exp-${index}`] || false}
                     >
                       <motion.div
                         animate={{ rotate: expandedItems[`exp-${index}`] ? 180 : 0 }}
