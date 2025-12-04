@@ -4,16 +4,24 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build", 
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "payload": "payload",
+    "generate:types": "payload generate:types",
+    "seed": "node scripts/seed.js"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.66.0",
+    "@payloadcms/db-sqlite": "^3.66.0",
+    "@payloadcms/richtext-lexical": "^3.66.0",
     "framer-motion": "^12.23.25",
     "next": "16.0.6",
+    "payload": "^3.66.0",
     "posthog-js": "^1.301.0",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
