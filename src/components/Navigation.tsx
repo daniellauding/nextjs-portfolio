@@ -25,9 +25,10 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <motion.a
-              href="#"
+              href="/"
               className="flex items-center justify-center text-[var(--foreground)] cursor-pointer"
               whileHover={{ opacity: 0.7 }}
+              aria-label="Home"
             >
               <Logo className="text-[var(--accent)]" />
             </motion.a>
@@ -40,6 +41,8 @@ export default function Navigation() {
               className="text-sm text-[var(--foreground)] hover:text-[var(--accent)] transition-colors cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
             >
               {menuOpen ? "Close" : "Menu"}
             </motion.button>

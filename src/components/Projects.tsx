@@ -124,6 +124,7 @@ export default function Projects({ projects, activeTag, onTagClick }: ProjectsPr
                                     ? "bg-white text-black"
                                     : "bg-white/20 text-white hover:bg-white/40"
                                 }`}
+                                aria-label={`Filter projects by ${tag}`}
                               >
                                 {tag}
                               </button>
@@ -138,6 +139,7 @@ export default function Projects({ projects, activeTag, onTagClick }: ProjectsPr
                                   }));
                                 }}
                                 className="px-3 py-1 rounded-full text-xs bg-white/10 text-white/80 hover:bg-white/20 transition-all"
+                                aria-label={projectShowAll ? "Show fewer tags" : `Show ${project.tags.length - maxTagsToShow} more tags`}
                               >
                                 {projectShowAll 
                                   ? "..." 
