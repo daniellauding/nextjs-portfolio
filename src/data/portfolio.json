@@ -103,7 +103,7 @@
       "date": "2025",
       "location": "Remote/Stockholm",
       "description": "Building a smarter, more engaging way for driving students and instructors to plan, track, and complete practice based on Sweden's 16-step curriculum.",
-      "tags": ["Product Design", "React Native", "AI", "Startup", "Education"],
+      "tags": ["Product Design", "React Native", "AI", "Startup", "Education", "Figma", "AI Prototyping", "AI-assisted Development", "Cursor"],
       "image": "/projects/vromm.jpg",
       "color": "#3B82F6",
       "featured": true,
@@ -151,7 +151,7 @@
       "location": "Remote/Stockholm",
       "url": "https://www.qasa.se",
       "description": "Led product design within the Match team, making it easier for tenants and landlords to find each other, connect, and sign homes.",
-      "tags": ["Product Design", "UX Research", "AI Tools", "Rental Platform"],
+      "tags": ["Product Design", "UX Research", "AI Tools", "Rental Platform", "Figma", "AI Prototyping"],
       "image": "/projects/qasa.jpg",
       "color": "#10B981",
       "featured": true,
@@ -198,7 +198,7 @@
       "url": "https://www.asteria.ai",
       "location": "Remote/Stockholm",
       "description": "Transformed complex financial tools into intuitive digital products for SMEs, reaching over 400,000 users through partnerships with Swedbank and PayEx.",
-      "tags": ["Fintech", "Product Design", "Co-founder", "SaaS", "Banking"],
+      "tags": ["Fintech", "Product Design", "Co-founder", "SaaS", "Banking", "Design Systems", "Figma", "AI Prototyping"],
       "image": "/projects/asteria.jpg",
       "color": "#6366F1",
       "featured": true,
@@ -435,7 +435,7 @@
       "description": "AI-powered driving instruction app",
       "appStoreUrl": "https://www.vromm.se",
       "playStoreUrl": null,
-      "tags": ["React Native", "AI", "Education", "Startup"],
+      "tags": ["React Native", "AI", "Education", "Startup", "Figma", "AI Prototyping", "AI-assisted Development", "Cursor"],
       "color": "#3B82F6",
       "featured": true,
       "details": {
@@ -549,17 +549,17 @@
           "date": "7 months ago"
         },
         "projects": [
-          "Qasa (2025) – Senior Product Design Consultant. Led Match team product design, built AI-enhanced prototyping tools using Lovable, improved tenant-landlord matching flows. Created custom Qasa design system replica for AI tools. (https://www.qasa.se)",
-          "Fröjd Interactive (Mar-May 2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects. (https://frojd.se)",
+          "Qasa (2025) – Senior Product Design Consultant. Led Match team product design, built AI-enhanced prototyping tools using Lovable, Figma, AI Prototyping, improved tenant-landlord matching flows. Created custom Qasa Design Systems replica for AI tools. (https://www.qasa.se)",
+          "Fröjd Interactive (Mar-May 2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, Figma, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects. Design Systems development and implementation. (https://frojd.se)",
           "1-Week Design Sprint – Lund Startup (Feb 2025) – Led intensive design sprint. Delivered clickable prototypes, design refinements, and user-tested solutions using AI-assisted design tools and workshop facilitation. (https://www.less-studio.co/)",
           "Energiforsk (2024) – Frontend Developer. Sweden's most energy-efficient website using Next.js, achieving 75% performance improvement. Accessibility and sustainability focus. (https://www.energiforsk.se)",
           "Gavlegårdarna (2023) – UX/UI Designer & Frontend Developer. Housing platform for 30,000+ residents in Gävle. Vue.js with WCAG AA compliance and multi-language support. (https://www.gavlegardarna.se)",
           "Record Union (Aug 2017-Mar 2018) – UX/UI Designer. Indie music artists online publishing platform. Responsible for UX & UI foundation and design systems for music distribution platform. (https://www.recordunion.com)",
           "Spotify Data Saver (Mar-Jun 2017) – Product Design Consultant. Led UX design for low-data streaming feature for Brazil/emerging markets. Conducted field research in favelas, delivered 1% data usage solution. (https://www.spotify.com)",
-          "Länsförsäkringar (Mar 2016-Feb 2017) – Art Director Consultant with Identity Works. Digital design system for Sweden's largest insurer. Cross-platform web, mobile, and internal portals. Won Best App & Web 2017. (https://www.lansforsakringar.se)",
+          "Länsförsäkringar (Mar 2016-Feb 2017) – Art Director Consultant with Identity Works. Digital Design Systems for Sweden's largest insurer. Cross-platform web, mobile, and internal portals. Figma, component libraries, and design tokens. Won Best App & Web 2017. (https://www.lansforsakringar.se)",
           "KLM (Aug-Oct 2015) – Senior Design Consultant with AKQA Amsterdam. Online booking and travel experience redesign. Wireframes, flows, component designs for international platform. (beta.klm.com)",
           "DDB Stockholm (Mar 2015) – UX Consultant. Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces. (https://www.ddb.com)",
-          "Backbase (2012-2017) – Lead Designer. Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Component libraries and themeable admin portals for financial institutions. (https://www.backbase.com) 'Daniel is a very talented designer we have hired for Backbase. He delivers top quality work while being efficient. Daniel is a multi talent who's also a great guy and fun to work with. If I have the opportunity to hire him again in the future, I would certainly do that.' — Wouter Koeleman, Sr Manager Talent Acquisition",
+          "Backbase (2012-2017) – Lead Designer. Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Design Systems, component libraries, Figma workflows, and themeable admin portals for financial institutions. (https://www.backbase.com) 'Daniel is a very talented designer we have hired for Backbase. He delivers top quality work while being efficient. Daniel is a multi talent who's also a great guy and fun to work with. If I have the opportunity to hire him again in the future, I would certainly do that.' — Wouter Koeleman, Sr Manager Talent Acquisition",
           "Various startups and SMEs (2007-Present) – Product design, UX research, frontend development across fintech, healthcare, e-commerce. 15+ years serving clients from early-stage startups to Fortune 500 companies."
         ]
       },
@@ -568,14 +568,14 @@
         "company": "Vromm",
         "companyUrl": "https://www.vromm.se",
         "period": "2025 - Present",
-        "description": "Building AI-powered driving instruction app. Solo product design and development using modern AI workflows. (as Instinctly)."
+        "description": "Building AI-powered driving instruction app. Solo product design and development using React Native, Cursor, AI-assisted Development, and modern AI workflows. (as Instinctly)."
       },
       {
         "title": "Senior Product Design Consultant",
         "company": "Qasa",
         "companyUrl": "https://www.qasa.se",
         "period": "May - Aug 2025",
-        "description": "Led product design for Match team. Built AI-enhanced prototyping tools and improved tenant-landlord matching flows (as Instinctly).",
+        "description": "Led product design for Match team. Built AI-enhanced prototyping tools using Figma, AI Prototyping, and improved tenant-landlord matching flows (as Instinctly).",
         "recommendation": {
           "quote": "Daniel stepped in and filled a pair of vacant design-shoes at Qasa during the summer of 2025. As the versatile designer he is - he covered our needs by always delivering multiple alternatives of the UX/UI challenges - always answering right yet presenting alternative routes to cement the chosen path. He designs, speak/write code and think systems so for me being Staff it was a smooth run. Five out of five LinkedIn-stars on Daniel!",
           "author": "Fredrik Weinestad",
@@ -590,8 +590,8 @@
         "period": "2017 - 2025",
         "description": "Co-founded fintech company serving 400k+ users through Swedbank and PayEx partnerships. Led product vision and design strategy.",
         "projects": [
-          "Smart Cash Flow (SCF) – Core AI-powered cash flow management platform used by 10,000+ SMEs and multiple banks. Led UX/UI, design system, and product validation (2017-2025) (https://www.asteria.ai)",
-          "Företagskollen – Swedbank – White-label financial dashboard integrated into Swedbank's online banking platform for 400,000+ business customers. Led product definition, user research, and design system creation (2017-2025) (https://www.affarsvarlden.se/native/sa-far-du-battre-koll-pa-ditt-foretags-ekonomi)",
+          "Smart Cash Flow (SCF) – Core AI-powered cash flow management platform used by 10,000+ SMEs and multiple banks. Led UX/UI, Design Systems, Figma, AI Prototyping, and product validation (2017-2025) (https://www.asteria.ai)",
+          "Företagskollen – Swedbank – White-label financial dashboard integrated into Swedbank's online banking platform for 400,000+ business customers. Led product definition, user research, Design Systems creation, and Figma workflows (2017-2025) (https://www.affarsvarlden.se/native/sa-far-du-battre-koll-pa-ditt-foretags-ekonomi)",
           "Invoice Portal – PayEx – Scalable invoice management portal for SMEs in partnership with PayEx (Swedbank subsidiary). Led UX/UI work and integration with existing tech ecosystem (2022-2025) (https://www.payex.com)"
         ],
         "recommendation": {
