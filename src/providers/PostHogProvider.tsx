@@ -39,12 +39,19 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (hasConsent === true) {
-      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
-        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
-        person_profiles: 'identified_only',
-        capture_pageview: false,
-        capture_pageleave: true,
-      })
+      const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY
+      const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST
+      
+      if (posthogKey && posthogHost) {
+        posthog.init(posthogKey, {
+          api_host: posthogHost,
+          person_profiles: 'identified_only',
+          capture_pageview: false,
+          capture_pageleave: true,
+        })
+      } else {
+        console.warn('PostHog environment variables are not configured')
+      }
     } else if (hasConsent === false) {
       posthog.opt_out_capturing()
     }
