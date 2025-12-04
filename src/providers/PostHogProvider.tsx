@@ -9,9 +9,10 @@ import { useConsent } from '@/hooks/useConsent'
 function PostHogPageViewInner() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const { hasConsent } = useConsent()
 
   useEffect(() => {
-    if (pathname && posthog) {
+    if (pathname && posthog && hasConsent === true) {
       let url = window.origin + pathname
       if (searchParams && searchParams.toString()) {
         url = url + '?' + searchParams.toString()
@@ -20,7 +21,7 @@ function PostHogPageViewInner() {
         $current_url: url,
       })
     }
-  }, [pathname, searchParams])
+  }, [pathname, searchParams, hasConsent])
 
   return null
 }
