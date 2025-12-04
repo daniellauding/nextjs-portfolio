@@ -31,13 +31,76 @@ interface Education {
 interface CVProps {
   experience: Experience[];
   education: Education[];
+  activeTag?: string | null;
 }
 
-export default function CV({ experience, education }: CVProps) {
+export default function CV({ experience, education, activeTag }: CVProps) {
   const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
+
+  // Helper function to highlight matching text
+  const highlightText = (text: string, searchTerm: string | null | undefined) => {
+    if (!searchTerm) return text;
+    
+    const regex = new RegExp(`(${searchTerm})`, 'gi');
+    const parts = text.split(regex);
+    
+    return parts.map((part, index) => 
+      regex.test(part) ? 
+        <span key={index} className="bg-[var(--accent)]/20 text-[var(--accent)] font-medium px-1 rounded">{part}</span> : 
+        part
+    );
+  };
+
+  // Filter experience based on active tag
+  const filteredExperience = activeTag
+    ? experience.filter((exp) => {
+        const searchTerm = activeTag.toLowerCase();
+        
+        // Check if any project contains the active tag
+        const projectsMatch = exp.projects?.some(project => 
+          project.toLowerCase().includes(searchTerm)
+        ) || false;
+        
+        // Check if description contains the tag
+        const descriptionMatch = exp.description.toLowerCase().includes(searchTerm);
+        
+        // Check if company name matches
+        const companyMatch = exp.company.toLowerCase().includes(searchTerm);
+        
+        // Check if title matches
+        const titleMatch = exp.title.toLowerCase().includes(searchTerm);
+        
+        // Check recommendation for match too
+        const recommendationMatch = exp.recommendation?.quote.toLowerCase().includes(searchTerm) || 
+                                   exp.recommendation?.author.toLowerCase().includes(searchTerm) || false;
+        
+        return projectsMatch || descriptionMatch || companyMatch || titleMatch || recommendationMatch;
+      })
+    : experience;
 
   return (
     <section className="px-6 md:px-12 py-24">
+      {activeTag && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-8 text-center"
+        >
+          <span className="text-sm text-[var(--text-muted)]">
+            Showing CV entries related to: <span className="text-[var(--accent)] font-medium">{activeTag}</span>
+            {filteredExperience.length > 0 && (
+              <span className="ml-2 text-xs text-[var(--text-muted)]">
+                ({filteredExperience.length} {filteredExperience.length === 1 ? 'entry' : 'entries'} found)
+              </span>
+            )}
+          </span>
+          {filteredExperience.length === 0 && (
+            <p className="text-sm text-[var(--text-muted)] mt-2">
+              No experience entries found for this skill.
+            </p>
+          )}
+        </motion.div>
+      )}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +113,7 @@ export default function CV({ experience, education }: CVProps) {
             Experience
           </h2>
           <div className="space-y-8">
-            {experience.map((exp, index) => (
+            {filteredExperience.map((exp, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
@@ -62,7 +125,7 @@ export default function CV({ experience, education }: CVProps) {
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <h3 className="text-lg font-medium text-[var(--foreground)]">
-                      {exp.title}
+                      {highlightText(exp.title, activeTag)}
                     </h3>
                     {exp.companyUrl ? (
                       <a
@@ -72,21 +135,21 @@ export default function CV({ experience, education }: CVProps) {
                         className="text-[var(--accent)] text-sm mt-1 hover:underline inline-flex items-center gap-1 cursor-pointer"
                         onClick={() => trackExternalLink(exp.companyUrl!, 'client')}
                       >
-                        {exp.company}
+                        {highlightText(exp.company, activeTag)}
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                       </a>
                     ) : (
                       <p className="text-[var(--accent)] text-sm mt-1">
-                        {exp.company}
+                        {highlightText(exp.company, activeTag)}
                       </p>
                     )}
                     <p className="text-[var(--text-muted)] text-sm mt-1">
                       {exp.period}
                     </p>
                     <p className="text-[var(--foreground)] text-sm mt-3 opacity-80">
-                      {exp.description}
+                      {highlightText(exp.description, activeTag)}
                     </p>
                   </div>
                   {(exp.projects || exp.recommendation) && (
@@ -146,7 +209,7 @@ export default function CV({ experience, education }: CVProps) {
                             return (
                               <div key={projIndex} className="text-base pl-4 border-l border-[var(--text-muted)]/30 mb-3 leading-relaxed">
                                 <div className="flex items-start gap-2">
-                                  <span className="flex-1 text-[var(--text-muted)]/80">{projectText}</span>
+                                  <span className="flex-1 text-[var(--text-muted)]/80">{highlightText(projectText, activeTag)}</span>
                                   {hasUrl && url && (
                                     <a
                                       href={url}
