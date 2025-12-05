@@ -18,7 +18,8 @@ interface Experience {
   period: string;
   description: string;
   projects?: string[];
-  recommendation?: Recommendation;
+  recommendations?: Recommendation[];
+  recommendation?: Recommendation; // Keep for backwards compatibility
 }
 
 interface Education {
@@ -36,6 +37,7 @@ interface CVProps {
 
 export default function CV({ experience, education, activeTag }: CVProps) {
   const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
+  const [expandedQuotes, setExpandedQuotes] = useState<Record<string, boolean>>({});
 
   // Helper function to highlight matching text
   const highlightText = (text: string, searchTerm: string | null | undefined) => {
@@ -49,6 +51,16 @@ export default function CV({ experience, education, activeTag }: CVProps) {
         <span key={index} className="bg-[var(--accent)]/20 text-[var(--accent)] font-medium px-1 rounded">{part}</span> : 
         part
     );
+  };
+
+  // Check if a quote is long (more than 435 characters for preview)
+  const isLongQuote = (quote: string) => quote.length > 435;
+
+  // Get preview of a quote (first 435 characters)
+  const getQuotePreview = (quote: string) => {
+    if (quote.length <= 435) return quote;
+    const lastSpace = quote.lastIndexOf(' ', 435);
+    return quote.substring(0, lastSpace > 0 ? lastSpace : 435);
   };
 
   // Filter experience based on active tag
@@ -70,13 +82,27 @@ export default function CV({ experience, education, activeTag }: CVProps) {
         // Check if title matches
         const titleMatch = exp.title.toLowerCase().includes(searchTerm);
         
-        // Check recommendation for match too
-        const recommendationMatch = exp.recommendation?.quote.toLowerCase().includes(searchTerm) || 
-                                   exp.recommendation?.author.toLowerCase().includes(searchTerm) || false;
+        // Check recommendations for match
+        const recommendationsMatch = exp.recommendations?.some(rec => 
+          rec.quote.toLowerCase().includes(searchTerm) ||
+          rec.author.toLowerCase().includes(searchTerm)
+        ) || exp.recommendation?.quote.toLowerCase().includes(searchTerm) || 
+           exp.recommendation?.author.toLowerCase().includes(searchTerm) || false;
         
-        return projectsMatch || descriptionMatch || companyMatch || titleMatch || recommendationMatch;
+        return projectsMatch || descriptionMatch || companyMatch || titleMatch || recommendationsMatch;
       })
     : experience;
+
+  // Get recommendations array (handle both old and new format)
+  const getRecommendations = (exp: Experience): Recommendation[] => {
+    if (exp.recommendations && exp.recommendations.length > 0) {
+      return exp.recommendations;
+    }
+    if (exp.recommendation) {
+      return [exp.recommendation];
+    }
+    return [];
+  };
 
   return (
     <section className="px-6 md:px-12 py-24">
@@ -113,152 +139,208 @@ export default function CV({ experience, education, activeTag }: CVProps) {
             Experience
           </h2>
           <div className="space-y-8">
-            {filteredExperience.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="border-l-2 border-[var(--accent)] pl-6"
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-lg font-medium text-[var(--foreground)]">
-                      {highlightText(exp.title, activeTag)}
-                    </h3>
-                    {exp.companyUrl ? (
-                      <a
-                        href={exp.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[var(--accent)] text-sm mt-1 hover:underline inline-flex items-center gap-1 cursor-pointer"
-                        onClick={() => trackExternalLink(exp.companyUrl!, 'client')}
-                      >
-                        {highlightText(exp.company, activeTag)}
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </a>
-                    ) : (
-                      <p className="text-[var(--accent)] text-sm mt-1">
-                        {highlightText(exp.company, activeTag)}
-                      </p>
-                    )}
-                    <p className="text-[var(--text-muted)] text-sm mt-1">
-                      {exp.period}
-                    </p>
-                    <p className="text-[var(--text-muted)] text-sm mt-3">
-                      {highlightText(exp.description, activeTag)}
-                    </p>
-                  </div>
-                  {(exp.projects || exp.recommendation) && (
-                    <motion.button
-                      onClick={() => {
-                        const itemKey = `exp-${index}`;
-                        setExpandedItems(prev => ({
-                          ...prev,
-                          [itemKey]: !prev[itemKey]
-                        }));
-                        trackClick('cv_expand', exp.title);
-                      }}
-                      className="ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
-                      whileTap={{ scale: 0.95 }}
-                      aria-label={expandedItems[`exp-${index}`] ? `Collapse ${exp.title} details` : `Expand ${exp.title} details`}
-                      aria-expanded={expandedItems[`exp-${index}`] || false}
-                    >
-                      <motion.div
-                        animate={{ rotate: expandedItems[`exp-${index}`] ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="flex items-center justify-center"
-                      >
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
+            {filteredExperience.map((exp, index) => {
+              const recommendations = getRecommendations(exp);
+              const hasContent = exp.projects || recommendations.length > 0;
+              
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  className="border-l-2 border-[var(--accent)] pl-6"
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="text-lg font-medium text-[var(--foreground)]">
+                        {highlightText(exp.title, activeTag)}
+                      </h3>
+                      {exp.companyUrl ? (
+                        <a
+                          href={exp.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[var(--accent)] text-sm mt-1 hover:underline inline-flex items-center gap-1 cursor-pointer"
+                          onClick={() => trackExternalLink(exp.companyUrl!, 'client')}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </motion.div>
-                    </motion.button>
-                  )}
-                </div>
-                
-                <AnimatePresence>
-                  {(exp.projects || exp.recommendation) && expandedItems[`exp-${index}`] && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-4 space-y-4 overflow-hidden"
-                    >
-                      {exp.projects && (
-                        <div>
-                          <h4 className="text-base font-medium text-[var(--foreground)] mb-4">Projects:</h4>
-                          {exp.projects.map((project, projIndex) => {
-                            const urlMatch = project.match(/(https?:\/\/[^\s)]+)/);
-                            const hasUrl = urlMatch !== null;
-                            const url = urlMatch ? urlMatch[0] : null;
-                            const projectText = hasUrl && url ? project.replace(url, '').replace(/[()]/g, '').trim() : project;
-                            
-                            return (
-                              <div key={projIndex} className="text-base pl-4 border-l border-[var(--text-muted)]/30 mb-3 leading-relaxed">
-                                <div className="flex items-start gap-2">
-                                  <span className="flex-1 text-[var(--text-muted)]/80">{highlightText(projectText, activeTag)}</span>
-                                  {hasUrl && url && (
-                                    <a
-                                      href={url}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="text-[var(--accent)] hover:text-[var(--accent)]/80 transition-colors cursor-pointer flex justify-center items-center"
-                                      onClick={() => trackExternalLink(url, 'project')}
-                                    >
-                                      <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                      </svg>
-                                    </a>
-                                  )}
+                          {highlightText(exp.company, activeTag)}
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      ) : (
+                        <p className="text-[var(--accent)] text-sm mt-1">
+                          {highlightText(exp.company, activeTag)}
+                        </p>
+                      )}
+                      <p className="text-[var(--text-muted)] text-sm mt-1">
+                        {exp.period}
+                      </p>
+                      <p className="text-[var(--text-muted)] text-sm mt-3">
+                        {highlightText(exp.description, activeTag)}
+                      </p>
+                    </div>
+                    {hasContent && (
+                      <motion.button
+                        onClick={() => {
+                          const itemKey = `exp-${index}`;
+                          setExpandedItems(prev => ({
+                            ...prev,
+                            [itemKey]: !prev[itemKey]
+                          }));
+                          trackClick('cv_expand', exp.title);
+                        }}
+                        className="ml-4 flex-shrink-0 flex items-center justify-center w-8 h-8 text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
+                        whileTap={{ scale: 0.95 }}
+                        aria-label={expandedItems[`exp-${index}`] ? `Collapse ${exp.title} details` : `Expand ${exp.title} details`}
+                        aria-expanded={expandedItems[`exp-${index}`] || false}
+                      >
+                        <motion.div
+                          animate={{ rotate: expandedItems[`exp-${index}`] ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="flex items-center justify-center"
+                        >
+                          <svg
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </motion.div>
+                      </motion.button>
+                    )}
+                  </div>
+                  
+                  <AnimatePresence>
+                    {hasContent && expandedItems[`exp-${index}`] && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mt-4 space-y-4 overflow-hidden"
+                      >
+                        {exp.projects && (
+                          <div>
+                            <h4 className="text-base font-medium text-[var(--foreground)] mb-4">Projects:</h4>
+                            {exp.projects.map((project, projIndex) => {
+                              const urlMatch = project.match(/(https?:\/\/[^\s)]+)/);
+                              const hasUrl = urlMatch !== null;
+                              const url = urlMatch ? urlMatch[0] : null;
+                              const projectText = hasUrl && url ? project.replace(url, '').replace(/[()]/g, '').trim() : project;
+                              
+                              return (
+                                <div key={projIndex} className="text-base pl-4 border-l border-[var(--text-muted)]/30 mb-3 leading-relaxed">
+                                  <div className="flex items-start gap-2">
+                                    <span className="flex-1 text-[var(--text-muted)]/80">{highlightText(projectText, activeTag)}</span>
+                                    {hasUrl && url && (
+                                      <a
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[var(--accent)] hover:text-[var(--accent)]/80 transition-colors cursor-pointer flex justify-center items-center"
+                                        onClick={() => trackExternalLink(url, 'project')}
+                                      >
+                                        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                      </a>
+                                    )}
+                                  </div>
                                 </div>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
-                      
-                      {exp.recommendation && (
-                        <div className="bg-[var(--card)] rounded-lg p-4 border border-[var(--border)]">
-                          <h4 className="text-base font-medium text-[var(--foreground)] mb-3">Recommendation:</h4>
-                          <div className="flex items-start gap-3">
-                            <svg className="w-6 h-6 text-[var(--accent)] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                            </svg>
-                            <div>
-                              <blockquote className="text-base text-[var(--foreground)] mb-3 leading-relaxed italic">
-                                "{exp.recommendation.quote}"
-                              </blockquote>
-                              <div>
-                                <p className="font-medium text-[var(--foreground)]">— {exp.recommendation.author}</p>
-                                <p className="text-sm text-[var(--text-muted)]">{exp.recommendation.role}</p>
-                                {exp.recommendation.date && (
-                                  <p className="text-xs text-[var(--text-muted)] mt-1">{exp.recommendation.date}</p>
-                                )}
-                              </div>
-                            </div>
+                              );
+                            })}
                           </div>
-                        </div>
-                      )}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
+                        )}
+                        
+                        {recommendations.length > 0 && (
+                          <div className="space-y-4">
+                            <h4 className="text-base font-medium text-[var(--foreground)]">
+                              Recommendation{recommendations.length > 1 ? 's' : ''}:
+                            </h4>
+                            {recommendations.map((rec, recIndex) => {
+                              const quoteKey = `quote-${index}-${recIndex}`;
+                              const isLong = isLongQuote(rec.quote);
+                              const isExpanded = expandedQuotes[quoteKey];
+                              const displayQuote = isLong && !isExpanded ? getQuotePreview(rec.quote) : rec.quote;
+                              
+                              return (
+                                <div key={recIndex} className="bg-[var(--card)] rounded-lg p-4 border border-[var(--border)]">
+                                  <div className="flex items-start gap-3">
+                                    <svg className="w-6 h-6 text-[var(--accent)] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                    </svg>
+                                    <div className="flex-1">
+                                      <blockquote className="text-base text-[var(--foreground)] mb-3 leading-relaxed italic whitespace-pre-line">
+                                        "{displayQuote}
+                                        {isLong && !isExpanded && "..."}
+                                        {isLong && isExpanded && '"'}
+                                      </blockquote>
+                                      {isLong && (
+                                        <button
+                                          onClick={() => {
+                                            setExpandedQuotes(prev => ({
+                                              ...prev,
+                                              [quoteKey]: !prev[quoteKey]
+                                            }));
+                                            trackClick('recommendation_expand', rec.author);
+                                          }}
+                                          className="text-[var(--accent)] hover:text-[var(--accent)]/80 text-sm mb-3 transition-colors inline-flex items-center gap-1"
+                                        >
+                                          {isExpanded ? (
+                                            <>
+                                              <span>Show less</span>
+                                              <motion.span
+                                                initial={{ rotate: 0 }}
+                                                animate={{ rotate: isExpanded ? 180 : 0 }}
+                                                transition={{ duration: 0.2 }}
+                                              >
+                                                ˄
+                                              </motion.span>
+                                            </>
+                                          ) : (
+                                            <>
+                                              <span>Read more</span>
+                                              <motion.span
+                                                initial={{ rotate: 0 }}
+                                                animate={{ rotate: isExpanded ? 180 : 0 }}
+                                                transition={{ duration: 0.2 }}
+                                              >
+                                                ˅
+                                              </motion.span>
+                                            </>
+                                          )}
+                                        </button>
+                                      )}
+                                      <div>
+                                        <p className="font-medium text-[var(--foreground)]">— {rec.author}</p>
+                                        <p className="text-sm text-[var(--text-muted)]">{rec.role}</p>
+                                        {rec.date && (
+                                          <p className="text-sm text-[var(--text-muted)]">{rec.date}</p>
+                                        )}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
@@ -270,7 +352,7 @@ export default function CV({ experience, education, activeTag }: CVProps) {
             {education.map((edu, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
@@ -285,7 +367,7 @@ export default function CV({ experience, education, activeTag }: CVProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[var(--accent)] text-sm mt-1 hover:underline inline-flex items-center gap-1 cursor-pointer"
-                    onClick={() => trackExternalLink(edu.schoolUrl!, 'other')}
+                    onClick={() => trackExternalLink(edu.schoolUrl!, 'education')}
                   >
                     {edu.school}
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -293,7 +375,9 @@ export default function CV({ experience, education, activeTag }: CVProps) {
                     </svg>
                   </a>
                 ) : (
-                  <p className="text-[var(--accent)] text-sm mt-1">{edu.school}</p>
+                  <p className="text-[var(--accent)] text-sm mt-1">
+                    {edu.school}
+                  </p>
                 )}
                 <p className="text-[var(--text-muted)] text-sm mt-1">
                   {edu.year}

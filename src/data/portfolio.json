@@ -542,12 +542,20 @@
         "companyUrl": "https://www.instinctly.se",
         "period": "2007 - Present",
         "description": "Design & development consultancy serving clients like Qasa, Spotify, Swedbank, Länsförsäkringar, and KLM. 15+ years of product design and development.",
-        "recommendation": {
-          "quote": "I highly recommend Daniel! He helped us iterate design, prototype and test really fast. Daniel is at the cutting edge by combining a design, user experience understand, using AI coding - and being able to code himself!",
-          "author": "Fredrik Eklöf",
-          "role": "CEO & Founder | Peer Coaching @Emotional Fitness Sweden",
-          "date": "7 months ago"
-        },
+        "recommendations": [
+          {
+            "quote": "I had the pleasure of supporting and coaching Daniel during his tenure as a Product Designer at small startup. His performance consistently exceeded expectations, particularly given the high-paced, complex environments and demanding stakeholders he often navigated.\n\nDaniel possesses a truly strong eye for product design, coupled with an uncompromising attention to detail, which results in genuinely excellent customer experiences. He doesn't just execute; he is deeply strategic. Daniel has a rare ability to quickly identify inefficiencies or breakdowns in the design process and takes proactive, effective steps—both strategic and tactical—to improve our ways of working and overall output quality.\n\nHis extensive experience, ranging from agile startup environments to large-scale enterprises, speaks volumes about his versatility and adaptability. Regardless of the organizational size or domain, Daniel reliably delivers work of exceptional quality.\n\nWhat truly sets him apart is his unwavering commitment to growth. Daniel is relentlessly interested in learning and improving, not only as a product designer dedicated to his craft but also as a professional and a human being. He would be an invaluable asset to any team seeking a high-performing, strategically-minded, and growth-oriented Product Designer. I recommend him without reservation.",
+            "author": "Jens Wedin",
+            "role": "Design Director, Service Designer, CEO, Author",
+            "date": "December 4, 2024"
+          },
+          {
+            "quote": "I highly recommend Daniel! He helped us iterate design, prototype and test really fast. Daniel is at the cutting edge by combining a design, user experience understand, using AI coding - and being able to code himself!",
+            "author": "Fredrik Eklöf",
+            "role": "CEO & Founder | Peer Coaching @Emotional Fitness Sweden",
+            "date": "7 months ago"
+          }
+        ],
         "projects": [
           "Qasa (2025) – Senior Product Design Consultant. Led Match team product design, built AI-enhanced prototyping tools using Lovable, Figma, AI Prototyping, improved tenant-landlord matching flows. Created custom Qasa Design Systems replica for AI tools. (https://www.qasa.se)",
           "Fröjd Interactive (Mar-May 2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, Figma, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects. Design Systems development and implementation. (https://frojd.se)",
