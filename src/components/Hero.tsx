@@ -333,7 +333,7 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
                   }}
                 >
                   <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden shadow-lg flex items-center justify-center ${
-                    app.slug === 'plotta' 
+                    app.name === 'plotta' 
                       ? 'bg-gradient-to-br from-[var(--accent)] to-[var(--accent-secondary)]' 
                       : 'bg-white'
                   }`}>
