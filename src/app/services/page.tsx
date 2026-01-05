@@ -101,8 +101,107 @@ export default function ServicesPage() {
         </div>
       </motion.section>
 
+      {/* Role-specific Services Section */}
+      <section className="px-6 md:px-12 py-24">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              Explore Services by Role
+            </h2>
+            <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
+              Learn more about specific expertise areas and how I can help in different capacities.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Link href="/services/product-designer" className="group block">
+                <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl p-6 hover:shadow-lg transition-all group-hover:scale-[1.02]">
+                  <div className="text-4xl mb-4">🎨</div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-[var(--accent)] transition-colors">
+                    Product Designer
+                  </h3>
+                  <p className="text-[var(--text-muted)] text-sm mb-4">
+                    User research, design systems, and user-centered solutions
+                  </p>
+                  <span className="text-sm font-medium text-[var(--accent)]">
+                    Learn more →
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Link href="/services/design-engineering" className="group block">
+                <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-2xl p-6 hover:shadow-lg transition-all group-hover:scale-[1.02]">
+                  <div className="text-4xl mb-4">⚡</div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-[var(--accent)] transition-colors">
+                    Design Engineering
+                  </h3>
+                  <p className="text-[var(--text-muted)] text-sm mb-4">
+                    Bridging design and code with scalable component systems
+                  </p>
+                  <span className="text-sm font-medium text-[var(--accent)]">
+                    Learn more →
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <Link href="/services/frontend-developer" className="group block">
+                <div className="bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-2xl p-6 hover:shadow-lg transition-all group-hover:scale-[1.02]">
+                  <div className="text-4xl mb-4">💻</div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-[var(--accent)] transition-colors">
+                    Frontend Developer
+                  </h3>
+                  <p className="text-[var(--text-muted)] text-sm mb-4">
+                    Fast, accessible applications with modern technologies
+                  </p>
+                  <span className="text-sm font-medium text-[var(--accent)]">
+                    Learn more →
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
+
+          <div className="text-center">
+            <Link 
+              href="/services/roles"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--card)] rounded-xl font-medium hover:bg-[var(--accent)]/10 transition-colors"
+            >
+              View All Role Details
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Services Grid */}
-      <section className="px-6 md:px-12 pb-24">
+      <section className="px-6 md:px-12 py-24">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-8">
             {services.map((service, index) => (

@@ -106,7 +106,7 @@
       "tags": ["Product Design", "React Native", "AI", "Startup", "Education", "Figma", "AI Prototyping", "AI-assisted Development", "Cursor"],
       "image": "/projects/vromm.jpg",
       "color": "#3B82F6",
-      "featured": true,
+      "featured": false,
       "password": "WELCOME",
       "details": {
         "client": "Vromm (Own Startup)",
@@ -154,7 +154,7 @@
       "tags": ["Product Design", "UX Research", "AI Tools", "Rental Platform", "Figma", "AI Prototyping"],
       "image": "/projects/qasa.jpg",
       "color": "#10B981",
-      "featured": true,
+      "featured": false,
       "password": "WELCOME",
       "details": {
         "client": "Qasa",
@@ -201,7 +201,7 @@
       "tags": ["Fintech", "Product Design", "Co-founder", "SaaS", "Banking", "Design Systems", "Figma", "AI Prototyping"],
       "image": "/projects/asteria.jpg",
       "color": "#6366F1",
-      "featured": true,
+      "featured": false,
       "password": "fintech2025",
       "details": {
         "client": "Swedbank, PayEx, SMEs",
@@ -248,7 +248,7 @@
       "tags": ["Mobile Design", "Emerging Markets", "User Research", "Music Tech"],
       "image": "/projects/spotify.jpg",
       "color": "#1DB954",
-      "featured": true,
+      "featured": false,
       "password": "WELCOME",
       "details": {
         "client": "Spotify",
@@ -532,6 +532,47 @@
           "Hidden features"
         ]
       }
+    },
+    {
+      "id": "app-4",
+      "slug": "greeto",
+      "name": "Greeto",
+      "icon": "/apps/app_greeto.png",
+      "description": "Create personal greeting cards in seconds",
+      "appStoreUrl": "https://www.greeto.se",
+      "playStoreUrl": null,
+      "tags": ["Web App", "Cards", "Greetings", "Holiday", "Swedish"],
+      "color": "#FFFFFF",
+      "featured": true,
+      "details": {
+        "category": "Cards & Greetings",
+        "platform": "Web",
+        "downloads": "Public Launch",
+        "rating": "New Release",
+        "releaseDate": "2025",
+        "version": "1.0",
+        "overview": "Create greeting cards that touch hearts. Personal greetings in just seconds, completely free. Perfect for Swedish holidays and special occasions.",
+        "features": [
+          "Quick card creation",
+          "Personalized greetings",
+          "Swedish holiday cards",
+          "Free to use",
+          "Beautiful templates",
+          "Instant sharing"
+        ],
+        "screenshots": [
+          "/apps/greeto/screen-1.jpg",
+          "/apps/greeto/screen-2.jpg",
+          "/apps/greeto/screen-3.jpg"
+        ],
+        "testimonials": [
+          {
+            "quote": "Perfect for creating beautiful Swedish greeting cards quickly!",
+            "author": "User",
+            "rating": 5
+          }
+        ]
+      }
     }
   ],
   "cv": {
@@ -547,7 +588,7 @@
             "quote": "I had the pleasure of supporting and coaching Daniel during his tenure as a Product Designer at small startup. His performance consistently exceeded expectations, particularly given the high-paced, complex environments and demanding stakeholders he often navigated.\n\nDaniel possesses a truly strong eye for product design, coupled with an uncompromising attention to detail, which results in genuinely excellent customer experiences. He doesn't just execute; he is deeply strategic. Daniel has a rare ability to quickly identify inefficiencies or breakdowns in the design process and takes proactive, effective steps—both strategic and tactical—to improve our ways of working and overall output quality.\n\nHis extensive experience, ranging from agile startup environments to large-scale enterprises, speaks volumes about his versatility and adaptability. Regardless of the organizational size or domain, Daniel reliably delivers work of exceptional quality.\n\nWhat truly sets him apart is his unwavering commitment to growth. Daniel is relentlessly interested in learning and improving, not only as a product designer dedicated to his craft but also as a professional and a human being. He would be an invaluable asset to any team seeking a high-performing, strategically-minded, and growth-oriented Product Designer. I recommend him without reservation.",
             "author": "Jens Wedin",
             "role": "Design Director, Service Designer, CEO, Author",
-            "date": "December 4, 2024"
+            "date": "December, 2025"
           },
           {
             "quote": "I highly recommend Daniel! He helped us iterate design, prototype and test really fast. Daniel is at the cutting edge by combining a design, user experience understand, using AI coding - and being able to code himself!",
@@ -557,16 +598,17 @@
           }
         ],
         "projects": [
+          "All Aboard (2025) – Product Design Consultant. UX heuristic evaluation and redesign of train ticket booking platform. Focused on offer selection, route visualization, and journey comparison. Improved clarity in multi-leg journeys, seat selection, flexibility rules, and carrier differentiation. Created wireframes and UI designs ready for implementation. (https://allaboard.eu)",
           "Qasa (2025) – Senior Product Design Consultant. Led Match team product design, built AI-enhanced prototyping tools using Lovable, Figma, AI Prototyping, improved tenant-landlord matching flows. Created custom Qasa Design Systems replica for AI tools. (https://www.qasa.se)",
-          "Fröjd Interactive (Mar-May 2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, Figma, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects. Design Systems development and implementation. (https://frojd.se)",
-          "1-Week Design Sprint – Lund Startup (Feb 2025) – Led intensive design sprint. Delivered clickable prototypes, design refinements, and user-tested solutions using AI-assisted design tools and workshop facilitation. (https://www.less-studio.co/)",
-          "Energiforsk (2024) – Frontend Developer. Sweden's most energy-efficient website using Next.js, achieving 75% performance improvement. Accessibility and sustainability focus. (https://www.energiforsk.se)",
-          "Gavlegårdarna (2023) – UX/UI Designer & Frontend Developer. Housing platform for 30,000+ residents in Gävle. Vue.js with WCAG AA compliance and multi-language support. (https://www.gavlegardarna.se)",
-          "Record Union (Aug 2017-Mar 2018) – UX/UI Designer. Indie music artists online publishing platform. Responsible for UX & UI foundation and design systems for music distribution platform. (https://www.recordunion.com)",
-          "Spotify Data Saver (Mar-Jun 2017) – Product Design Consultant. Led UX design for low-data streaming feature for Brazil/emerging markets. Conducted field research in favelas, delivered 1% data usage solution. (https://www.spotify.com)",
-          "Länsförsäkringar (Mar 2016-Feb 2017) – Art Director Consultant with Identity Works. Digital Design Systems for Sweden's largest insurer. Cross-platform web, mobile, and internal portals. Figma, component libraries, and design tokens. Won Best App & Web 2017. (https://www.lansforsakringar.se)",
-          "KLM (Aug-Oct 2015) – Senior Design Consultant with AKQA Amsterdam. Online booking and travel experience redesign. Wireframes, flows, component designs for international platform. (beta.klm.com)",
-          "DDB Stockholm (Mar 2015) – UX Consultant. Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces. (https://www.ddb.com)",
+          "Fröjd Interactive (2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, Figma, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects. Design Systems development and implementation. (https://frojd.se)",
+          "1-Week Design Sprint – Lund Startup (2025) – Led intensive design sprint. Delivered clickable prototypes, design refinements, and user-tested solutions using AI-assisted design tools and workshop facilitation. (https://www.less-studio.co/)",
+          "Energiforsk (2025) – Frontend Developer. Sweden's most energy-efficient website using Next.js, achieving 75% performance improvement. Accessibility and sustainability focus. (https://www.energiforsk.se)",
+          "Gavlegårdarna (2025) – UX/UI Designer & Frontend Developer. Housing platform for 30,000+ residents in Gävle. Vue.js with WCAG AA compliance and multi-language support. (https://www.gavlegardarna.se)",
+          "Record Union (2017-2018) – UX/UI Designer. Indie music artists online publishing platform. Responsible for UX & UI foundation and design systems for music distribution platform. (https://www.recordunion.com)",
+          "Spotify Data Saver (2017) – Product Design Consultant. Led UX design for low-data streaming feature for Brazil/emerging markets. Conducted field research in favelas, delivered 1% data usage solution. (https://www.spotify.com)",
+          "Länsförsäkringar (2016-2017) – Art Director Consultant with Identity Works. Digital Design Systems for Sweden's largest insurer. Cross-platform web, mobile, and internal portals. Figma, component libraries, and design tokens. Won Best App & Web 2017. (https://www.lansforsakringar.se)",
+          "KLM (2015) – Senior Design Consultant with AKQA Amsterdam. Online booking and travel experience redesign. Wireframes, flows, component designs for international platform. (beta.klm.com)",
+          "DDB Stockholm (2015) – UX Consultant. Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces. (https://www.ddb.com)",
           "Backbase (2012-2017) – Lead Designer. Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Design Systems, component libraries, Figma workflows, and themeable admin portals for financial institutions. (https://www.backbase.com) 'Daniel is a very talented designer we have hired for Backbase. He delivers top quality work while being efficient. Daniel is a multi talent who's also a great guy and fun to work with. If I have the opportunity to hire him again in the future, I would certainly do that.' — Wouter Koeleman, Sr Manager Talent Acquisition",
           "Various startups and SMEs (2007-Present) – Product design, UX research, frontend development across fintech, healthcare, e-commerce. 15+ years serving clients from early-stage startups to Fortune 500 companies."
         ]

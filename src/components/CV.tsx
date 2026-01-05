@@ -238,10 +238,24 @@ export default function CV({ experience, education, activeTag }: CVProps) {
                               const url = urlMatch ? urlMatch[0] : null;
                               const projectText = hasUrl && url ? project.replace(url, '').replace(/[()]/g, '').trim() : project;
                               
+                              // Split project text to get company/project name and description
+                              const dashIndex = projectText.indexOf(' – ');
+                              const projectName = dashIndex > -1 ? projectText.substring(0, dashIndex) : '';
+                              const projectDescription = dashIndex > -1 ? projectText.substring(dashIndex + 3) : projectText;
+                              
                               return (
                                 <div key={projIndex} className="text-base pl-4 border-l border-[var(--text-muted)]/30 mb-3 leading-relaxed">
                                   <div className="flex items-start gap-2">
-                                    <span className="flex-1 text-[var(--text-muted)]/80">{highlightText(projectText, activeTag)}</span>
+                                    <span className="flex-1">
+                                      {dashIndex > -1 ? (
+                                        <>
+                                          <span className="font-semibold text-[var(--foreground)]">{highlightText(projectName, activeTag)}</span>
+                                          <span className="text-[var(--text-muted)]/90"> – {highlightText(projectDescription, activeTag)}</span>
+                                        </>
+                                      ) : (
+                                        <span className="text-[var(--text-muted)]/90">{highlightText(projectText, activeTag)}</span>
+                                      )}
+                                    </span>
                                     {hasUrl && url && (
                                       <a
                                         href={url}

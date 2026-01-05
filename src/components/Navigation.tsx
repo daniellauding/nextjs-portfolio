@@ -11,6 +11,7 @@ export default function Navigation() {
     { label: "Work", href: "#work" },
     { label: "About", href: "#about" },
     { label: "Apps", href: "#apps" },
+    { label: "Services", href: "/services" },
     { label: "Contact", href: "#contact" },
   ];
 

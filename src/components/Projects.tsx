@@ -16,6 +16,7 @@ interface Project {
   tags: string[];
   image: string;
   color: string;
+  featured?: boolean;
   readMore?: string;
 }
 
@@ -39,9 +40,6 @@ export default function Projects({ projects, activeTag, onTagClick }: ProjectsPr
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <span className="text-sm font-bold text-[var(--foreground)] tracking-wide">
-          WELCOME
-        </span>
         <h2 className="text-3xl md:text-4xl font-bold mt-2">
           Work <span className="text-[var(--accent)]">&</span>
           <br />
