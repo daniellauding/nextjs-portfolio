@@ -381,7 +381,7 @@ export default function CV({ experience, education, activeTag }: CVProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[var(--accent)] text-sm mt-1 hover:underline inline-flex items-center gap-1 cursor-pointer"
-                    onClick={() => trackExternalLink(edu.schoolUrl!, 'education')}
+                    onClick={() => trackExternalLink(edu.schoolUrl!, 'other')}
                   >
                     {edu.school}
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
