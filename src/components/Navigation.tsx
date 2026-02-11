@@ -9,6 +9,7 @@ export default function Navigation() {
 
   const menuItems = [
     { label: "Work", href: "#work" },
+    { label: "Experience", href: "/experiences" },
     { label: "About", href: "#about" },
     { label: "Apps", href: "#apps" },
     { label: "Services", href: "/services" },
