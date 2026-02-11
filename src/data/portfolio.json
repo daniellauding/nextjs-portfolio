@@ -307,121 +307,126 @@
     },
     {
       "id": "client-5",
+      "name": "SkiStar",
+      "url": "https://www.skistar.com"
+    },
+    {
+      "id": "client-6",
       "name": "Qasa",
       "url": "https://qasa.se"
     },
     {
-      "id": "client-6",
+      "id": "client-7",
       "name": "Backbase",
       "url": "https://www.backbase.com"
     },
     {
-      "id": "client-7",
+      "id": "client-8",
       "name": "AKQA",
       "url": "https://www.akqa.com"
     },
     {
-      "id": "client-8",
+      "id": "client-9",
       "name": "Fröjd Interactive",
       "url": "https://frojd.se"
     },
     {
-      "id": "client-9",
+      "id": "client-10",
       "name": "PayEx",
       "url": "https://www.payex.com"
     },
     {
-      "id": "client-10",
+      "id": "client-11",
       "name": "Record Union",
       "url": "https://www.recordunion.com"
     },
     {
-      "id": "client-11",
+      "id": "client-12",
       "name": "DDB Stockholm",
       "url": "https://www.ddb.com"
     },
     {
-      "id": "client-12",
+      "id": "client-13",
       "name": "Identity Works",
       "url": "https://identityworks.se"
     },
     {
-      "id": "client-13",
+      "id": "client-14",
       "name": "Apegroup",
       "url": "https://apegroup.com"
     },
     {
-      "id": "client-14",
+      "id": "client-15",
       "name": "Actic",
       "url": "https://actic.se"
     },
     {
-      "id": "client-15",
+      "id": "client-16",
       "name": "ÅBRO Bryggeri",
       "url": "https://abro.se"
     },
     {
-      "id": "client-16",
+      "id": "client-17",
       "name": "SJ",
       "url": "https://www.sj.se"
     },
     {
-      "id": "client-17",
+      "id": "client-18",
       "name": "MDH University",
       "url": "https://www.mdu.se"
     },
     {
-      "id": "client-18",
+      "id": "client-19",
       "name": "XLN",
       "url": "https://www.xln.se"
     },
     {
-      "id": "client-19",
+      "id": "client-20",
       "name": "Hyper Island",
       "url": "https://www.hyperisland.com"
     },
     {
-      "id": "client-20",
+      "id": "client-21",
       "name": "ABN Amro",
       "url": "https://www.abnamro.com"
     },
     {
-      "id": "client-21",
+      "id": "client-22",
       "name": "UniCredit",
       "url": "https://www.unicredit.it"
     },
     {
-      "id": "client-22",
+      "id": "client-23",
       "name": "UOB Singapore",
       "url": "https://www.uob.com.sg"
     },
     {
-      "id": "client-23",
+      "id": "client-24",
       "name": "Standard Chartered",
       "url": "https://www.sc.com"
     },
     {
-      "id": "client-24",
+      "id": "client-25",
       "name": "Vromm",
       "url": "https://www.vromm.se"
     },
     {
-      "id": "client-25",
+      "id": "client-26",
       "name": "Asteria",
       "url": "https://www.asteria.ai"
     },
     {
-      "id": "client-26",
+      "id": "client-27",
       "name": "Funka",
       "url": "https://funka.com"
     },
     {
-      "id": "client-27",
+      "id": "client-28",
       "name": "Navii",
       "url": "https://navii.se"
     },
     {
-      "id": "client-28",
+      "id": "client-29",
       "name": "Pod1",
       "url": "https://pod1.com"
     }
@@ -610,6 +615,7 @@
           }
         ],
         "projects": [
+          "SkiStar (Present) – Consultant Lead Product Design. Leading product design for Scandinavia's premier ski resort app, enhancing booking flows, lift pass management, and on-mountain experiences for winter sports enthusiasts. Focused on streamlining resort navigation, real-time snow conditions, and seamless booking journeys that adapt to changing mountain conditions and guest needs. (https://apps.apple.com/se/app/skistar/id406481077)",
           "All Aboard (2025) – Product Design Consultant. UX heuristic evaluation and redesign of train ticket booking platform. Focused on offer selection, route visualization, and journey comparison. Improved clarity in multi-leg journeys, seat selection, flexibility rules, and carrier differentiation. Created wireframes and UI designs ready for implementation. (https://allaboard.eu)",
           "Qasa (2025) – Senior Product Design Consultant. Led Match team product design, built AI-enhanced prototyping tools using Lovable, Figma, AI Prototyping, improved tenant-landlord matching flows. Created custom Qasa Design Systems replica for AI tools. (https://www.qasa.se)",
           "Fröjd Interactive (2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, Figma, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects. Design Systems development and implementation. (https://frojd.se)",
