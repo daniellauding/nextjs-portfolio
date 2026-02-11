@@ -10,14 +10,7 @@
       "endDate": null,
       "current": true,
       "type": "work",
-      "description": "Building an AI-driven driving school app that gamifies the learning experience and connects students, instructors, and parents in a smarter way.",
-      "achievements": [
-        "Solo-designed and developed React Native MVP using AI-assisted development (Cursor, ChatGPT, Claude)",
-        "Built co-creation system using AI to cut dev/design time by 60–70%",
-        "Launching internal MVP with active pilot users in Skåne region",
-        "Connected real-world driving routes to Sweden's 16-step curriculum"
-      ],
-      "tags": ["Product Design", "React Native", "AI", "Startup", "Education", "Figma", "AI Prototyping", "AI-assisted Development", "Cursor", "Supabase", "Gamification"]
+      "description": "Building an AI-driven driving school app that gamifies the learning experience and connects students, instructors, and parents in a smarter way. Solo-designed and developed using React Native with AI-assisted workflows (Cursor, ChatGPT, Claude)."
     },
     {
       "id": "exp-2",
@@ -29,22 +22,7 @@
       "endDate": "2025-08",
       "current": false,
       "type": "work",
-      "description": "Led product design within the Match team, improving tenant-landlord matching flows and creating AI-enhanced prototyping tools.",
-      "achievements": [
-        "Increased usage of Find Tenant tool through UX improvements",
-        "Improved landlord CSAT scores from avg. 2.6 to higher ratings",
-        "Built custom Lovable prototyping tool using Qasa's design system",
-        "Led workshops, heuristic audits, and AI-enhanced design processes"
-      ],
-      "tags": ["Product Design", "UX Research", "AI Tools", "Rental Platform", "Figma", "AI Prototyping", "Design Systems", "Workshop Facilitation", "Heuristic Evaluation"],
-      "recommendations": [
-        {
-          "quote": "Daniel stepped in and filled a pair of vacant design-shoes at Qasa during the summer of 2025. As the versatile designer he is - he covered our needs by always delivering multiple alternatives of the UX/UI challenges. Five out of five LinkedIn-stars on Daniel!",
-          "author": "Fredrik Weinestad",
-          "role": "Staff Product Designer at Qasa",
-          "date": "Aug 2025"
-        }
-      ]
+      "description": "Led product design within the Match team, improving tenant-landlord matching flows and creating AI-enhanced prototyping tools. Built custom Lovable prototyping tool using Qasa's design system."
     },
     {
       "id": "exp-3",
@@ -56,63 +34,10 @@
       "endDate": "2025-05",
       "current": false,
       "type": "work",
-      "description": "Co-founded and led product design for a fintech SaaS platform providing smart cash flow tools to SMEs through partnerships with Swedbank and PayEx.",
-      "achievements": [
-        "Reached 400,000+ users through banking partnerships",
-        "Led design from discovery to delivery for Företagskollen (Swedbank)",
-        "Built modular design systems for white-label integrations",
-        "Designed embedded financial dashboards and forecasting interfaces"
-      ],
-      "tags": ["Fintech", "Product Design", "Co-founder", "SaaS", "Banking", "Design Systems", "Figma", "AI Prototyping", "Leadership", "Startup Strategy", "UX/UI Design"],
-      "recommendations": [
-        {
-          "quote": "I've had the pleasure of working with Daniel for over 5 years. Daniel is a great resource and it has been a joy to see how Daniel has developed during our time working together. I highly recommend hiring Daniel.",
-          "author": "Anders Nordkvist",
-          "role": "CEO at Asteria AB",
-          "date": "2025"
-        }
-      ]
+      "description": "Co-founded and led product design for a fintech SaaS platform providing smart cash flow tools to SMEs through partnerships with Swedbank and PayEx. Reached 400,000+ users."
     },
     {
       "id": "exp-4",
-      "role": "Lead Product Designer",
-      "company": "PayEx Invoice Portal",
-      "companyUrl": "https://www.payex.com",
-      "period": "Jan 2022 – May 2025",
-      "startDate": "2022-01",
-      "endDate": "2025-05",
-      "current": false,
-      "type": "work",
-      "description": "Led product design for PayEx's invoice portal, creating seamless financial experiences for SMEs and enterprise clients.",
-      "achievements": [
-        "Designed white-label solutions for major banking partners",
-        "Created scalable design systems for financial products",
-        "Improved user satisfaction and retention metrics",
-        "Collaborated with cross-functional teams across multiple markets"
-      ],
-      "tags": ["Product Design", "Fintech", "Design Systems", "SaaS", "UX/UI Design", "Figma", "Banking"]
-    },
-    {
-      "id": "exp-5",
-      "role": "Lead Product Designer",
-      "company": "Swedbank Företagskollen",
-      "companyUrl": "https://www.swedbank.se",
-      "period": "Nov 2017 – May 2025",
-      "startDate": "2017-11",
-      "endDate": "2025-05",
-      "current": false,
-      "type": "work",
-      "description": "Designed cash flow management tools for Swedbank's SME customers, making complex financial data accessible and actionable.",
-      "achievements": [
-        "Launched to 400,000+ Swedbank business customers",
-        "Created intuitive dashboards for financial planning",
-        "Reduced complexity in SME financial management",
-        "Built trust through clear data visualization"
-      ],
-      "tags": ["Product Design", "Fintech", "Banking", "UX/UI Design", "Design Systems", "Figma", "Data Visualization"]
-    },
-    {
-      "id": "exp-6",
       "role": "Senior Product Design Consultant",
       "company": "Spotify",
       "companyUrl": "https://www.spotify.com",
@@ -121,17 +46,10 @@
       "endDate": "2017-06",
       "current": false,
       "type": "work",
-      "description": "Designed Data Saver feature for emerging markets, conducting field research in Brazilian favelas to understand data constraints.",
-      "achievements": [
-        "Reduced data usage to 1% through intelligent streaming design",
-        "Conducted field research in favelas (Brazil)",
-        "Increased adoption in low-bandwidth markets",
-        "Successfully launched feature after A/B testing"
-      ],
-      "tags": ["Product Design", "Mobile Design", "User Research", "Field Research", "Emerging Markets", "Music Tech", "UX/UI Design", "Figma", "User Testing"]
+      "description": "Designed Data Saver feature for emerging markets, conducting field research in Brazilian favelas to understand data constraints. Reduced data usage to 1% through intelligent streaming design."
     },
     {
-      "id": "exp-7",
+      "id": "exp-5",
       "role": "Art Director Consultant",
       "company": "Länsförsäkringar",
       "companyUrl": "https://www.lansforsakringar.se",
@@ -140,18 +58,47 @@
       "endDate": "2017-02",
       "current": false,
       "type": "work",
-      "description": "Modernized digital identity for one of Sweden's largest insurers, creating comprehensive cross-platform design system.",
-      "achievements": [
-        "Won Best App & Web 2017 award",
-        "Created unified design system for web, mobile, and internal portals",
-        "Served millions of users across all platforms",
-        "Established design principles and component libraries"
-      ],
-      "tags": ["Art Direction", "Design Systems", "Insurance", "Enterprise", "Figma", "Component Libraries", "Mobile & Web Design", "UX/UI Design", "Accessibility"]
+      "description": "Modernized digital identity for one of Sweden's largest insurers, creating comprehensive cross-platform design system. Won Best App & Web 2017 award."
+    },
+    {
+      "id": "exp-6",
+      "role": "Senior Design Consultant",
+      "company": "KLM",
+      "companyUrl": "https://www.klm.com",
+      "period": "2015",
+      "startDate": "2015-01",
+      "endDate": "2015-12",
+      "current": false,
+      "type": "work",
+      "description": "Online booking and travel experience redesign with AKQA Amsterdam. Wireframes, flows, and component designs for international platform."
+    },
+    {
+      "id": "exp-7",
+      "role": "UX Consultant",
+      "company": "DDB Stockholm",
+      "companyUrl": "https://www.ddb.com",
+      "period": "2015",
+      "startDate": "2015-01",
+      "endDate": "2015-12",
+      "current": false,
+      "type": "work",
+      "description": "Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces."
     },
     {
       "id": "exp-8",
-      "role": "Founder",
+      "role": "Lead Designer",
+      "company": "Backbase",
+      "companyUrl": "https://www.backbase.com",
+      "period": "2012 – 2017",
+      "startDate": "2012-01",
+      "endDate": "2017-12",
+      "current": false,
+      "type": "work",
+      "description": "Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Design Systems, component libraries, Figma workflows, and themeable admin portals for financial institutions."
+    },
+    {
+      "id": "exp-9",
+      "role": "Founder & Design Consultant",
       "company": "Instinctly AB",
       "companyUrl": "https://www.daniellauding.se",
       "period": "2007 – Present",
@@ -159,96 +106,42 @@
       "endDate": null,
       "current": true,
       "type": "work",
-      "description": "Design engineering consultancy specializing in AI-assisted product design, UX/UI, and frontend development for startups and enterprises.",
-      "achievements": [
-        "15+ years of freelance consulting",
-        "Worked with Spotify, Swedbank, Länsförsäkringar, PayEx, Qasa",
-        "Built multiple successful products from concept to launch",
-        "Pioneer in AI-assisted design and development workflows"
-      ],
-      "tags": ["Freelance", "Design Engineering", "Product Design", "UX/UI Design", "AI Prototyping", "Frontend Dev", "React", "TypeScript", "Figma", "Consulting", "Leadership"]
+      "description": "Design engineering consultancy specializing in AI-assisted product design, UX/UI, and frontend development for startups and enterprises. Worked with Spotify, Swedbank, Länsförsäkringar, PayEx, Qasa, KLM, and many others over 15+ years."
     }
   ],
   "education": [
     {
       "id": "edu-1",
-      "degree": "Digital Media",
-      "school": "Hyper Island",
-      "schoolUrl": "https://www.hyperisland.com",
-      "period": "Aug 2009 – Jun 2011",
-      "startDate": "2009-08",
-      "endDate": "2011-06",
+      "degree": "JavaScript Bootcamp",
+      "school": "Technigo",
+      "schoolUrl": "https://www.technigo.com",
+      "period": "2025 – 2026",
+      "startDate": "2025-01",
+      "endDate": "2026-12",
       "type": "education",
-      "description": "Intensive program focused on digital design, strategy, and modern work methodologies.",
-      "tags": ["Design", "Digital Media", "Strategy", "UX/UI Design"]
+      "description": "Advanced JavaScript and modern web development bootcamp."
     },
     {
       "id": "edu-2",
-      "degree": "Music Production",
+      "degree": "Music Production & Theory",
       "school": "Furuboda Folkhögskola",
       "schoolUrl": "https://www.furuboda.nu",
-      "period": "Aug 2023 – May 2025",
+      "period": "2023 – 2024",
       "startDate": "2023-08",
-      "endDate": "2025-05",
+      "endDate": "2024-05",
       "type": "education",
-      "description": "Music production and sound design studies, exploring creative technology and audio.",
-      "tags": ["Music Production", "Sound Design", "Creative Technology"]
+      "description": "Music production and sound design studies, exploring creative technology and audio."
     },
     {
       "id": "edu-3",
-      "degree": "React.js Development Course",
-      "school": "Folkuniversitetet",
-      "schoolUrl": "https://www.folkuniversitetet.se",
-      "period": "Apr 2025 – Jun 2025",
-      "startDate": "2025-04",
-      "endDate": "2025-06",
+      "degree": "Digital Media Creative",
+      "school": "Hyper Island",
+      "schoolUrl": "https://www.hyperisland.com",
+      "period": "2009 – 2011",
+      "startDate": "2009-08",
+      "endDate": "2011-06",
       "type": "education",
-      "description": "Advanced React.js development course focusing on modern frontend practices.",
-      "tags": ["React", "Frontend Dev", "JavaScript", "TypeScript"]
+      "description": "Intensive program focused on digital design, strategy, and modern work methodologies."
     }
-  ],
-  "allTags": [
-    "Product Design",
-    "UX/UI Design",
-    "Design Systems",
-    "React",
-    "TypeScript",
-    "React Native",
-    "Next.js",
-    "Figma",
-    "AI Prototyping",
-    "AI-assisted Development",
-    "Cursor",
-    "Design Engineering",
-    "Fintech",
-    "SaaS",
-    "Startup",
-    "Banking",
-    "Frontend Dev",
-    "User Research",
-    "Field Research",
-    "Accessibility",
-    "Design Sprints",
-    "Workshop Facilitation",
-    "Heuristic Evaluation",
-    "Leadership",
-    "Co-founder",
-    "Consulting",
-    "Freelance",
-    "Mobile Design",
-    "Web Design",
-    "Prototyping",
-    "User Testing",
-    "Gamification",
-    "Education",
-    "Music Tech",
-    "Emerging Markets",
-    "Art Direction",
-    "Component Libraries",
-    "Data Visualization",
-    "Supabase",
-    "Enterprise",
-    "Insurance",
-    "Rental Platform"
   ]
 }
