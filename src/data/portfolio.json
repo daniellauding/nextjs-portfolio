@@ -243,8 +243,7 @@
       "tags": ["Mobile Design", "Emerging Markets", "User Research", "Music Tech"],
       "image": "/projects/spotify.jpg",
       "color": "#1DB954",
-      "featured": false,
-      "password": "WELCOME",
+      "featured": true,
       "details": {
         "client": "Spotify",
         "duration": "4 months (Mar-Jun 2017)",
