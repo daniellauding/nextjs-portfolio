@@ -107,7 +107,6 @@
       "image": "/projects/vromm.jpg",
       "color": "#3B82F6",
       "featured": true,
-      "password": "WELCOME",
       "details": {
         "client": "Vromm (Own Startup)",
         "duration": "Ongoing (2025-Present)",
@@ -138,8 +137,7 @@
           "author": "Maria Andersson",
           "role": "Driving Instructor, Skåne"
         },
-        "nextProject": "qasa-rental-platform",
-        "password": null
+        "nextProject": "qasa-rental-platform"
       }
     },
     {
@@ -155,7 +153,6 @@
       "image": "/projects/qasa.jpg",
       "color": "#10B981",
       "featured": true,
-      "password": "WELCOME",
       "details": {
         "client": "Qasa",
         "duration": "4 months (May-Aug 2025)",
