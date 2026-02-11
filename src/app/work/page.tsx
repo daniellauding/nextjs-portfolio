@@ -21,6 +21,15 @@ const caseStudies = [
     tags: ["Product Design", "React Native", "AI", "Startup", "Education"],
     year: "2025",
     duration: "Ongoing"
+  },
+  {
+    slug: "asteria-fintech",
+    title: "Asteria - Smart Cash Flow",
+    description: "Transformed complex financial tools into intuitive digital products for SMEs, reaching over 400,000 users through partnerships with Swedbank and PayEx.",
+    color: "#6366F1",
+    tags: ["Fintech", "Product Design", "Co-founder", "SaaS", "Banking"],
+    year: "2017-2025",
+    duration: "8 years"
   }
 ];
 

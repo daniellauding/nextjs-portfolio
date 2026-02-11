@@ -198,8 +198,7 @@
       "tags": ["Fintech", "Product Design", "Co-founder", "SaaS", "Banking", "Design Systems", "Figma", "AI Prototyping"],
       "image": "/projects/asteria.jpg",
       "color": "#6366F1",
-      "featured": false,
-      "password": "fintech2025",
+      "featured": true,
       "details": {
         "client": "Swedbank, PayEx, SMEs",
         "duration": "8 years (2017-2025)",
@@ -230,8 +229,7 @@
           "author": "Anders Nordkvist",
           "role": "CEO at Asteria AB"
         },
-        "nextProject": "spotify-data-saver",
-        "password": "fintech2025"
+        "nextProject": "spotify-data-saver"
       }
     },
     {
