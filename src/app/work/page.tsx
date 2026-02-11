@@ -30,6 +30,15 @@ const caseStudies = [
     tags: ["Fintech", "Product Design", "Co-founder", "SaaS", "Banking"],
     year: "2017-2025",
     duration: "8 years"
+  },
+  {
+    slug: "spotify-data-saver",
+    title: "Spotify - Data Saver Feature",
+    description: "Designed a low-data music streaming experience for users in emerging markets like Brazil, conducting field research in favelas.",
+    color: "#1DB954",
+    tags: ["Mobile Design", "Emerging Markets", "User Research", "Music Tech"],
+    year: "2017",
+    duration: "4 months"
   }
 ];
 
