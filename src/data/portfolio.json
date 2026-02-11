@@ -106,7 +106,7 @@
       "tags": ["Product Design", "React Native", "AI", "Startup", "Education", "Figma", "AI Prototyping", "AI-assisted Development", "Cursor"],
       "image": "/projects/vromm.jpg",
       "color": "#3B82F6",
-      "featured": false,
+      "featured": true,
       "password": "WELCOME",
       "details": {
         "client": "Vromm (Own Startup)",
@@ -154,7 +154,7 @@
       "tags": ["Product Design", "UX Research", "AI Tools", "Rental Platform", "Figma", "AI Prototyping"],
       "image": "/projects/qasa.jpg",
       "color": "#10B981",
-      "featured": false,
+      "featured": true,
       "password": "WELCOME",
       "details": {
         "client": "Qasa",
