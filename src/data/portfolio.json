@@ -274,6 +274,57 @@
           "author": "Internal User Research",
           "role": "Spotify Brazil Team"
         },
+        "nextProject": "lansforsakringar-digital-design"
+      }
+    },
+    {
+      "id": "project-5",
+      "slug": "lansforsakringar-digital-design",
+      "name": "Länsförsäkringar - Digital Design System",
+      "type": "Art Director Consultant",
+      "date": "2016-2017",
+      "location": "Stockholm",
+      "url": "https://www.lansforsakringar.se",
+      "description": "Modernized the digital identity for one of Sweden's largest insurers, creating a comprehensive cross-platform design system for web, mobile, and internal portals. Won Best App & Web 2017.",
+      "tags": ["Design Systems", "Insurance", "Enterprise", "Figma", "Component Libraries", "Mobile & Web Design"],
+      "image": "/projects/lansforsakringar.jpg",
+      "color": "#005AA0",
+      "featured": true,
+      "details": {
+        "client": "Länsförsäkringar (with Identity Works)",
+        "duration": "1 year (Mar 2016 - Feb 2017)",
+        "team": "Cross-functional with designers, developers, and brand team",
+        "role": "Art Director Consultant",
+        "challenge": "Transform Länsförsäkringar's fragmented digital presence into a cohesive, modern experience across multiple platforms. The company needed a scalable design system that could serve millions of customers while maintaining accessibility and brand consistency across web, mobile apps, and internal portals.",
+        "solution": "Led the creation of a comprehensive digital design system using Figma, component libraries, and design tokens. Built modular, reusable components that ensured consistency across all touchpoints. Established design principles and guidelines that enabled cross-platform development while maintaining visual identity.",
+        "impact": "Successfully launched unified digital experience across all platforms. Won Best App & Web 2017 award. The design system became the foundation for Länsförsäkringar's digital products, serving millions of users and enabling faster, more consistent product development across teams.",
+        "sections": [
+          {
+            "title": "Research & Discovery",
+            "content": "Conducted comprehensive audit of existing digital properties. Analyzed user pain points across web and mobile platforms. Collaborated with brand team to understand company values and translate them into digital principles. Mapped out customer journeys and identified key touchpoints requiring design attention.",
+            "images": ["/projects/lansforsakringar/research-1.jpg", "/projects/lansforsakringar/research-2.jpg"]
+          },
+          {
+            "title": "Design System Architecture",
+            "content": "Built a complete design system from the ground up using Figma and component libraries. Created design tokens for colors, typography, spacing, and motion. Developed modular components that could scale across web, iOS, and Android. Established clear documentation and guidelines for implementation.",
+            "images": ["/projects/lansforsakringar/design-system-1.jpg", "/projects/lansforsakringar/design-system-2.jpg"]
+          },
+          {
+            "title": "Cross-Platform Implementation",
+            "content": "Rolled out design system across web platforms, mobile apps, and internal portals. Worked closely with development teams to ensure pixel-perfect implementation. Created accessibility guidelines meeting WCAG standards. Trained teams on design system usage and maintenance.",
+            "images": ["/projects/lansforsakringar/implementation-1.jpg", "/projects/lansforsakringar/implementation-2.jpg"]
+          },
+          {
+            "title": "Award-Winning Results",
+            "content": "The unified digital experience launched successfully across all platforms. Won Best App & Web 2017 recognition for excellence in digital design. The design system enabled Länsförsäkringar to maintain consistency while rapidly iterating on new features and services.",
+            "images": ["/projects/lansforsakringar/results-1.jpg"]
+          }
+        ],
+        "testimonial": {
+          "quote": "Daniel is a skilled Art Director with an eye for detail. He works super fast and comes up with suggestions for new approaches. He maintains a high pace with high quality. Daniel has been part of the process to develop Länsförsäkringar's new digital expression and we have had high pressure but so much fun during the time. Good luck going forward, hope we get to work together again soon :)",
+          "author": "Liza Hansson",
+          "role": "Strategic Lead Designer at Variant Sverige"
+        },
         "nextProject": "vromm-driving-app"
       }
     }
