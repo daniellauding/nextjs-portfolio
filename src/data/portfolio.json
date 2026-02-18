@@ -426,6 +426,302 @@
         },
         "nextProject": "vromm-driving-app"
       }
+    },
+    {
+      "id": "project-6",
+      "slug": "foretagskollen-swedbank",
+      "name": "Företagskollen – Swedbank",
+      "type": "Lead Product Design",
+      "date": "2017–Present",
+      "location": "Stockholm",
+      "url": "https://www.swedbank.se",
+      "description": "Together with Swedbank, we built Företagskollen – a cash flow management tool integrated into online banking for over 400,000 business clients.",
+      "tags": [
+        "Fintech",
+        "Product Design",
+        "Banking",
+        "Design Systems",
+        "Figma"
+      ],
+      "image": "/projects/foretagskollen.jpg",
+      "color": "#FF5A00",
+      "featured": false,
+      "details": {
+        "client": "Swedbank / Asteria",
+        "duration": "2017–Present",
+        "team": "Asteria + Swedbank cross-functional team",
+        "role": "Lead Product Designer",
+        "challenge": "Small business owners often found cash flow management complex and expressed a need for a simpler, digital solution integrated into their everyday banking.",
+        "solution": "Företagskollen pulls transactions and balances from company accounts, sorting and forecasting them to present an easy-to-understand visual of future cash flow, all within the digital banking experience.",
+        "impact": "Successfully rolled out to Swedbank's SME clientele, reaching 400,000+ business customers. Now a versatile tool beyond Swedbank's platform, with plans to expand accessibility especially on mobile.",
+        "sections": [
+          {
+            "title": "Setting the Goal",
+            "content": "Our mission was to integrate cash flow management into the everyday banking activities of small businesses, offering them a clear, visual snapshot of their financial health."
+          },
+          {
+            "title": "Gaining Insights",
+            "content": "Företagskollen pulls transactions and balances from company accounts, sorting and forecasting them to present an easy-to-understand visual of future cash flow, all within the digital banking experience."
+          },
+          {
+            "title": "Design & Delivery",
+            "content": "Starting from the ground up, I led the design process, getting involved in everything from coding to feature refinement and user interface improvements. Collaboration was key, working closely with both Swedbank and our Asteria team, drawing on user feedback to continuously enhance our solution."
+          }
+        ],
+        "testimonial": {
+          "quote": "I've had the pleasure of working with Daniel for over 5 years. Daniel is a great resource and it has been a joy to see how Daniel has developed during our time working together. I highly recommend hiring Daniel.",
+          "author": "Anders Nordkvist",
+          "role": "CEO at Asteria AB"
+        },
+        "nextProject": "invoice-portal-payex"
+      }
+    },
+    {
+      "id": "project-7",
+      "slug": "invoice-portal-payex",
+      "name": "Invoice Portal – PayEx",
+      "type": "Lead Product Design",
+      "date": "2023–Present",
+      "location": "Stockholm",
+      "url": "https://www.payex.com",
+      "description": "In partnership with PayEx (a Swedbank subsidiary), we designed a streamlined invoice administration and factoring portal for SMEs across the Nordic region.",
+      "tags": [
+        "Fintech",
+        "Product Design",
+        "SaaS",
+        "Banking",
+        "Figma"
+      ],
+      "image": "/projects/payex.jpg",
+      "color": "#1A3C8F",
+      "featured": false,
+      "details": {
+        "client": "PayEx / Asteria",
+        "duration": "2023–Present",
+        "team": "Asteria + PayEx team",
+        "role": "Lead Product Designer",
+        "challenge": "PayEx customers (primarily SMEs) required a streamlined solution to simplify their invoice administration and factoring needs, saving valuable time and resources.",
+        "solution": "We developed a user portal and a partner admin section for PayEx to manage their users and the platform. Key features included mapping invoices for automation and scanning invoice information for transmission to PayEx.",
+        "impact": "The integrated solution was successfully launched with two prominent banks, offering a streamlined experience for SMEs in managing their factoring and invoicing needs.",
+        "sections": [
+          {
+            "title": "Setting the Goal",
+            "content": "Our objective was to design a customer journey that made obtaining factoring services effortless for SMEs, leveraging Asteria's integrations with a white-label factoring platform."
+          },
+          {
+            "title": "Gaining Insights",
+            "content": "By diving deep into the needs of SMEs and understanding the intricacies of factoring and invoicing, we aimed to create a user-centric portal and admin interface that addressed these requirements effectively."
+          },
+          {
+            "title": "Design & Delivery",
+            "content": "We developed a user portal and a partner admin section for PayEx to manage their users and the platform. Key features included mapping invoices for automation and scanning invoice information for transmission to PayEx, ensuring a smooth and automated workflow."
+          }
+        ],
+        "nextProject": "addictive-keys-xln"
+      }
+    },
+    {
+      "id": "project-8",
+      "slug": "addictive-keys-xln",
+      "name": "Addictive Keys – XLN Audio",
+      "type": "Lead Product Design",
+      "date": "2015",
+      "location": "Sweden",
+      "description": "Redesigned XLN Audio's Addictive Keys plugin to create a more engaging, intuitive, and creator-focused experience for music producers.",
+      "tags": [
+        "Product Design",
+        "Music Tech",
+        "UX/UI",
+        "AI",
+        "Figma"
+      ],
+      "image": "/projects/xlnaudio.jpg",
+      "color": "#1A1A2E",
+      "featured": false,
+      "details": {
+        "client": "XLN Audio",
+        "duration": "2015",
+        "team": "Solo consultant",
+        "role": "Lead Product Designer",
+        "challenge": "Creators were spending too much time searching for the right sounds and grappling with an interface that wasn't as user-friendly as it could be, especially in the standalone version.",
+        "solution": "The proposed redesign included an AI-based sound recommendation engine for tailored suggestions, a simplified instrument library interface for quick access, and a refreshed flat design with skeuomorphic details to facilitate an intuitive user journey.",
+        "impact": "The concept was well-received by XLN Audio, acknowledging the innovative approach and its potential to significantly enhance the creative experience on the platform.",
+        "sections": [
+          {
+            "title": "Setting the Goal",
+            "content": "The concept aimed to streamline the sound selection process through AI-driven recommendations, unify the interface for ease of use, and adapt the platform to better fit individual creative processes."
+          },
+          {
+            "title": "Gaining Insights",
+            "content": "Research into current VST interface trends pointed to a need for a responsive, modern design that balanced skeuomorphic elements with flat design for better navigation and user experience."
+          }
+        ],
+        "nextProject": "klm-airlines"
+      }
+    },
+    {
+      "id": "project-9",
+      "slug": "klm-airlines",
+      "name": "KLM Royal Dutch Airlines",
+      "type": "Senior Designer Consultant",
+      "date": "Aug–Oct 2015",
+      "location": "Amsterdam",
+      "url": "https://www.klm.com",
+      "description": "Joined AKQA Amsterdam to give KLM's web platform a fresh new look, making travel planning smooth and enjoyable for millions of passengers.",
+      "tags": [
+        "Product Design",
+        "UX/UI",
+        "Travel",
+        "Enterprise",
+        "Figma"
+      ],
+      "image": "/projects/klm.jpg",
+      "color": "#00A1DE",
+      "featured": false,
+      "details": {
+        "client": "KLM (via AKQA Amsterdam)",
+        "duration": "Aug–Oct 2015",
+        "team": "AKQA Amsterdam + KLM team",
+        "role": "Senior Designer Consultant",
+        "challenge": "KLM wanted to make their online experience as friendly and easy to use as their flights — finding flights, getting information, and planning trips needed to be simpler.",
+        "solution": "With each sprint, we got closer to a design that would make finding flights, getting information, and planning trips simpler and more enjoyable, working closely with KLM's team.",
+        "impact": "The KLM project resulted in a complete design set ready for launch at beta.klm.com. The project was ultimately redirected as the business decided to pursue a different path.",
+        "sections": [
+          {
+            "title": "Setting the Goal",
+            "content": "Our goal was to create a website that would make planning a trip with KLM smooth and enjoyable, reflecting the warmth and efficiency KLM is known for."
+          },
+          {
+            "title": "Design Process",
+            "content": "We worked closely with KLM's team, diving deep into what travelers need and want from an airline's website. With each sprint, we got closer to a design that would make finding flights and planning trips simpler."
+          }
+        ],
+        "nextProject": "backbase-banking"
+      }
+    },
+    {
+      "id": "project-10",
+      "slug": "backbase-banking",
+      "name": "Backbase – Digital Banking Platform",
+      "type": "Lead Designer",
+      "date": "2012–2017",
+      "location": "Amsterdam",
+      "url": "https://www.backbase.com",
+      "description": "At Backbase, designed UI/UX solutions for top-tier global banks including ABN Amro, UniCredit, UOB Singapore, and Standard Chartered.",
+      "tags": [
+        "Fintech",
+        "Product Design",
+        "Banking",
+        "Design Systems",
+        "Enterprise"
+      ],
+      "image": "/projects/backbase.jpg",
+      "color": "#FF4A4A",
+      "featured": false,
+      "details": {
+        "client": "ABN Amro, UniCredit, UOB Singapore, Standard Chartered",
+        "duration": "2012–2017 (5 years)",
+        "team": "Backbase product team",
+        "role": "Lead Designer",
+        "challenge": "Evolve an existing platform to accommodate the intricate requirements of digital banking, ensuring comprehensive user experiences across various devices and a themeable platform for diverse clients.",
+        "solution": "Developed a themeable platform 'Launchpad' to enrich user experiences, aiding partners in customizing their interfaces with their branding. Crafted an admin panel and CMS improvements, often turning around design requests in just days.",
+        "impact": "Launchpad significantly enhanced delivery efficiency for online and mobile banking projects, ensuring consistent UX across platforms. Strengthened Backbase's market position with major banking clients worldwide.",
+        "sections": [
+          {
+            "title": "Setting the Goal",
+            "content": "Swiftly design and roll out adaptable, responsive UI/UX solutions for prominent banking clients, fostering a seamless digital banking journey."
+          },
+          {
+            "title": "Gaining Insights",
+            "content": "The task involved bridging traditional banking systems with a contemporary, intuitive user interface, maintaining consistent UX on multiple devices and creating a themeable platform for diverse user preferences."
+          },
+          {
+            "title": "Design & Delivery",
+            "content": "Quick response to design requests, often turning them around in just days. Responsibilities grew to encompass development of a themeable platform, partner customization support, and admin panel creation."
+          }
+        ],
+        "testimonial": {
+          "quote": "Daniel is a very talented designer we have hired for Backbase. He delivers top quality work while being efficient. Daniel is a multi talent who's also a great guy and fun to work with. If I have the opportunity to hire him again in the future, I would certainly do that.",
+          "author": "Wouter Koeleman",
+          "role": "Sr Manager Talent Acquisition, Backbase"
+        },
+        "nextProject": "abro-bryggeri"
+      }
+    },
+    {
+      "id": "project-11",
+      "slug": "abro-bryggeri",
+      "name": "Åbro Bryggeri – Website Redesign",
+      "type": "UX/UI Designer & Frontend Developer",
+      "date": "2014",
+      "location": "Sweden",
+      "url": "https://abro.se",
+      "description": "Teamed up with Producks and Folkets Stockholm to give Åbro Bryggeri's online space a fresh new look — welcoming, easy to navigate, and full of character.",
+      "tags": [
+        "Web Design",
+        "Frontend Development",
+        "UX/UI",
+        "CMS",
+        "WordPress"
+      ],
+      "image": "/projects/abro.jpg",
+      "color": "#C8A951",
+      "featured": false,
+      "details": {
+        "client": "Åbro Bryggeri",
+        "duration": "2014",
+        "team": "Producks + Folkets Stockholm",
+        "role": "UX/UI Designer & Frontend Developer",
+        "challenge": "Åbro wanted to make their website more welcoming and easier to use, to really show off what makes them unique as a beloved Swedish brewery.",
+        "solution": "Focused on designing a user-friendly site that captures Åbro's spirit, with a special CMS to keep things running smoothly behind the scenes. Spent time getting to know Åbro, their team, and their fans.",
+        "impact": "Launched Åbro's new site in early 2015, bringing their story and products to life online. Created a user-friendly CMS focusing on simplicity and future growth.",
+        "sections": [
+          {
+            "title": "Design Approach",
+            "content": "We spent a lot of time getting to know Åbro, their team, and their fans. This helped us make sure the new site would feel just right — welcoming, easy to navigate, and full of character."
+          }
+        ],
+        "nextProject": "steem-navii"
+      }
+    },
+    {
+      "id": "project-12",
+      "slug": "steem-navii",
+      "name": "Steem – Web2Print Platform",
+      "type": "Co-founder & Lead Designer",
+      "date": "2011–2012",
+      "location": "Västerås",
+      "description": "Launched Steem, an internal startup within Navii design agency, revolutionizing the Web2Print sector for Swedish organizations.",
+      "tags": [
+        "Startup",
+        "Product Design",
+        "Web Design",
+        "SaaS",
+        "Frontend Development"
+      ],
+      "image": "/projects/steem.jpg",
+      "color": "#2D6A4F",
+      "featured": false,
+      "details": {
+        "client": "Navii / Centerpartiet + Swedish organizations",
+        "duration": "2011–2012",
+        "team": "Navii internal startup team",
+        "role": "Co-founder & Lead Designer",
+        "challenge": "Available systems were too rigid and complex for effectively personalizing marketing communications for Swedish organizations.",
+        "solution": "Built an accessible online storefront and a backend system for admins, allowing for the upload of customizable templates and defining editable sections for end-users.",
+        "impact": "Quickly embraced by key organizations including Centerpartiet. Steem was nominated as Sweden's best Web2Print tool at the Graphic Awards in November 2011.",
+        "sections": [
+          {
+            "title": "Setting the Goal",
+            "content": "We aimed to craft a platform that made it effortless for users to order and personalize their marketing materials, enhancing their online experience."
+          },
+          {
+            "title": "Gaining Insights",
+            "content": "We hit the road, meeting with customers across Sweden to demo and test our platform, gathering critical feedback to refine our approach."
+          }
+        ],
+        "nextProject": "vromm-driving-app"
+      }
     }
   ],
   "clients": [
