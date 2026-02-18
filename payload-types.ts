@@ -6,89 +6,53 @@
  * and re-run `payload generate:types` to regenerate this file.
  */
 
-/**
- * Supported timezones in IANA format.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "supportedTimezones".
- */
-export type SupportedTimezones =
-  | 'Pacific/Midway'
-  | 'Pacific/Niue'
-  | 'Pacific/Honolulu'
-  | 'Pacific/Rarotonga'
-  | 'America/Anchorage'
-  | 'Pacific/Gambier'
-  | 'America/Los_Angeles'
-  | 'America/Tijuana'
-  | 'America/Denver'
-  | 'America/Phoenix'
-  | 'America/Chicago'
-  | 'America/Guatemala'
-  | 'America/New_York'
-  | 'America/Bogota'
-  | 'America/Caracas'
-  | 'America/Santiago'
-  | 'America/Buenos_Aires'
-  | 'America/Sao_Paulo'
-  | 'Atlantic/South_Georgia'
-  | 'Atlantic/Azores'
-  | 'Atlantic/Cape_Verde'
-  | 'Europe/London'
-  | 'Europe/Berlin'
-  | 'Africa/Lagos'
-  | 'Europe/Athens'
-  | 'Africa/Cairo'
-  | 'Europe/Moscow'
-  | 'Asia/Riyadh'
-  | 'Asia/Dubai'
-  | 'Asia/Baku'
-  | 'Asia/Karachi'
-  | 'Asia/Tashkent'
-  | 'Asia/Calcutta'
-  | 'Asia/Dhaka'
-  | 'Asia/Almaty'
-  | 'Asia/Jakarta'
-  | 'Asia/Bangkok'
-  | 'Asia/Shanghai'
-  | 'Asia/Singapore'
-  | 'Asia/Tokyo'
-  | 'Asia/Seoul'
-  | 'Australia/Brisbane'
-  | 'Australia/Sydney'
-  | 'Pacific/Guam'
-  | 'Pacific/Noumea'
-  | 'Pacific/Auckland'
-  | 'Pacific/Fiji';
-
 export interface Config {
   auth: {
     users: UserAuthOperations;
   };
-  blocks: {};
+  blocks: Record<string, never>;
   collections: {
     users: User;
-    posts: Post;
+    media: Media;
+    projects: Project;
+    clients: Client;
+    apps: App;
+    skills: Skill;
+    experience: Experience;
+    education: Education;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  collectionsJoins: {};
+  collectionsJoins: Record<string, never>;
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
-    posts: PostsSelect<false> | PostsSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
+    clients: ClientsSelect<false> | ClientsSelect<true>;
+    apps: AppsSelect<false> | AppsSelect<true>;
+    skills: SkillsSelect<false> | SkillsSelect<true>;
+    experience: ExperienceSelect<false> | ExperienceSelect<true>;
+    education: EducationSelect<false> | EducationSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
+    'payload-locked-documents':
+      | PayloadLockedDocumentsSelect<false>
+      | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    'personal-info': PersonalInfo;
+    'site-settings': SiteSettings;
+  };
+  globalsSelect: {
+    'personal-info': PersonalInfoSelect<false> | PersonalInfoSelect<true>;
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -98,6 +62,7 @@ export interface Config {
     workflows: unknown;
   };
 }
+
 export interface UserAuthOperations {
   forgotPassword: {
     email: string;
@@ -116,10 +81,7 @@ export interface UserAuthOperations {
     password: string;
   };
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
- */
+
 export interface User {
   id: number;
   name?: string | null;
@@ -132,93 +94,255 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
-  password?: string | null;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "posts".
- */
-export interface Post {
+
+export interface Media {
   id: number;
-  title: string;
-  content?: string | null;
+  alt: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+  sizes?: {
+    thumbnail?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    card?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    tablet?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+
+export interface Project {
+  id: number;
+  name: string;
+  slug: string;
+  type?: string | null;
+  description: string;
+  date?: string | null;
+  location?: string | null;
+  url?: string | null;
+  featured?: boolean | null;
+  color?: string | null;
+  image?: number | Media | null;
+  imageUrl?: string | null;
+  tags?: Array<{ tag?: string | null; id?: string | null }> | null;
+  password?: string | null;
+  details?: {
+    client?: string | null;
+    duration?: string | null;
+    team?: string | null;
+    role?: string | null;
+    challenge?: string | null;
+    solution?: string | null;
+    impact?: string | null;
+    sections?:
+      | Array<{
+          title: string;
+          content?: unknown;
+          images?: Array<{ image?: number | Media | null; id?: string | null }> | null;
+          id?: string | null;
+        }>
+      | null;
+    testimonial?: {
+      quote?: string | null;
+      author?: string | null;
+      role?: string | null;
+    };
+    nextProject?: number | Project | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-kv".
- */
+
+export interface Client {
+  id: number;
+  name: string;
+  url?: string | null;
+  logo?: number | Media | null;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+
+export interface App {
+  id: number;
+  name: string;
+  slug: string;
+  icon?: number | Media | null;
+  iconUrl?: string | null;
+  description: string;
+  appStoreUrl?: string | null;
+  playStoreUrl?: string | null;
+  tags?: Array<{ tag?: string | null; id?: string | null }> | null;
+  color?: string | null;
+  featured?: boolean | null;
+  details?: {
+    category?: string | null;
+    platform?: string | null;
+    downloads?: string | null;
+    rating?: string | null;
+    releaseDate?: string | null;
+    version?: string | null;
+    overview?: unknown;
+    features?: Array<{ feature?: string | null; id?: string | null }> | null;
+    screenshots?: Array<{ screenshot?: number | Media | null; id?: string | null }> | null;
+    testimonials?: Array<{
+      quote?: string | null;
+      author?: string | null;
+      rating?: number | null;
+      id?: string | null;
+    }> | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+
+export interface Skill {
+  id: number;
+  name: string;
+  category?: 'design' | 'development' | 'tools' | 'soft-skills' | 'other' | null;
+  proficiency?: 'expert' | 'advanced' | 'intermediate' | 'beginner' | null;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+
+export interface Experience {
+  id: number;
+  title: string;
+  company: string;
+  companyUrl?: string | null;
+  period: string;
+  description?: unknown;
+  projects?: Array<{ project?: unknown; id?: string | null }> | null;
+  recommendation?: {
+    quote?: string | null;
+    author?: string | null;
+    role?: string | null;
+    date?: string | null;
+  };
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+
+export interface Education {
+  id: number;
+  degree: string;
+  school: string;
+  schoolUrl?: string | null;
+  year: string;
+  description?: unknown;
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+
+export interface PersonalInfo {
+  id: number;
+  name: string;
+  firstName: string;
+  lastName: string;
+  title: string;
+  subtitle?: string | null;
+  status?: string | null;
+  studio?: string | null;
+  location?: string | null;
+  email: string;
+  phone?: string | null;
+  website?: string | null;
+  bio?: unknown;
+  avatar?: number | Media | null;
+  tools?: Array<{ tool?: string | null; id?: string | null }> | null;
+  roles?: Array<{ role?: string | null; id?: string | null }> | null;
+  experience?: string | null;
+  keyContributions?: Array<{ contribution?: string | null; id?: string | null }> | null;
+  socialLinks?: {
+    linkedin?: string | null;
+    github?: string | null;
+    medium?: string | null;
+    twitter?: string | null;
+  };
+  updatedAt?: string;
+  createdAt?: string;
+  globalType?: string;
+}
+
+export interface SiteSettings {
+  id: number;
+  siteName: string;
+  siteDescription?: string | null;
+  siteKeywords?: string | null;
+  ogImage?: number | Media | null;
+  favicon?: number | Media | null;
+  analytics?: {
+    googleAnalytics?: string | null;
+    posthogKey?: string | null;
+    posthogHost?: string | null;
+  };
+  maintenance?: {
+    enabled?: boolean | null;
+    message?: string | null;
+  };
+  updatedAt?: string;
+  createdAt?: string;
+  globalType?: string;
+}
+
+// ─── Payload internal types ───────────────────────────────────────────────────
+
 export interface PayloadKv {
   id: number;
   key: string;
-  data:
-    | {
-        [k: string]: unknown;
-      }
-    | unknown[]
-    | string
-    | number
-    | boolean
-    | null;
+  data: unknown;
+  updatedAt: string;
+  createdAt: string;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-locked-documents".
- */
+
 export interface PayloadLockedDocument {
   id: number;
-  document?:
-    | ({
-        relationTo: 'users';
-        value: number | User;
-      } | null)
-    | ({
-        relationTo: 'posts';
-        value: number | Post;
-      } | null);
+  document?: { relationTo: string; value: number | Record<string, unknown> } | null;
   globalSlug?: string | null;
-  user: {
-    relationTo: 'users';
-    value: number | User;
-  };
+  user: { relationTo: 'users'; value: number | User };
   updatedAt: string;
   createdAt: string;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-preferences".
- */
+
 export interface PayloadPreference {
   id: number;
-  user: {
-    relationTo: 'users';
-    value: number | User;
-  };
+  user: { relationTo: 'users'; value: number | User };
   key?: string | null;
-  value?:
-    | {
-        [k: string]: unknown;
-      }
-    | unknown[]
-    | string
-    | number
-    | boolean
-    | null;
+  value?: unknown;
   updatedAt: string;
   createdAt: string;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-migrations".
- */
+
 export interface PayloadMigration {
   id: number;
   name?: string | null;
@@ -226,51 +350,137 @@ export interface PayloadMigration {
   updatedAt: string;
   createdAt: string;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users_select".
- */
+
+// ─── Select types ─────────────────────────────────────────────────────────────
+
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
-  sessions?:
-    | T
-    | {
-        id?: T;
-        createdAt?: T;
-        expiresAt?: T;
-      };
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "posts_select".
- */
-export interface PostsSelect<T extends boolean = true> {
-  title?: T;
-  content?: T;
+
+export interface MediaSelect<T extends boolean = true> {
+  alt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  filename?: T;
+}
+
+export interface ProjectsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  type?: T;
+  description?: T;
+  date?: T;
+  location?: T;
+  url?: T;
+  featured?: T;
+  color?: T;
+  image?: T;
+  imageUrl?: T;
+  tags?: T;
+  password?: T;
+  details?: T;
   updatedAt?: T;
   createdAt?: T;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-kv_select".
- */
+
+export interface ClientsSelect<T extends boolean = true> {
+  name?: T;
+  url?: T;
+  logo?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+
+export interface AppsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  icon?: T;
+  iconUrl?: T;
+  description?: T;
+  appStoreUrl?: T;
+  playStoreUrl?: T;
+  tags?: T;
+  color?: T;
+  featured?: T;
+  details?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+
+export interface SkillsSelect<T extends boolean = true> {
+  name?: T;
+  category?: T;
+  proficiency?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+
+export interface ExperienceSelect<T extends boolean = true> {
+  title?: T;
+  company?: T;
+  companyUrl?: T;
+  period?: T;
+  description?: T;
+  projects?: T;
+  recommendation?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+
+export interface EducationSelect<T extends boolean = true> {
+  degree?: T;
+  school?: T;
+  schoolUrl?: T;
+  year?: T;
+  description?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+
+export interface PersonalInfoSelect<T extends boolean = true> {
+  name?: T;
+  firstName?: T;
+  lastName?: T;
+  title?: T;
+  subtitle?: T;
+  status?: T;
+  studio?: T;
+  location?: T;
+  email?: T;
+  phone?: T;
+  website?: T;
+  bio?: T;
+  avatar?: T;
+  tools?: T;
+  roles?: T;
+  experience?: T;
+  keyContributions?: T;
+  socialLinks?: T;
+}
+
+export interface SiteSettingsSelect<T extends boolean = true> {
+  siteName?: T;
+  siteDescription?: T;
+  siteKeywords?: T;
+  ogImage?: T;
+  favicon?: T;
+  analytics?: T;
+  maintenance?: T;
+}
+
 export interface PayloadKvSelect<T extends boolean = true> {
   key?: T;
   data?: T;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-locked-documents_select".
- */
+
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
   document?: T;
   globalSlug?: T;
@@ -278,10 +488,7 @@ export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-preferences_select".
- */
+
 export interface PayloadPreferencesSelect<T extends boolean = true> {
   user?: T;
   key?: T;
@@ -289,24 +496,17 @@ export interface PayloadPreferencesSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-migrations_select".
- */
+
 export interface PayloadMigrationsSelect<T extends boolean = true> {
   name?: T;
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "auth".
- */
+
 export interface Auth {
   [k: string]: unknown;
 }
-
 
 declare module 'payload' {
   export interface GeneratedTypes extends Config {}
