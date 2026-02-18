@@ -193,16 +193,29 @@ export default function Projects({ projects, activeTag, onTagClick }: ProjectsPr
         transition={{ delay: 0.4, duration: 0.6 }}
         className="mt-16 pt-12 border-t border-[var(--text-muted)]"
       >
-        <h3 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] mb-4">
-          Got any project?
-        </h3>
-        <motion.a
-          href="#contact"
-          className="text-lg text-[var(--accent)] underline underline-offset-4"
-          whileHover={{ opacity: 0.7 }}
-        >
-          Hire me
-        </motion.a>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] mb-4">
+              Got any project?
+            </h3>
+            <motion.a
+              href="#contact"
+              className="text-lg text-[var(--accent)] underline underline-offset-4"
+              whileHover={{ opacity: 0.7 }}
+            >
+              Hire me
+            </motion.a>
+          </div>
+          <Link
+            href="/cases"
+            className="inline-flex items-center gap-2 text-sm font-medium text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors group"
+          >
+            View all cases
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
       </motion.div>
     </section>
   );
