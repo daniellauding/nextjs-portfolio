@@ -722,6 +722,49 @@
         ],
         "nextProject": "vromm-driving-app"
       }
+    },
+    {
+      "id": "project-13",
+      "slug": "mrusta-dubai",
+      "name": "mrUsta – Service Marketplace",
+      "type": "UX/UI Designer",
+      "date": "2015",
+      "location": "Dubai",
+      "description": "Designed the app experience for mrUsta, an exciting startup in Dubai connecting people with local services — from fixing a car to finding a plumber.",
+      "tags": [
+        "Product Design",
+        "UX/UI",
+        "Mobile Design",
+        "Startup",
+        "Marketplace"
+      ],
+      "image": "/projects/mrusta.jpg",
+      "color": "#F59E0B",
+      "featured": false,
+      "details": {
+        "client": "mrUsta (Dubai)",
+        "duration": "2015",
+        "team": "mrUsta product team",
+        "role": "UX/UI Designer",
+        "challenge": "mrUsta aimed to transition from their website to a new app, enhancing the user experience to seamlessly find and connect with services.",
+        "solution": "Designed a friendly and easy-to-use app that matched mrUsta's new look and feel. Dived into mrUsta's world, exploring what users needed and how to make the app a joy to use.",
+        "impact": "Delivered a complete set of designs ready for the developers to bring to life, aiming to make mrUsta's app a go-to for finding great local services in Dubai.",
+        "sections": [
+          {
+            "title": "Setting the Goal",
+            "content": "Our aim was to design a friendly and easy-to-use app that matched mrUsta's new look and feel — making finding the right service a breeze."
+          },
+          {
+            "title": "Gaining Insights",
+            "content": "I dived into mrUsta's world, exploring what users needed and how we could make the app a joy to use. Understanding the everyday services people look for — from car fixes to plumbers."
+          },
+          {
+            "title": "Design & Delivery",
+            "content": "We wrapped up with a set of designs that were ready for the developers to bring to life, aiming to make mrUsta's app a go-to for finding great services."
+          }
+        ],
+        "nextProject": "vromm-driving-app"
+      }
     }
   ],
   "clients": [
