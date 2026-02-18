@@ -1,14 +1,12 @@
-import { getPayload } from 'payload'
-import config from '../../payload.config'
-
-// Cache the payload instance
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let cachedPayload: any = null
 
 export const getPayloadClient = async () => {
   if (!cachedPayload) {
-    cachedPayload = await getPayload({
-      config,
-    })
+    // Lazy import to avoid loading Payload config at module level (causes OOM in Next.js build)
+    const { getPayload } = await import('payload')
+    const { default: config } = await import('../../payload.config')
+    cachedPayload = await getPayload({ config })
   }
   return cachedPayload
 }
@@ -26,6 +24,7 @@ export const getProjects = async () => {
   return await payload.find({
     collection: 'projects',
     sort: '-featured',
+    limit: 100,
   })
 }
 
@@ -48,6 +47,7 @@ export const getClients = async () => {
   return await payload.find({
     collection: 'clients',
     sort: 'order',
+    limit: 100,
   })
 }
 
@@ -56,6 +56,7 @@ export const getApps = async () => {
   return await payload.find({
     collection: 'apps',
     sort: '-featured',
+    limit: 100,
   })
 }
 
@@ -64,6 +65,7 @@ export const getSkills = async () => {
   return await payload.find({
     collection: 'skills',
     sort: 'order',
+    limit: 200,
   })
 }
 
@@ -72,6 +74,7 @@ export const getExperience = async () => {
   return await payload.find({
     collection: 'experience',
     sort: 'order',
+    limit: 50,
   })
 }
 
@@ -80,6 +83,7 @@ export const getEducation = async () => {
   return await payload.find({
     collection: 'education',
     sort: 'order',
+    limit: 20,
   })
 }
 
