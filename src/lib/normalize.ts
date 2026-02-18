@@ -167,8 +167,9 @@ export function normalizeExperience(doc: Record<string, unknown>): Record<string
  */
 export function normalizeClient(doc: Record<string, unknown>): Record<string, unknown> {
   return {
+    id: String(doc.id),
     name: doc.name as string,
-    url: (doc.url as string | null) || null,
+    url: (doc.url as string) || undefined,
   }
 }
 
