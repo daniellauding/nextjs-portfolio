@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface App {
   id: string;
@@ -29,10 +30,10 @@ export default function Apps({ apps, enableClickthrough = true }: AppsProps) {
         className="mb-12"
       >
         <h2 className="text-sm font-medium text-[var(--accent)] mb-4">
-          My Apps
+          Currently shipping
         </h2>
         <p className="text-xl text-[var(--foreground)]">
-          Personal projects and apps available on the App Store
+          Apps & projects I'm working on
         </p>
       </motion.div>
 
@@ -58,9 +59,19 @@ export default function Apps({ apps, enableClickthrough = true }: AppsProps) {
                 className="flex flex-col items-center text-center cursor-pointer"
               >
                 <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-[22px] overflow-hidden shadow-lg mb-4 bg-gradient-to-br from-[var(--accent)] to-[var(--accent-secondary)] flex items-center justify-center">
-                  <span className="text-3xl md:text-4xl text-[var(--background)]">
-                    {app.name.charAt(0)}
-                  </span>
+                  {app.icon && (app.icon.startsWith('http') || app.icon.startsWith('/')) ? (
+                    <Image
+                      src={app.icon}
+                      alt={`${app.name} icon`}
+                      fill
+                      className="object-cover"
+                      unoptimized={app.icon.startsWith('http')}
+                    />
+                  ) : (
+                    <span className="text-3xl md:text-4xl text-[var(--background)]">
+                      {app.icon || app.name.charAt(0)}
+                    </span>
+                  )}
                 </div>
                 <h3 className="text-sm font-medium text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
                   {app.name}

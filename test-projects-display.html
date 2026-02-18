@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Display Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .project {
+            background: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        .featured {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .not-featured {
+            color: #ef4444;
+        }
+        h1 {
+            color: #1f2937;
+        }
+        .summary {
+            background: #dbeafe;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Projects Display Verification</h1>
+    
+    <div class="summary">
+        <h2>Expected Result:</h2>
+        <p><strong>5 featured projects</strong> should appear in Work & Highlights section</p>
+        <ol>
+            <li>Vromm - Driving Instruction App</li>
+            <li>Qasa - Rental Matching Platform</li>
+            <li>Asteria - Smart Cash Flow</li>
+            <li>Spotify - Data Saver Feature</li>
+            <li>Länsförsäkringar - Digital Design System</li>
+        </ol>
+    </div>
+
+    <div id="projects-container"></div>
+
+    <script type="module">
+        // Fetch and display projects from portfolio.json
+        fetch('/src/data/portfolio.json')
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('projects-container');
+                const projects = data.projects;
+                const featured = projects.filter(p => p.featured);
+                
+                container.innerHTML = `
+                    <h2>Results:</h2>
+                    <p><strong>Total projects:</strong> ${projects.length}</p>
+                    <p><strong>Featured projects:</strong> ${featured.length}</p>
+                    <hr style="margin: 30px 0;">
+                `;
+                
+                projects.forEach((project, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'project';
+                    div.innerHTML = `
+                        <h3>${index + 1}. ${project.name}</h3>
+                        <p>${project.description}</p>
+                        <p><strong>Status:</strong> 
+                            <span class="${project.featured ? 'featured' : 'not-featured'}">
+                                ${project.featured ? '✅ FEATURED (will show)' : '❌ Not featured (will not show)'}
+                            </span>
+                        </p>
+                    `;
+                    container.appendChild(div);
+                });
+            })
+            .catch(err => {
+                document.getElementById('projects-container').innerHTML = 
+                    `<p style="color: red;">Error loading projects: ${err.message}</p>
+                     <p>Make sure this file is opened via the dev server (http://localhost:3000/test-projects-display.html)</p>`;
+            });
+    </script>
+</body>
+</html>

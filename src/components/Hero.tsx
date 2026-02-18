@@ -293,7 +293,7 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
             transition={{ delay: 0.8, duration: 0.6 }}
             className="mt-16 flex flex-wrap items-center gap-6"
           >
-            <span className="text-sm text-[var(--text-muted)]">My Apps</span>
+            <span className="text-sm text-[var(--text-muted)]">I'm working on</span>
             <div className="flex gap-4">
               {apps.map((app, index) => {
                 const Component = app.appStoreUrl ? motion.a : motion.div;
@@ -332,8 +332,12 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
                     }
                   }}
                 >
-                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-[var(--accent)] to-[var(--accent-secondary)] flex items-center justify-center">
-                    {app.icon.startsWith('/') ? (
+                  <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden shadow-lg flex items-center justify-center ${
+                    app.name === 'plotta' 
+                      ? 'bg-gradient-to-br from-[var(--accent)] to-[var(--accent-secondary)]' 
+                      : 'bg-white'
+                  }`}>
+                    {(app.icon.startsWith('/') || app.icon.startsWith('http')) ? (
                       <img 
                         src={app.icon} 
                         alt={app.name}

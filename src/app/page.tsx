@@ -17,9 +17,12 @@ export default function Home() {
   const { personal, skills, projects, clients, apps, cv } = portfolioData;
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
+  // Only show featured projects
+  const featuredProjects = projects.filter((p) => p.featured);
+  
   const filteredProjects = activeTag
-    ? projects.filter((p) => p.tags.includes(activeTag))
-    : projects;
+    ? featuredProjects.filter((p) => p.tags.includes(activeTag))
+    : featuredProjects;
 
   const filteredApps = activeTag
     ? apps.filter((a) => a.tags.includes(activeTag))
@@ -45,7 +48,7 @@ export default function Home() {
           keyContributions={cv.keyContributions}
         />
         <Skills skills={skills} activeTag={activeTag} onTagClick={setActiveTag} />
-        {/* <Projects projects={filteredProjects} activeTag={activeTag} onTagClick={setActiveTag} /> */}
+        <Projects projects={filteredProjects} activeTag={activeTag} onTagClick={setActiveTag} />
         <Clients clients={clients} />
         <CV experience={cv.experience} education={cv.education} activeTag={activeTag} />
         <Articles articles={cv.mediumPosts} />

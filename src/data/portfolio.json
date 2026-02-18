@@ -12,13 +12,32 @@
     "phone": "+46(0) 73 918 44 10",
     "website": "http://www.daniellauding.se",
     "bio": "What started as a childhood fascination with building websites has evolved into 15+ years of crafting digital experiences that matter. From those early days tweaking graphics and rebuilding sites with every new trend, Daniel discovered his passion for the intersection of creativity, technology, and human impact. Today, he's a Design Engineer who thrives on transforming complex problems into elegant, user-centered solutions. Whether co-founding fintech companies serving 400,000+ users or conducting field research in Brazilian favelas for Spotify, Daniel brings a unique blend of strategic thinking, technical execution, and genuine care for the people using what he builds. Currently exploring the frontiers of AI-assisted design and development, he's passionate about leveraging cutting-edge tools to create more meaningful, accessible experiences that truly serve users' needs.",
-    "tools": ["Figma", "Cursor", "Supabase", "Claude Code", "Notion", "Lovable", "React JS/Native", "Design to Code", "Tailwind", "TypeScript", "Git"],
-    "roles": ["Lead Product Designer", "Frontend Developer", "Design Engineer", "UX/UI Specialist", "Design System Architect", "Vibe coder"],
+    "tools": [
+      "Figma",
+      "Cursor",
+      "Supabase",
+      "Claude Code",
+      "Notion",
+      "Lovable",
+      "React JS/Native",
+      "Design to Code",
+      "Tailwind",
+      "TypeScript",
+      "Git"
+    ],
+    "roles": [
+      "Lead Product Designer",
+      "Frontend Developer",
+      "Design Engineer",
+      "UX/UI Specialist",
+      "Design System Architect",
+      "Vibe coder"
+    ],
     "experience": "15+ years • Design to Code • Spotify, Swedbank, Länsförsäkringar • WiFi Tribe nomad • Open for 2026"
   },
   "skills": [
     "Product Design",
-    "UX/UI Design", 
+    "UX/UI Design",
     "Design Systems",
     "React",
     "TypeScript",
@@ -102,35 +121,41 @@
       "url": "https://www.vromm.se",
       "date": "2025",
       "location": "Remote/Stockholm",
-      "description": "Building a smarter, more engaging way for driving students and instructors to plan, track, and complete practice based on Sweden's 16-step curriculum.",
-      "tags": ["Product Design", "React Native", "AI", "Startup", "Education", "Figma", "AI Prototyping", "AI-assisted Development", "Cursor"],
+      "description": "At Vromm, I lead product design and development — creating a smarter, more structured way for students and instructors to plan, track, and complete driving practice together. Built solo using AI-assisted workflows.",
+      "tags": [
+        "Product Design",
+        "React Native",
+        "AI",
+        "Startup",
+        "Education",
+        "Figma",
+        "AI Prototyping",
+        "AI-assisted Development",
+        "Cursor"
+      ],
       "image": "/projects/vromm.jpg",
       "color": "#3B82F6",
       "featured": true,
-      "password": "WELCOME",
       "details": {
         "client": "Vromm (Own Startup)",
         "duration": "Ongoing (2025-Present)",
         "team": "Solo founder with AI assistance",
         "role": "Founder & Product Designer",
-        "challenge": "Build a smarter, more structured way for students and instructors to plan, track, and complete driving practice together. Reduce complexity in planning and feedback, especially for private driving pairs.",
-        "solution": "Designed and developed an MVP in React Native using Cursor, Supabase, and GPT-based tools. Connected real-world driving routes to learning objectives with gamified progress tracking.",
-        "impact": "Launching internal MVP with active pilot users. Built a co-creation system using AI to cut dev/design time by 60–70%. Preparing for 2025 public pilot with schools and instructors in Skåne.",
+        "challenge": "Driving students in Sweden often lack structure and motivation between lessons. The 16-step Trafikverket curriculum is complex, and private driving pairs — parents and teens — have no good tools to plan practice together. We needed to change that.",
+        "solution": "Designed and developed a full React Native MVP using Cursor, Supabase, and AI-based tools. The app maps real-world driving routes to Trafikverket's 16 curriculum steps with gamified progress tracking, collaborative planning for student-instructor pairs, and AI-assisted feedback loops.",
+        "impact": "Active pilot with driving schools and private users in Skåne. AI co-creation cut design and development time by 60–70%. Now preparing for a 2025 public launch with driving schools and instructors.",
         "sections": [
           {
             "title": "Research & Discovery",
-            "content": "Surveys with instructors, students, and parents. Input from startup coaches (ALMI, Minc). Mapping Trafikverket's 16 steps to real routes and increasing clarity in how students approach the curriculum.",
-            "images": ["/projects/vromm/research-1.jpg", "/projects/vromm/research-2.jpg"]
+            "content": "Conducted surveys with instructors, students, and parents across Sweden. Gathered input from startup coaches at ALMI and Minc in Malmö. Mapped Trafikverket's 16 curriculum steps to real driving routes and identified where both private pairs and formal instruction failed — too unstructured, no shared visibility into progress."
           },
           {
             "title": "AI-Powered Development",
-            "content": "Solo-led product design and development using AI agents (ChatGPT, Claude) to brainstorm, write code, design UI, and validate ideas. Faster design and iteration cycles using co-creation workflows.",
-            "images": ["/projects/vromm/development-1.jpg", "/projects/vromm/development-2.jpg"]
+            "content": "Built the entire product solo using AI agents — ChatGPT and Claude for brainstorming, Cursor for code, Figma AI for fast UI exploration. This co-creation workflow compressed what would normally take a team of 4 into solo sprints. Every feature was validated quickly, iterated on, and shipped fast."
           },
           {
             "title": "Product & Validation",
-            "content": "Built React Native MVP with gamified progress tracking. Connected real-world driving routes to learning objectives. Early positive feedback on visual route-planning and progress tracking.",
-            "images": ["/projects/vromm/app-1.jpg", "/projects/vromm/app-2.jpg", "/projects/vromm/app-3.jpg"]
+            "content": "The MVP includes gamified progress tracking tied to the 16-step curriculum, real-world route planning with map integration, and collaborative dashboards for student-instructor pairs. Early feedback from pilot users has been strongly positive — particularly on the visual route-planning and the clarity of curriculum progress."
           }
         ],
         "testimonial": {
@@ -138,8 +163,7 @@
           "author": "Maria Andersson",
           "role": "Driving Instructor, Skåne"
         },
-        "nextProject": "qasa-rental-platform",
-        "password": null
+        "nextProject": "qasa-rental-platform"
       }
     },
     {
@@ -150,35 +174,38 @@
       "date": "2025",
       "location": "Remote/Stockholm",
       "url": "https://www.qasa.se",
-      "description": "Led product design within the Match team, making it easier for tenants and landlords to find each other, connect, and sign homes.",
-      "tags": ["Product Design", "UX Research", "AI Tools", "Rental Platform", "Figma", "AI Prototyping"],
+      "description": "At Qasa, I led product design within the Match team — responsible for making it easier and more delightful for tenants and landlords to find each other, connect, and sign homes across Sweden, Finland, and Norway.",
+      "tags": [
+        "Product Design",
+        "UX Research",
+        "AI Tools",
+        "Rental Platform",
+        "Figma",
+        "AI Prototyping"
+      ],
       "image": "/projects/qasa.jpg",
       "color": "#10B981",
       "featured": true,
-      "password": "WELCOME",
       "details": {
         "client": "Qasa",
         "duration": "4 months (May-Aug 2025)",
         "team": "Cross-functional with PMs, developers, customer support",
         "role": "Senior Product Design Consultant",
-        "challenge": "Improve the Find Tenant flow to reduce friction and increase conversions. Address the complexity of matching and signing workflows for both landlords and tenants.",
-        "solution": "Built high-fidelity, brand-consistent prototypes using AI-enhanced design tooling. Introduced full-journey mapping and redesigned flows to scale across the product.",
-        "impact": "Increased usage of Find Tenant tool, improved CSAT scores from landlords (avg. 2.6 to higher scores), positive feedback on image upload improvements and profile clarity.",
+        "challenge": "Qasa's Find Tenant flow had significant friction: landlords struggled to understand how to reach the right tenants, image uploads were clunky, and CSAT scores reflected the frustration. The matching flow needed a full redesign that could scale across markets.",
+        "solution": "Built high-fidelity, brand-consistent prototypes using AI-enhanced design tooling. Introduced full-journey mapping for both landlords and tenants. Redesigned flows and patterns from scratch to work across the full product. Also built a custom Lovable prototyping tool using Qasa's design system — now a permanent tool in their product toolbox.",
+        "impact": "Increased adoption of the Find Tenant tool. Improved CSAT scores from landlords (avg. 2.6 → higher). Positive user feedback on image upload improvements and profile clarity. The Lovable prototype tool is now used by the team for shaping new product bets.",
         "sections": [
           {
             "title": "Research & Analysis",
-            "content": "CSAT scores from landlords highlighted issues in listing and tenant discovery. Market benchmarking across Sweden, Finland, and Norway revealed UX gaps in image upload flows.",
-            "images": ["/projects/qasa/research-1.jpg"]
+            "content": "CSAT scores from landlords highlighted pain points in listing creation and tenant discovery. I ran heuristic audits of the existing flows and benchmarked competitors across Sweden, Finland, and Norway. We identified a clear gap: landlords had no intuitive way to evaluate tenant quality, and tenants couldn't signal their fit effectively."
           },
           {
             "title": "AI-Enhanced Design Process",
-            "content": "Led workshops, heuristic audits, and built AI-usable design system components to speed up iteration. Used AI to explore edge cases and accelerate ideation.",
-            "images": ["/projects/qasa/process-1.jpg"]
+            "content": "Led workshops and rapid ideation sessions using AI to explore edge cases and accelerate iterations. Built AI-usable design system components in Figma to speed up prototyping. Used AI to run through 20+ variations of key flows in the time it would normally take to design 3."
           },
           {
             "title": "Lovable Prototyping Tool",
-            "content": "Built a custom Lovable prototyping tool for Qasa using their design system and branding. Now part of their toolbox for shaping product bets and validating concepts.",
-            "images": ["/projects/qasa/lovable-1.jpg", "/projects/qasa/lovable-2.jpg"]
+            "content": "Built a custom prototyping tool for Qasa using Lovable and their design system components. This enabled non-designers and PMs to generate realistic UI explorations for new product bets, without needing a designer present. The tool is now a permanent part of their workflow for validating ideas before committing to full design sprints."
           }
         ],
         "testimonial": {
@@ -197,35 +224,40 @@
       "date": "2017-2025",
       "url": "https://www.asteria.ai",
       "location": "Remote/Stockholm",
-      "description": "Transformed complex financial tools into intuitive digital products for SMEs, reaching over 400,000 users through partnerships with Swedbank and PayEx.",
-      "tags": ["Fintech", "Product Design", "Co-founder", "SaaS", "Banking", "Design Systems", "Figma", "AI Prototyping"],
+      "description": "At Asteria, I co-founded and led product design for 8 years — transforming complex financial tools into intuitive digital products for SMEs, reaching over 400,000 users through partnerships with Swedbank and PayEx.",
+      "tags": [
+        "Fintech",
+        "Product Design",
+        "Co-founder",
+        "SaaS",
+        "Banking",
+        "Design Systems",
+        "Figma",
+        "AI Prototyping"
+      ],
       "image": "/projects/asteria.jpg",
       "color": "#6366F1",
       "featured": true,
-      "password": "fintech2025",
       "details": {
         "client": "Swedbank, PayEx, SMEs",
         "duration": "8 years (2017-2025)",
         "team": "Co-founder team + partners",
         "role": "Co-Founder & Lead Product Designer",
-        "challenge": "Bring advanced cash flow and financial planning tools to SMEs in a way that feels accessible, delightful, and easy to integrate with banking workflows.",
-        "solution": "Led design from discovery to delivery. Built modular design systems, dashboards, and forecasting interfaces embedded in partner platforms.",
-        "impact": "Over 400,000 users through partnerships. Successfully rolled out Företagskollen to Swedbank's SME clientele. PayEx integrated solution launched with prominent banks.",
+        "challenge": "Small and medium businesses in Sweden were flying blind on cash flow. Complex financial data was locked inside accounting software, inaccessible to the owners who needed it most. Banks had no simple way to offer SMEs meaningful financial insight within their existing digital channels.",
+        "solution": "Led product design from zero to scale. Built modular design systems and forecasting dashboards embedded directly into Swedbank's online banking environment. Created intuitive visualizations that turned raw transaction data into actionable cash flow insights — accessible to non-financial users.",
+        "impact": "Over 400,000 users through Swedbank's SME clientele. Successfully launched Företagskollen as a white-label product inside Swedbank's banking platform. PayEx integration launched with prominent Nordic banks. Product evolved continuously for 8 years under my design leadership.",
         "sections": [
           {
             "title": "SME Research & Discovery",
-            "content": "Comprehensive user research with SMEs revealed complex financial planning pain points. Small business owners needed simpler, digital cash flow management solutions.",
-            "images": ["/projects/asteria/research-1.jpg"]
+            "content": "Comprehensive user research with SME owners across Sweden revealed a consistent pattern: small business owners felt overwhelmed by financial management and underserved by their banks. They needed something that felt simple, lived where they already banked, and gave them confidence — not complexity."
           },
           {
             "title": "Banking Partnership Integration",
-            "content": "Designed modular systems for integration with Swedbank and PayEx platforms. Created embedded financial tools that felt native to each partner's ecosystem.",
-            "images": ["/projects/asteria/banking-1.jpg", "/projects/asteria/banking-2.jpg"]
+            "content": "Designed modular design systems that could be embedded into Swedbank and PayEx platforms while feeling native to each partner's brand. Every component had to work within strict banking UI constraints while still being intuitive and delightful — a genuine design challenge at scale."
           },
           {
             "title": "Scalable Design Systems",
-            "content": "Built design systems and dashboard interfaces that served 400,000+ users. Focused on making complex financial data accessible and actionable for non-experts.",
-            "images": ["/projects/asteria/dashboard-1.jpg"]
+            "content": "Built and maintained the full design system for Asteria's product suite over 8 years. Covered the core cash flow app, bank integrations, admin panels, and partner portals. The system scaled from a 3-person startup to a product serving hundreds of thousands of users across multiple banking platforms."
           }
         ],
         "testimonial": {
@@ -233,8 +265,7 @@
           "author": "Anders Nordkvist",
           "role": "CEO at Asteria AB"
         },
-        "nextProject": "spotify-data-saver",
-        "password": "fintech2025"
+        "nextProject": "spotify-data-saver"
       }
     },
     {
@@ -244,35 +275,36 @@
       "type": "Senior Product Design Consultant",
       "date": "2017",
       "location": "Stockholm/Brazil",
-      "description": "Designed a low-data music streaming experience for users in emerging markets like Brazil, conducting field research in favelas.",
-      "tags": ["Mobile Design", "Emerging Markets", "User Research", "Music Tech"],
+      "description": "At Spotify, I designed a low-data music streaming experience for users in emerging markets — conducting field research in Brazilian favelas, and launching a feature that reduced data usage by 99%.",
+      "tags": [
+        "Mobile Design",
+        "Emerging Markets",
+        "User Research",
+        "Music Tech"
+      ],
       "image": "/projects/spotify.jpg",
       "color": "#1DB954",
       "featured": true,
-      "password": "WELCOME",
       "details": {
         "client": "Spotify",
         "duration": "4 months (Mar-Jun 2017)",
         "team": "Product owners, developers in Stockholm",
         "role": "Senior Product Design Consultant",
-        "challenge": "Make Spotify usable in low-bandwidth areas and increase adoption in favelas and other regions with data limitations. High data costs were a major barrier to adoption.",
-        "solution": "Designed and tested a 'Data Saver' theme that streamed music with 1% of the normal data use. Conducted field interviews and user testing on-site in Brazil.",
-        "impact": "Successfully launched feature with increased adoption in target markets and measurable improvements in retention. Feature let users play four on-demand playlists with just 1% of their data.",
+        "challenge": "In Brazil and other emerging markets, high data costs were the single biggest barrier to Spotify adoption. Many users still downloaded music the old-fashioned way because they couldn't trust streaming on the go. Spotify needed a way to remove that fear without removing the magic of on-demand music.",
+        "solution": "Designed a distinct 'Data Saver' mode with a dark-blue theme that made the data-saving state visually clear. The feature allowed users to play four on-demand playlists using just 1% of normal data. Conducted field research and live user testing in Brazil — adapting the design in real time based on what we saw.",
+        "impact": "After A/B testing, the Data Saver feature stood out as a game-changer. It made streaming feel safe and accessible even without Wi-Fi. Increased adoption in target markets and measurably improved retention among users who previously downloaded music only.",
         "sections": [
           {
             "title": "Field Research in Brazil",
-            "content": "Conducted field interviews and user testing on-site in Brazil. Studied data usage behaviors and understood real barriers caused by high data costs in favelas.",
-            "images": ["/projects/spotify/research-1.jpg"]
+            "content": "Spent two weeks in Brazil conducting field interviews and usability testing on-site — including in favelas where data costs had the most impact. We tested ideas in people's homes, adapting our approach in real time. This kind of hands-on, immersive research was rare even at Spotify's scale, and it shaped everything that followed."
           },
           {
             "title": "Data Saver Design",
-            "content": "Designed a feature that let users play four on-demand playlists with just 1% of their data. Created intuitive UI that made data usage transparent and controllable.",
-            "images": ["/projects/spotify/design-1.jpg", "/projects/spotify/design-2.jpg"]
+            "content": "Designed a dark-blue visual mode to create a clear, confident feeling of being in 'data-safe mode'. The UI made data consumption visible and controllable, so users felt in charge rather than anxious. The feature let users access four on-demand playlists using only 1% of their normal data allowance."
           },
           {
             "title": "A/B Testing & Launch",
-            "content": "After nail-biting A/B tests, the Data Saver feature stood out as a game-changer. Made streaming feel safer and more accessible even without Wi-Fi.",
-            "images": ["/projects/spotify/testing-1.jpg"]
+            "content": "After extensive A/B testing — which the team described as 'nail-biting' — Data Saver came out as the clear winner. The feature launched globally for emerging markets, and the results showed measurable improvements in user retention and confidence in streaming outside of Wi-Fi zones."
           }
         ],
         "testimonial": {
@@ -280,6 +312,415 @@
           "author": "Internal User Research",
           "role": "Spotify Brazil Team"
         },
+        "nextProject": "lansforsakringar-digital-design"
+      }
+    },
+    {
+      "id": "project-5",
+      "slug": "lansforsakringar-digital-design",
+      "name": "Länsförsäkringar - Digital Design System",
+      "type": "Art Director Consultant",
+      "date": "2016-2017",
+      "location": "Stockholm",
+      "url": "https://www.lansforsakringar.se",
+      "description": "At Länsförsäkringar, I modernized the digital brand identity in collaboration with Identity Works — leading the creation of a design system adopted across web, mobile, and internal platforms. Won Best App & Web 2017.",
+      "tags": [
+        "Design Systems",
+        "Insurance",
+        "Enterprise",
+        "Figma",
+        "Component Libraries",
+        "Mobile & Web Design"
+      ],
+      "image": "/projects/lansforsakringar.jpg",
+      "color": "#005AA0",
+      "featured": true,
+      "details": {
+        "client": "Länsförsäkringar (with Identity Works)",
+        "duration": "1 year (Mar 2016 - Feb 2017)",
+        "team": "Cross-functional with designers, developers, and brand team",
+        "role": "Art Director Consultant",
+        "challenge": "Länsförsäkringar had a fragmented digital presence spread across a website, mobile app, bank portal, and internal insurance tools — each with its own visual language. Customers experienced a disjointed brand every time they moved between channels. The company needed a unified digital identity that stayed true to their local roots.",
+        "solution": "Led a 5-week design sprint to generate ideas and prototypes for all major platforms. Then transitioned into an Art Director consultant role to ensure consistent application of the new system across all teams. Built a comprehensive cross-platform design system using Figma, component libraries, and design tokens — covering web, iOS, Android, and internal portals. Collaborated with accessibility specialists Funka throughout.",
+        "impact": "Awarded Best App & Web 2017. Launched a unified digital experience across all platforms that served millions of Swedish customers. The design system became the long-term foundation for Länsförsäkringar's product development — still in active use years after launch.",
+        "sections": [
+          {
+            "title": "Research & Discovery",
+            "content": "Conducted a comprehensive audit of existing digital properties, mapping inconsistencies and pain points across web, mobile, and internal tools. Collaborated with the Länsförsäkringar brand team to understand their values — particularly their emphasis on local ownership and community presence — and translated these into digital design principles."
+          },
+          {
+            "title": "Design System Architecture",
+            "content": "Built a complete design system from the ground up in Figma: design tokens for color, typography, spacing, and motion; modular components that scaled across iOS, Android, and web; and thorough documentation for implementation teams. Every component was built to be both flexible and consistently branded."
+          },
+          {
+            "title": "Cross-Platform Implementation",
+            "content": "Rolled the system out across all platforms while working directly with development teams to ensure pixel-perfect implementation. Trained internal designers and developers on system usage and governance. Set up accessibility guidelines meeting WCAG standards in collaboration with Funka, Sweden's leading accessibility consultancy."
+          },
+          {
+            "title": "Award-Winning Results",
+            "content": "The new unified digital experience launched in late 2016 and won Best App & Web 2017. The design system created a scalable foundation that the Länsförsäkringar team could build on independently — and which remained in use long after the initial engagement ended."
+          }
+        ],
+        "testimonial": {
+          "quote": "Daniel is a skilled Art Director with an eye for detail. He works super fast and comes up with suggestions for new approaches. He maintains a high pace with high quality. Daniel has been part of the process to develop Länsförsäkringar's new digital expression and we have had high pressure but so much fun during the time. Good luck going forward, hope we get to work together again soon :)",
+          "author": "Liza Hansson",
+          "role": "Strategic Lead Designer at Variant Sverige"
+        },
+        "nextProject": "vromm-driving-app"
+      }
+    },
+    {
+      "id": "project-6",
+      "slug": "foretagskollen-swedbank",
+      "name": "Företagskollen – Swedbank",
+      "type": "Lead Product Design",
+      "date": "2017–Present",
+      "location": "Stockholm",
+      "url": "https://www.swedbank.se",
+      "description": "Together with Swedbank, we built Företagskollen — a cash flow management tool integrated directly into Swedbank's online banking platform, giving 400,000+ business clients a clear window into their financial health.",
+      "tags": [
+        "Fintech",
+        "Product Design",
+        "Banking",
+        "Design Systems",
+        "Figma"
+      ],
+      "image": "/projects/foretagskollen.jpg",
+      "color": "#FF5A00",
+      "featured": false,
+      "details": {
+        "client": "Swedbank / Asteria",
+        "duration": "2017–Present",
+        "team": "Asteria + Swedbank cross-functional team",
+        "role": "Lead Product Designer",
+        "challenge": "Small business owners in Sweden were managing cash flow through spreadsheets, accountants, or not at all. Swedbank had the data but no good way to surface it meaningfully. SME owners needed a simple, visual snapshot of their finances — inside the banking environment they already used every day.",
+        "solution": "Designed Företagskollen as a native-feeling feature inside Swedbank's digital banking platform. The tool pulls real transactions and bank balances, sorts and categorizes them, and generates a forward-looking cash flow forecast — visualized in a way that any business owner can understand at a glance. Led the design process end to end, from research through coding and feature refinement.",
+        "impact": "Successfully rolled out to 400,000+ Swedbank SME customers, backed by a major marketing campaign. Became a standalone product beyond Swedbank's platform — now reaching additional users and expanding toward mobile.",
+        "sections": [
+          {
+            "title": "Understanding the Problem",
+            "content": "Spent time with small business owners across Sweden to understand their relationship with financial data. The consistent finding: most felt overwhelmed by numbers, mistrustful of forecasts, and disconnected from their bank's digital tools. They needed something that felt human, not like a finance dashboard."
+          },
+          {
+            "title": "Design & Integration",
+            "content": "Designed Företagskollen to feel native inside Swedbank's existing digital banking product — not a bolted-on tool. Every design decision prioritized clarity and confidence over completeness. Worked closely with the Asteria and Swedbank engineering teams to ensure the forecasting logic was accurately represented in the UI."
+          },
+          {
+            "title": "Launch & Evolution",
+            "content": "The product launched inside Swedbank's platform with a full marketing rollout. User feedback shaped continuous iterations. Over time, Företagskollen grew beyond Swedbank into a standalone product, and mobile expansion became the next frontier — something the original design system was built to support."
+          }
+        ],
+        "testimonial": {
+          "quote": "I've had the pleasure of working with Daniel for over 5 years. Daniel is a great resource and it has been a joy to see how Daniel has developed during our time working together. I highly recommend hiring Daniel.",
+          "author": "Anders Nordkvist",
+          "role": "CEO at Asteria AB"
+        },
+        "nextProject": "invoice-portal-payex"
+      }
+    },
+    {
+      "id": "project-7",
+      "slug": "invoice-portal-payex",
+      "name": "Invoice Portal – PayEx",
+      "type": "Lead Product Design",
+      "date": "2023–Present",
+      "location": "Stockholm",
+      "url": "https://www.payex.com",
+      "description": "In partnership with PayEx (a Swedbank subsidiary), we designed a streamlined invoice administration and factoring portal — giving Nordic SMEs a simple, automated way to manage cash flow through invoice financing.",
+      "tags": [
+        "Fintech",
+        "Product Design",
+        "SaaS",
+        "Banking",
+        "Figma"
+      ],
+      "image": "/projects/payex.jpg",
+      "color": "#1A3C8F",
+      "featured": false,
+      "details": {
+        "client": "PayEx / Asteria",
+        "duration": "2023–Present",
+        "team": "Asteria + PayEx team",
+        "role": "Lead Product Designer",
+        "challenge": "SMEs needed a way to access invoice factoring without wading through complex financial processes. PayEx had the infrastructure but lacked a user-friendly front end that could guide small business owners through signing up, connecting their systems, and selecting invoices for financing.",
+        "solution": "Designed a two-part system: a user-facing portal for SMEs to manage invoices and access factoring, and a partner admin section for PayEx to manage users and platform operations. Key features included automated invoice mapping, intelligent invoice scanning, and a streamlined customer journey from signup through first factoring submission.",
+        "impact": "Launched successfully with two prominent Nordic banks. SMEs now have a significantly faster, more automated path to invoice financing — reducing what was previously a complex, paper-heavy process into a clean digital workflow.",
+        "sections": [
+          {
+            "title": "Mapping the Customer Journey",
+            "content": "Worked closely with PayEx and the Asteria team to map the full factoring journey from the SME's perspective — from first contact through system connection, invoice selection, and submission. Every step had friction that needed to be eliminated. The goal was to make factoring feel as simple as online banking."
+          },
+          {
+            "title": "Dual-Interface Design",
+            "content": "The solution required two distinct interfaces built on a shared design system: the SME user portal for day-to-day invoice management, and the PayEx admin panel for user management and operational oversight. Maintaining design consistency across both while serving very different user needs was a central challenge."
+          },
+          {
+            "title": "Automation & Launch",
+            "content": "The key technical design challenge was representing automated invoice processing in a way users could trust. Designed clear status flows, confirmation states, and error handling that made the automation feel reliable and transparent. Launched with two prominent banks in the Nordic region."
+          }
+        ],
+        "nextProject": "addictive-keys-xln"
+      }
+    },
+    {
+      "id": "project-8",
+      "slug": "addictive-keys-xln",
+      "name": "Addictive Keys – XLN Audio",
+      "type": "Lead Product Design",
+      "date": "2015",
+      "location": "Sweden",
+      "description": "Redesigned XLN Audio's Addictive Keys VST plugin — introducing AI-driven sound recommendations, a streamlined instrument library, and a modern flat-skeuomorphic UI to help music producers find the right sound faster.",
+      "tags": [
+        "Product Design",
+        "Music Tech",
+        "UX/UI",
+        "AI",
+        "Figma"
+      ],
+      "image": "/projects/xlnaudio.jpg",
+      "color": "#1A1A2E",
+      "featured": false,
+      "details": {
+        "client": "XLN Audio",
+        "duration": "2015",
+        "team": "Solo consultant",
+        "role": "Lead Product Designer",
+        "challenge": "Music producers using Addictive Keys spent too much time scrolling through presets and fighting an interface that wasn't built for fast creative flow. The standalone version especially felt outdated. XLN Audio needed a redesign that matched how modern producers actually work — fast, intuitive, AI-assisted.",
+        "solution": "Proposed a redesign centered around three pillars: an AI-based sound recommendation engine that learns from user behavior and suggests relevant presets; a simplified instrument library with faster navigation and visual categorization; and a refreshed UI that balanced skeuomorphic warmth with the clean, flat design sensibility of modern music tools.",
+        "impact": "The concept was presented to XLN Audio and received strong positive feedback — acknowledged as innovative and well-aligned with where the creative tools market is heading. Confirmed appetite for an AI-enhanced redesign direction.",
+        "sections": [
+          {
+            "title": "Creative Tools Research",
+            "content": "Researched the current VST plugin landscape — Spitfire Audio, Native Instruments, Arturia — to understand where UI/UX standards were heading. Found a clear trend toward cleaner, faster navigation with smart search and AI-assisted discovery. Addictive Keys had strong sonic quality but needed a UI to match."
+          },
+          {
+            "title": "AI Recommendation Engine Concept",
+            "content": "Designed an AI-based sound recommendation layer that surfaces relevant presets based on the producer's project context, recent selections, and usage patterns. The goal was to eliminate preset browsing paralysis — letting the tool anticipate what you need before you know to ask for it."
+          },
+          {
+            "title": "Visual Design Direction",
+            "content": "Developed a UI direction that kept the warm, tactile quality of the original skeuomorphic design while adopting the cleaner navigation patterns of modern flat design. The result felt premium and familiar — not a complete departure, but a confident evolution that made the tool feel current without alienating existing users."
+          }
+        ],
+        "nextProject": "klm-airlines"
+      }
+    },
+    {
+      "id": "project-9",
+      "slug": "klm-airlines",
+      "name": "KLM Royal Dutch Airlines",
+      "type": "Senior Designer Consultant",
+      "date": "Aug–Oct 2015",
+      "location": "Amsterdam",
+      "url": "https://www.klm.com",
+      "description": "Joined AKQA Amsterdam as Senior Designer Consultant to redesign KLM's web booking experience — making flight search, planning, and booking feel as smooth and human as the airline itself.",
+      "tags": [
+        "Product Design",
+        "UX/UI",
+        "Travel",
+        "Enterprise",
+        "Figma"
+      ],
+      "image": "/projects/klm.jpg",
+      "color": "#00A1DE",
+      "featured": false,
+      "details": {
+        "client": "KLM (via AKQA Amsterdam)",
+        "duration": "Aug–Oct 2015",
+        "team": "AKQA Amsterdam + KLM team",
+        "role": "Senior Designer Consultant",
+        "challenge": "KLM's digital booking experience felt transactional and dated compared to the warmth and care of their in-flight experience. The gap between the brand promise and the online journey was significant — especially for complex itineraries and multi-leg bookings.",
+        "solution": "Worked in close collaboration with KLM's product team and the AKQA Amsterdam team across multiple design sprints. Each sprint brought us closer to a booking flow that was visually cohesive, emotionally warmer, and functionally cleaner — from destination search through seat selection and confirmation.",
+        "impact": "Delivered a complete design set for beta.klm.com. The project was ultimately redirected at the business level — not due to design quality but due to a strategic pivot. The work laid strong groundwork for KLM's subsequent digital evolution.",
+        "sections": [
+          {
+            "title": "Understanding the Traveler",
+            "content": "Conducted deep user research with KLM's team to understand what travelers actually needed from an airline website — beyond booking. Planning mode vs. buying mode. The anxiety of complex itineraries. The desire for clarity on baggage, flexibility, and seat options. All of this shaped the design principles we built from."
+          },
+          {
+            "title": "Sprint-Based Design Process",
+            "content": "Worked in rapid design sprints with AKQA and KLM stakeholders. Each sprint focused on a specific part of the journey — destination discovery, flight selection, passenger details, confirmation. Concepts were prototyped quickly, tested with real users, and iterated before moving forward."
+          },
+          {
+            "title": "Design System for Scale",
+            "content": "Built a modular component library that could support KLM's global platform — handling multiple languages, currencies, and booking scenarios. Every component was designed to be both brand-expressive and highly functional, forming the design system foundation for beta.klm.com."
+          }
+        ],
+        "nextProject": "backbase-banking"
+      }
+    },
+    {
+      "id": "project-10",
+      "slug": "backbase-banking",
+      "name": "Backbase – Digital Banking Platform",
+      "type": "Lead Designer",
+      "date": "2012–2017",
+      "location": "Amsterdam",
+      "url": "https://www.backbase.com",
+      "description": "At Backbase, I designed UI/UX solutions for a leading digital banking platform serving major global banks — including ABN Amro, UniCredit, UOB Singapore, and Standard Chartered — across 5 years in Amsterdam.",
+      "tags": [
+        "Fintech",
+        "Product Design",
+        "Banking",
+        "Design Systems",
+        "Enterprise"
+      ],
+      "image": "/projects/backbase.jpg",
+      "color": "#FF4A4A",
+      "featured": false,
+      "details": {
+        "client": "ABN Amro, UniCredit, UOB Singapore, Standard Chartered",
+        "duration": "2012–2017 (5 years)",
+        "team": "Backbase product team",
+        "role": "Lead Designer",
+        "challenge": "Global banks needed digital banking solutions fast — responsive, on-brand, and consistent across web and mobile. Backbase's platform had to serve radically different clients with radically different needs, while maintaining a unified component architecture. Design turnaround times were often measured in days, not weeks.",
+        "solution": "Developed a themeable 'Launchpad' platform that allowed bank partners to customize interfaces with their branding while building on a shared, tested component foundation. Designed an admin panel and CMS improvements that gave banks operational control. Traveled internationally to present proof-of-concept demos to bank stakeholders.",
+        "impact": "Launchpad significantly accelerated delivery of online and mobile banking projects across Backbase's global client base. Consistent UX across platforms improved client satisfaction and reduced implementation time. The platform went on to serve billions of banking users worldwide.",
+        "sections": [
+          {
+            "title": "Banking at Scale",
+            "content": "Working at Backbase meant designing for constraints most designers never encounter — strict regulatory requirements, legacy system integrations, and the need for a single platform to serve banks in a dozen different countries, each with their own brand, language, and user expectations."
+          },
+          {
+            "title": "Themeable Platform Design",
+            "content": "The core design challenge was building a flexible but cohesive system that bank partners could theme to their brand without breaking consistency. I designed the component architecture, token system, and documentation that made Launchpad possible — a platform within a platform."
+          },
+          {
+            "title": "Client Delivery & Travel",
+            "content": "Regularly flew to client sites — ABN Amro in Amsterdam, UniCredit across Europe, UOB in Singapore — to present proof-of-concept designs and gather direct stakeholder feedback. This hands-on client engagement shaped how the platform evolved and built long-term relationships with banking partners."
+          }
+        ],
+        "testimonial": {
+          "quote": "Daniel is a very talented designer we have hired for Backbase. He delivers top quality work while being efficient. Daniel is a multi talent who's also a great guy and fun to work with. If I have the opportunity to hire him again in the future, I would certainly do that.",
+          "author": "Wouter Koeleman",
+          "role": "Sr Manager Talent Acquisition, Backbase"
+        },
+        "nextProject": "abro-bryggeri"
+      }
+    },
+    {
+      "id": "project-11",
+      "slug": "abro-bryggeri",
+      "name": "Åbro Bryggeri – Website Redesign",
+      "type": "UX/UI Designer & Frontend Developer",
+      "date": "2014",
+      "location": "Sweden",
+      "url": "https://abro.se",
+      "description": "Teamed up with Producks and Folkets Stockholm to redesign Åbro Bryggeri's online presence — creating a website that felt as welcoming and characterful as Sweden's beloved independent brewery.",
+      "tags": [
+        "Web Design",
+        "Frontend Development",
+        "UX/UI",
+        "CMS",
+        "WordPress"
+      ],
+      "image": "/projects/abro.jpg",
+      "color": "#C8A951",
+      "featured": false,
+      "details": {
+        "client": "Åbro Bryggeri",
+        "duration": "2014",
+        "team": "Producks + Folkets Stockholm",
+        "role": "UX/UI Designer & Frontend Developer",
+        "challenge": "Åbro had a rich brand story and a loyal following, but their website didn't do them justice. It was hard to navigate, visually dated, and didn't reflect the warmth and personality of the brand. They needed a digital home that felt right — and a CMS that the Åbro team could actually use.",
+        "solution": "Designed and developed a new website that put Åbro's story and products front and center. Spent time getting to know the Åbro team and their fans before a single pixel was placed. Built a custom, user-friendly CMS backend that gave the Åbro team full control over content — no developer required.",
+        "impact": "Launched in early 2015. The new site brought Åbro's story and product range to life in a way the old one never could. The custom CMS gave the team genuine independence. A proud outcome for a classic Swedish brand.",
+        "sections": [
+          {
+            "title": "Getting to Know Åbro",
+            "content": "Before designing anything, we spent time with the Åbro team — understanding their history, what made their brewery special, and what their customers loved about them. Great brand websites start with genuine understanding, not templates. That time invested showed in the final product."
+          },
+          {
+            "title": "Design & Build",
+            "content": "Designed a site that prioritized warmth, character, and ease of navigation — putting products and brand story front and center. Built a custom CMS backend that gave the Åbro team full editorial control, without needing a developer for every update. Accessibility and future growth were baked into the build from the start."
+          }
+        ],
+        "nextProject": "steem-navii"
+      }
+    },
+    {
+      "id": "project-12",
+      "slug": "steem-navii",
+      "name": "Steem – Web2Print Platform",
+      "type": "Co-founder & Lead Designer",
+      "date": "2011–2012",
+      "location": "Västerås",
+      "description": "Co-founded Steem within Navii design agency — a Web2Print SaaS platform that let Swedish organizations order and personalize branded marketing materials online. Nominated Sweden's best Web2Print tool at the 2011 Graphic Awards.",
+      "tags": [
+        "Startup",
+        "Product Design",
+        "Web Design",
+        "SaaS",
+        "Frontend Development"
+      ],
+      "image": "/projects/steem.jpg",
+      "color": "#2D6A4F",
+      "featured": false,
+      "details": {
+        "client": "Navii / Centerpartiet + Swedish organizations",
+        "duration": "2011–2012",
+        "team": "Navii internal startup team",
+        "role": "Co-founder & Lead Designer",
+        "challenge": "Swedish organizations — political parties, associations, businesses — had no good way to let local branches order personalized marketing materials at scale. Existing systems were too rigid, required print industry expertise, and couldn't handle the complexity of brand-governed personalization.",
+        "solution": "Built an online storefront for end users to browse, personalize, and order branded materials, plus a backend admin system for organizations to upload customizable templates and define exactly what end users could and couldn't change. Traveled across Sweden to demo and test the platform live with real customers.",
+        "impact": "Quickly adopted by key organizations including Centerpartiet. Nominated as Sweden's best Web2Print tool at the Graphic Awards, November 2011. Demonstrated that a small internal startup could outcompete established print industry players with better UX.",
+        "sections": [
+          {
+            "title": "The Web2Print Opportunity",
+            "content": "The Swedish print industry was ripe for disruption. Organizations were managing branded print orders through phone calls and email chains, with no self-service options and no brand control at the local level. We saw an opportunity to build the tool that didn't exist yet."
+          },
+          {
+            "title": "On the Road with Customers",
+            "content": "We took the product on the road — meeting customers across Sweden to demo, test, and gather feedback in person. This direct customer engagement was invaluable. It shaped what features we built, what we simplified, and what we left out. Building in public, before building in public was a thing."
+          },
+          {
+            "title": "Launch & Recognition",
+            "content": "Centerpartiet became an early adopter, validating our approach for large organizations. The platform was nominated as Sweden's best Web2Print tool at the Graphic Awards in November 2011 — recognition that a small team with good design thinking could build something world-class."
+          }
+        ],
+        "nextProject": "vromm-driving-app"
+      }
+    },
+    {
+      "id": "project-13",
+      "slug": "mrusta-dubai",
+      "name": "mrUsta – Service Marketplace",
+      "type": "UX/UI Designer",
+      "date": "2015",
+      "location": "Dubai",
+      "description": "Designed the UX and UI for mrUsta's mobile app — a Dubai-based service marketplace connecting residents with trusted local professionals, from plumbers to car mechanics.",
+      "tags": [
+        "Product Design",
+        "UX/UI",
+        "Mobile Design",
+        "Startup",
+        "Marketplace"
+      ],
+      "image": "/projects/mrusta.jpg",
+      "color": "#F59E0B",
+      "featured": false,
+      "details": {
+        "client": "mrUsta (Dubai)",
+        "duration": "2015",
+        "team": "mrUsta product team",
+        "role": "UX/UI Designer",
+        "challenge": "mrUsta had a working website but needed to transition to a native app experience that felt fast, trustworthy, and easy to use. Users needed to find the right professional quickly, book with confidence, and feel the brand's personality throughout the experience.",
+        "solution": "Designed a mobile-first app experience built around simplicity and trust signals. Mapped the full user journey from service discovery through booking and confirmation. Worked closely with the mrUsta team to ensure the app matched their refreshed brand direction and felt native to Dubai's multicultural, fast-moving user base.",
+        "impact": "Delivered a complete, developer-ready design set for the mrUsta app — covering all core flows from onboarding through booking. The designs gave the development team a clear, well-specified foundation to build from.",
+        "sections": [
+          {
+            "title": "Understanding the Market",
+            "content": "Dubai's service market is unique — a highly diverse user base, high expectations for speed and reliability, and a competitive landscape of informal service providers and established platforms. Understanding these dynamics was essential to designing something that felt local and trustworthy, not generic."
+          },
+          {
+            "title": "App UX Design",
+            "content": "Focused on three core flows: service discovery (what do you need?), provider selection (who can you trust?), and booking confirmation (when and how?). Each flow was designed to minimize steps while maximizing confidence. Clear service categories, provider ratings, and transparent pricing were central to the UX."
+          },
+          {
+            "title": "Design Handoff",
+            "content": "Delivered a complete, annotated design set ready for development — covering all screen states, edge cases, and component specifications. The mrUsta team had everything they needed to build the app without further design support, which was the brief from the start."
+          }
+        ],
         "nextProject": "vromm-driving-app"
       }
     }
@@ -307,126 +748,148 @@
     },
     {
       "id": "client-5",
+      "name": "SkiStar",
+      "url": "https://www.skistar.com"
+    },
+    {
+      "id": "client-6",
       "name": "Qasa",
       "url": "https://qasa.se"
     },
     {
-      "id": "client-6",
+      "id": "client-7",
       "name": "Backbase",
       "url": "https://www.backbase.com"
     },
     {
-      "id": "client-7",
+      "id": "client-8",
       "name": "AKQA",
       "url": "https://www.akqa.com"
     },
     {
-      "id": "client-8",
+      "id": "client-9",
       "name": "Fröjd Interactive",
       "url": "https://frojd.se"
     },
     {
-      "id": "client-9",
+      "id": "client-10",
       "name": "PayEx",
       "url": "https://www.payex.com"
     },
     {
-      "id": "client-10",
+      "id": "client-11",
       "name": "Record Union",
       "url": "https://www.recordunion.com"
     },
     {
-      "id": "client-11",
+      "id": "client-12",
       "name": "DDB Stockholm",
       "url": "https://www.ddb.com"
     },
     {
-      "id": "client-12",
+      "id": "client-13",
       "name": "Identity Works",
       "url": "https://identityworks.se"
     },
     {
-      "id": "client-13",
+      "id": "client-14",
       "name": "Apegroup",
       "url": "https://apegroup.com"
     },
     {
-      "id": "client-14",
+      "id": "client-15",
       "name": "Actic",
       "url": "https://actic.se"
     },
     {
-      "id": "client-15",
+      "id": "client-16",
       "name": "ÅBRO Bryggeri",
       "url": "https://abro.se"
     },
     {
-      "id": "client-16",
+      "id": "client-17",
       "name": "SJ",
       "url": "https://www.sj.se"
     },
     {
-      "id": "client-17",
+      "id": "client-18",
       "name": "MDH University",
       "url": "https://www.mdu.se"
     },
     {
-      "id": "client-18",
+      "id": "client-19",
       "name": "XLN",
       "url": "https://www.xln.se"
     },
     {
-      "id": "client-19",
+      "id": "client-20",
       "name": "Hyper Island",
       "url": "https://www.hyperisland.com"
     },
     {
-      "id": "client-20",
+      "id": "client-21",
       "name": "ABN Amro",
       "url": "https://www.abnamro.com"
     },
     {
-      "id": "client-21",
+      "id": "client-22",
       "name": "UniCredit",
       "url": "https://www.unicredit.it"
     },
     {
-      "id": "client-22",
+      "id": "client-23",
       "name": "UOB Singapore",
       "url": "https://www.uob.com.sg"
     },
     {
-      "id": "client-23",
+      "id": "client-24",
       "name": "Standard Chartered",
       "url": "https://www.sc.com"
     },
     {
-      "id": "client-24",
+      "id": "client-25",
       "name": "Vromm",
       "url": "https://www.vromm.se"
     },
     {
-      "id": "client-25",
+      "id": "client-26",
       "name": "Asteria",
       "url": "https://www.asteria.ai"
     },
     {
-      "id": "client-26",
+      "id": "client-27",
       "name": "Funka",
       "url": "https://funka.com"
     },
     {
-      "id": "client-27",
+      "id": "client-28",
       "name": "Navii",
       "url": "https://navii.se"
     },
     {
-      "id": "client-28",
+      "id": "client-29",
       "name": "Pod1",
       "url": "https://pod1.com"
     }
   ],
   "apps": [
+    {
+      "id": "app-0",
+      "slug": "skistar-app",
+      "name": "Skistar",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6e/41/ca/6e41ca04-2c2a-0071-ae31-8614e251f221/Placeholder.mill/200x200bb-75.webp",
+      "description": "Official SkiStar app for skiing",
+      "appStoreUrl": "https://apps.apple.com/se/app/skistar/id406481077",
+      "playStoreUrl": null,
+      "tags": [
+        "iOS",
+        "Skiing",
+        "Sports",
+        "Travel"
+      ],
+      "color": "#0066CC",
+      "featured": true
+    },
     {
       "id": "app-1",
       "slug": "vromm-app",
@@ -435,7 +898,16 @@
       "description": "AI-powered driving instruction app",
       "appStoreUrl": "https://www.vromm.se",
       "playStoreUrl": null,
-      "tags": ["React Native", "AI", "Education", "Startup", "Figma", "AI Prototyping", "AI-assisted Development", "Cursor"],
+      "tags": [
+        "React Native",
+        "AI",
+        "Education",
+        "Startup",
+        "Figma",
+        "AI Prototyping",
+        "AI-assisted Development",
+        "Cursor"
+      ],
       "color": "#3B82F6",
       "featured": true,
       "details": {
@@ -475,7 +947,12 @@
       "description": "Interactive gingerbread house competition",
       "appStoreUrl": "https://pepparkakshusbattle.se/",
       "playStoreUrl": null,
-      "tags": ["Web App", "Interactive", "Holiday", "Community"],
+      "tags": [
+        "Web App",
+        "Interactive",
+        "Holiday",
+        "Community"
+      ],
       "color": "#D97706",
       "featured": true,
       "details": {
@@ -515,7 +992,11 @@
       "description": "Subtle stealth project",
       "appStoreUrl": null,
       "playStoreUrl": null,
-      "tags": ["Stealth", "Tools", "Subtle"],
+      "tags": [
+        "Stealth",
+        "Tools",
+        "Subtle"
+      ],
       "color": "#6B7280",
       "featured": false,
       "details": {
@@ -532,6 +1013,53 @@
           "Hidden features"
         ]
       }
+    },
+    {
+      "id": "app-4",
+      "slug": "greeto",
+      "name": "Greeto",
+      "icon": "/apps/app_greeto.png",
+      "description": "Create personal greeting cards in seconds",
+      "appStoreUrl": "https://www.greeto.se",
+      "playStoreUrl": null,
+      "tags": [
+        "Web App",
+        "Cards",
+        "Greetings",
+        "Holiday",
+        "Swedish"
+      ],
+      "color": "#FFFFFF",
+      "featured": true,
+      "details": {
+        "category": "Cards & Greetings",
+        "platform": "Web",
+        "downloads": "Public Launch",
+        "rating": "New Release",
+        "releaseDate": "2025",
+        "version": "1.0",
+        "overview": "Create greeting cards that touch hearts. Personal greetings in just seconds, completely free. Perfect for Swedish holidays and special occasions.",
+        "features": [
+          "Quick card creation",
+          "Personalized greetings",
+          "Swedish holiday cards",
+          "Free to use",
+          "Beautiful templates",
+          "Instant sharing"
+        ],
+        "screenshots": [
+          "/apps/greeto/screen-1.jpg",
+          "/apps/greeto/screen-2.jpg",
+          "/apps/greeto/screen-3.jpg"
+        ],
+        "testimonials": [
+          {
+            "quote": "Perfect for creating beautiful Swedish greeting cards quickly!",
+            "author": "User",
+            "rating": 5
+          }
+        ]
+      }
     }
   ],
   "cv": {
@@ -542,23 +1070,33 @@
         "companyUrl": "https://www.instinctly.se",
         "period": "2007 - Present",
         "description": "Design & development consultancy serving clients like Qasa, Spotify, Swedbank, Länsförsäkringar, and KLM. 15+ years of product design and development.",
-        "recommendation": {
-          "quote": "I highly recommend Daniel! He helped us iterate design, prototype and test really fast. Daniel is at the cutting edge by combining a design, user experience understand, using AI coding - and being able to code himself!",
-          "author": "Fredrik Eklöf",
-          "role": "CEO & Founder | Peer Coaching @Emotional Fitness Sweden",
-          "date": "7 months ago"
-        },
+        "recommendations": [
+          {
+            "quote": "I had the pleasure of supporting and coaching Daniel during his tenure as a Product Designer at small startup. His performance consistently exceeded expectations, particularly given the high-paced, complex environments and demanding stakeholders he often navigated.\n\nDaniel possesses a truly strong eye for product design, coupled with an uncompromising attention to detail, which results in genuinely excellent customer experiences. He doesn't just execute; he is deeply strategic. Daniel has a rare ability to quickly identify inefficiencies or breakdowns in the design process and takes proactive, effective steps—both strategic and tactical—to improve our ways of working and overall output quality.\n\nHis extensive experience, ranging from agile startup environments to large-scale enterprises, speaks volumes about his versatility and adaptability. Regardless of the organizational size or domain, Daniel reliably delivers work of exceptional quality.\n\nWhat truly sets him apart is his unwavering commitment to growth. Daniel is relentlessly interested in learning and improving, not only as a product designer dedicated to his craft but also as a professional and a human being. He would be an invaluable asset to any team seeking a high-performing, strategically-minded, and growth-oriented Product Designer. I recommend him without reservation.",
+            "author": "Jens Wedin",
+            "role": "Design Director, Service Designer, CEO, Author",
+            "date": "December, 2025"
+          },
+          {
+            "quote": "I highly recommend Daniel! He helped us iterate design, prototype and test really fast. Daniel is at the cutting edge by combining a design, user experience understand, using AI coding - and being able to code himself!",
+            "author": "Fredrik Eklöf",
+            "role": "CEO & Founder | Peer Coaching @Emotional Fitness Sweden",
+            "date": "7 months ago"
+          }
+        ],
         "projects": [
+          "SkiStar (Present) – Consultant Lead Product Design. Leading product design for Scandinavia's premier ski resort app, enhancing booking flows, lift pass management, and on-mountain experiences for winter sports enthusiasts. Focused on streamlining resort navigation, real-time snow conditions, and seamless booking journeys that adapt to changing mountain conditions and guest needs. (https://apps.apple.com/se/app/skistar/id406481077)",
+          "All Aboard (2025) – Product Design Consultant. UX heuristic evaluation and redesign of train ticket booking platform. Focused on offer selection, route visualization, and journey comparison. Improved clarity in multi-leg journeys, seat selection, flexibility rules, and carrier differentiation. Created wireframes and UI designs ready for implementation. (https://allaboard.eu)",
           "Qasa (2025) – Senior Product Design Consultant. Led Match team product design, built AI-enhanced prototyping tools using Lovable, Figma, AI Prototyping, improved tenant-landlord matching flows. Created custom Qasa Design Systems replica for AI tools. (https://www.qasa.se)",
-          "Fröjd Interactive (Mar-May 2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, Figma, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects. Design Systems development and implementation. (https://frojd.se)",
-          "1-Week Design Sprint – Lund Startup (Feb 2025) – Led intensive design sprint. Delivered clickable prototypes, design refinements, and user-tested solutions using AI-assisted design tools and workshop facilitation. (https://www.less-studio.co/)",
-          "Energiforsk (2024) – Frontend Developer. Sweden's most energy-efficient website using Next.js, achieving 75% performance improvement. Accessibility and sustainability focus. (https://www.energiforsk.se)",
-          "Gavlegårdarna (2023) – UX/UI Designer & Frontend Developer. Housing platform for 30,000+ residents in Gävle. Vue.js with WCAG AA compliance and multi-language support. (https://www.gavlegardarna.se)",
-          "Record Union (Aug 2017-Mar 2018) – UX/UI Designer. Indie music artists online publishing platform. Responsible for UX & UI foundation and design systems for music distribution platform. (https://www.recordunion.com)",
-          "Spotify Data Saver (Mar-Jun 2017) – Product Design Consultant. Led UX design for low-data streaming feature for Brazil/emerging markets. Conducted field research in favelas, delivered 1% data usage solution. (https://www.spotify.com)",
-          "Länsförsäkringar (Mar 2016-Feb 2017) – Art Director Consultant with Identity Works. Digital Design Systems for Sweden's largest insurer. Cross-platform web, mobile, and internal portals. Figma, component libraries, and design tokens. Won Best App & Web 2017. (https://www.lansforsakringar.se)",
-          "KLM (Aug-Oct 2015) – Senior Design Consultant with AKQA Amsterdam. Online booking and travel experience redesign. Wireframes, flows, component designs for international platform. (beta.klm.com)",
-          "DDB Stockholm (Mar 2015) – UX Consultant. Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces. (https://www.ddb.com)",
+          "Fröjd Interactive (2025) – Frontend Design Consultant. React, Vue, Next.js, Storybook, Figma, and WordPress projects. Responsive component-based UIs with accessibility standards across multiple client projects. Design Systems development and implementation. (https://frojd.se)",
+          "1-Week Design Sprint – Lund Startup (2025) – Led intensive design sprint. Delivered clickable prototypes, design refinements, and user-tested solutions using AI-assisted design tools and workshop facilitation. (https://www.less-studio.co/)",
+          "Energiforsk (2025) – Frontend Developer. Sweden's most energy-efficient website using Next.js, achieving 75% performance improvement. Accessibility and sustainability focus. (https://www.energiforsk.se)",
+          "Gavlegårdarna (2025) – UX/UI Designer & Frontend Developer. Housing platform for 30,000+ residents in Gävle. Vue.js with WCAG AA compliance and multi-language support. (https://www.gavlegardarna.se)",
+          "Record Union (2017-2018) – UX/UI Designer. Indie music artists online publishing platform. Responsible for UX & UI foundation and design systems for music distribution platform. (https://www.recordunion.com)",
+          "Spotify Data Saver (2017) – Product Design Consultant. Led UX design for low-data streaming feature for Brazil/emerging markets. Conducted field research in favelas, delivered 1% data usage solution. (https://www.spotify.com)",
+          "Länsförsäkringar (2016-2017) – Art Director Consultant with Identity Works. Digital Design Systems for Sweden's largest insurer. Cross-platform web, mobile, and internal portals. Figma, component libraries, and design tokens. Won Best App & Web 2017. (https://www.lansforsakringar.se)",
+          "KLM (2015) – Senior Design Consultant with AKQA Amsterdam. Online booking and travel experience redesign. Wireframes, flows, component designs for international platform. (beta.klm.com)",
+          "DDB Stockholm (2015) – UX Consultant. Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces. (https://www.ddb.com)",
           "Backbase (2012-2017) – Lead Designer. Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Design Systems, component libraries, Figma workflows, and themeable admin portals for financial institutions. (https://www.backbase.com) 'Daniel is a very talented designer we have hired for Backbase. He delivers top quality work while being efficient. Daniel is a multi talent who's also a great guy and fun to work with. If I have the opportunity to hire him again in the future, I would certainly do that.' — Wouter Koeleman, Sr Manager Talent Acquisition",
           "Various startups and SMEs (2007-Present) – Product design, UX research, frontend development across fintech, healthcare, e-commerce. 15+ years serving clients from early-stage startups to Fortune 500 companies."
         ]

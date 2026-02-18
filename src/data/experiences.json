@@ -1,0 +1,147 @@
+{
+  "experiences": [
+    {
+      "id": "exp-1",
+      "role": "Founder & Product Designer",
+      "company": "Vromm",
+      "companyUrl": "https://www.vromm.se",
+      "period": "Feb 2025 – Present",
+      "startDate": "2025-02",
+      "endDate": null,
+      "current": true,
+      "type": "work",
+      "description": "Building an AI-driven driving school app that gamifies the learning experience and connects students, instructors, and parents in a smarter way. Solo-designed and developed using React Native with AI-assisted workflows (Cursor, ChatGPT, Claude)."
+    },
+    {
+      "id": "exp-2",
+      "role": "Senior Product Designer",
+      "company": "Qasa",
+      "companyUrl": "https://www.qasa.se",
+      "period": "May 2025 – Aug 2025",
+      "startDate": "2025-05",
+      "endDate": "2025-08",
+      "current": false,
+      "type": "work",
+      "description": "Led product design within the Match team, improving tenant-landlord matching flows and creating AI-enhanced prototyping tools. Built custom Lovable prototyping tool using Qasa's design system."
+    },
+    {
+      "id": "exp-3",
+      "role": "Co-Founder & Lead Product Designer",
+      "company": "Asteria",
+      "companyUrl": "https://www.asteria.ai",
+      "period": "Nov 2017 – May 2025",
+      "startDate": "2017-11",
+      "endDate": "2025-05",
+      "current": false,
+      "type": "work",
+      "description": "Co-founded and led product design for a fintech SaaS platform providing smart cash flow tools to SMEs through partnerships with Swedbank and PayEx. Reached 400,000+ users."
+    },
+    {
+      "id": "exp-4",
+      "role": "Senior Product Design Consultant",
+      "company": "Spotify",
+      "companyUrl": "https://www.spotify.com",
+      "period": "Mar 2017 – Jun 2017",
+      "startDate": "2017-03",
+      "endDate": "2017-06",
+      "current": false,
+      "type": "work",
+      "description": "Designed Data Saver feature for emerging markets, conducting field research in Brazilian favelas to understand data constraints. Reduced data usage to 1% through intelligent streaming design."
+    },
+    {
+      "id": "exp-5",
+      "role": "Art Director Consultant",
+      "company": "Länsförsäkringar",
+      "companyUrl": "https://www.lansforsakringar.se",
+      "period": "Mar 2016 – Feb 2017",
+      "startDate": "2016-03",
+      "endDate": "2017-02",
+      "current": false,
+      "type": "work",
+      "description": "Modernized digital identity for one of Sweden's largest insurers, creating comprehensive cross-platform design system. Won Best App & Web 2017 award."
+    },
+    {
+      "id": "exp-6",
+      "role": "Senior Design Consultant",
+      "company": "KLM",
+      "companyUrl": "https://www.klm.com",
+      "period": "2015",
+      "startDate": "2015-01",
+      "endDate": "2015-12",
+      "current": false,
+      "type": "work",
+      "description": "Online booking and travel experience redesign with AKQA Amsterdam. Wireframes, flows, and component designs for international platform."
+    },
+    {
+      "id": "exp-7",
+      "role": "UX Consultant",
+      "company": "DDB Stockholm",
+      "companyUrl": "https://www.ddb.com",
+      "period": "2015",
+      "startDate": "2015-01",
+      "endDate": "2015-12",
+      "current": false,
+      "type": "work",
+      "description": "Samsung projects with design department. Wireframing, prototyping, and UX design for consumer electronics interfaces."
+    },
+    {
+      "id": "exp-8",
+      "role": "Lead Designer",
+      "company": "Backbase",
+      "companyUrl": "https://www.backbase.com",
+      "period": "2012 – 2017",
+      "startDate": "2012-01",
+      "endDate": "2017-12",
+      "current": false,
+      "type": "work",
+      "description": "Banking platform UI for ABN Amro, UniCredit, UOB Singapore, Standard Chartered. Design Systems, component libraries, Figma workflows, and themeable admin portals for financial institutions."
+    },
+    {
+      "id": "exp-9",
+      "role": "Founder & Design Consultant",
+      "company": "Instinctly AB",
+      "companyUrl": "https://www.daniellauding.se",
+      "period": "2007 – Present",
+      "startDate": "2007-01",
+      "endDate": null,
+      "current": true,
+      "type": "work",
+      "description": "Design engineering consultancy specializing in AI-assisted product design, UX/UI, and frontend development for startups and enterprises. Worked with Spotify, Swedbank, Länsförsäkringar, PayEx, Qasa, KLM, and many others over 15+ years."
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-1",
+      "degree": "JavaScript Bootcamp",
+      "school": "Technigo",
+      "schoolUrl": "https://www.technigo.com",
+      "period": "2025 – 2026",
+      "startDate": "2025-01",
+      "endDate": "2026-12",
+      "type": "education",
+      "description": "Advanced JavaScript and modern web development bootcamp."
+    },
+    {
+      "id": "edu-2",
+      "degree": "Music Production & Theory",
+      "school": "Furuboda Folkhögskola",
+      "schoolUrl": "https://www.furuboda.nu",
+      "period": "2023 – 2024",
+      "startDate": "2023-08",
+      "endDate": "2024-05",
+      "type": "education",
+      "description": "Music production and sound design studies, exploring creative technology and audio."
+    },
+    {
+      "id": "edu-3",
+      "degree": "Digital Media Creative",
+      "school": "Hyper Island",
+      "schoolUrl": "https://www.hyperisland.com",
+      "period": "2009 – 2011",
+      "startDate": "2009-08",
+      "endDate": "2011-06",
+      "type": "education",
+      "description": "Intensive program focused on digital design, strategy, and modern work methodologies."
+    }
+  ]
+}
