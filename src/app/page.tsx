@@ -1,60 +1,10 @@
-"use client";
+import { getPortfolioData } from "@/lib/data";
+import HomeContent from "./HomeContent";
 
-import { useState } from "react";
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import Information from "@/components/Information";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Clients from "@/components/Clients";
-import CV from "@/components/CV";
-import Articles from "@/components/Articles";
-import Services from "@/components/Services";
-import Footer from "@/components/Footer";
-import portfolioData from "@/data/portfolio.json";
+// Always render dynamically (reads from DB at request time)
+export const dynamic = "force-dynamic";
 
-export default function Home() {
-  const { personal, skills, projects, clients, apps, cv } = portfolioData;
-  const [activeTag, setActiveTag] = useState<string | null>(null);
-
-  // Only show featured projects
-  const featuredProjects = projects.filter((p) => p.featured);
-  
-  const filteredProjects = activeTag
-    ? featuredProjects.filter((p) => p.tags.includes(activeTag))
-    : featuredProjects;
-
-  const filteredApps = activeTag
-    ? apps.filter((a) => a.tags.includes(activeTag))
-    : apps;
-
-  return (
-    <>
-      <Navigation />
-      <main>
-        <Hero 
-          firstName={personal.firstName} 
-          lastName={personal.lastName} 
-          title={personal.title}
-          subtitle={personal.subtitle}
-          status={personal.status}
-          apps={apps} 
-        />
-        <Information
-          bio={personal.bio}
-          tools={personal.tools}
-          roles={personal.roles}
-          experience={personal.experience}
-          keyContributions={cv.keyContributions}
-        />
-        <Skills skills={skills} activeTag={activeTag} onTagClick={setActiveTag} />
-        <Projects projects={filteredProjects} activeTag={activeTag} onTagClick={setActiveTag} />
-        <Clients clients={clients} />
-        <CV experience={cv.experience} education={cv.education} activeTag={activeTag} />
-        <Articles articles={cv.mediumPosts} />
-        {/* <Services /> */}
-      </main>
-      <Footer />
-    </>
-  );
+export default async function Home() {
+  const data = await getPortfolioData();
+  return <HomeContent data={data as Parameters<typeof HomeContent>[0]["data"]} />;
 }

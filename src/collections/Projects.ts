@@ -24,7 +24,6 @@ export const Projects: CollectionConfig = {
     {
       name: 'type',
       type: 'text',
-      required: true,
     },
     {
       name: 'description',
@@ -34,7 +33,6 @@ export const Projects: CollectionConfig = {
     {
       name: 'date',
       type: 'text',
-      required: true,
     },
     {
       name: 'location',
@@ -64,7 +62,16 @@ export const Projects: CollectionConfig = {
       name: 'image',
       type: 'upload',
       relationTo: 'media',
-      required: true,
+      required: false,
+    },
+    {
+      name: 'imageUrl',
+      type: 'text',
+      label: 'Image URL (fallback)',
+      admin: {
+        position: 'sidebar',
+        description: 'Used when no uploaded image is available (e.g. /projects/image.jpg)',
+      },
     },
     {
       name: 'tags',

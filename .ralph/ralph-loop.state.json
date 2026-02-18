@@ -1,0 +1,13 @@
+{
+  "active": true,
+  "iteration": 1,
+  "minIterations": 1,
+  "maxIterations": 8,
+  "completionPromise": "COMPLETE",
+  "tasksMode": false,
+  "taskPromise": "READY_FOR_NEXT_TASK",
+  "prompt": "Read PAYLOAD-CMS-BRIEF.md in the project root for full context.\n\nCurrent state: branch `feature/payload-cms-content`, Payload v3 already installed with SQLite adapter.\n\nTasks to complete (in order):\n1. Fix any broken/deleted files (database.db deleted, payload-full.config.ts deleted — restore or fix)\n2. Ensure `payload.config.ts` is correct and working\n3. Write/fix seed script `scripts/seed-payload.ts` to seed all data from `src/data/portfolio.json`\n4. Update pages to read from Payload local API (page.tsx, cases/page.tsx, projects/[slug]/page.tsx)\n5. Ensure admin works at /admin\n6. Run `npm run build` to verify no TypeScript errors\n7. Stage and commit all changes\n\nOutput <promise>COMPLETE</promise> when:\n- npm run build succeeds\n- All pages still work (no broken imports)\n- seed script exists and runs without errors\n- All changes committed\n",
+  "startedAt": "2026-02-18T23:01:34.232Z",
+  "model": "",
+  "agent": "claude-code"
+}

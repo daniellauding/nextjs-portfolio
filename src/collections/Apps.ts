@@ -4,7 +4,7 @@ export const Apps: CollectionConfig = {
   slug: 'apps',
   admin: {
     useAsTitle: 'name',
-    defaultColumns: ['name', 'featured', 'category'],
+    defaultColumns: ['name', 'featured'],
   },
   fields: [
     {
@@ -25,6 +25,16 @@ export const Apps: CollectionConfig = {
       name: 'icon',
       type: 'upload',
       relationTo: 'media',
+      required: false,
+    },
+    {
+      name: 'iconUrl',
+      type: 'text',
+      label: 'Icon URL (fallback)',
+      admin: {
+        position: 'sidebar',
+        description: 'Used when no uploaded icon is available',
+      },
     },
     {
       name: 'description',
