@@ -38,7 +38,7 @@ interface HomeContentProps {
       color: string;
       featured?: boolean;
     }>;
-    clients: Array<{ name: string; url?: string | null }>;
+    clients: Array<{ id: string; name: string; url?: string | null }>;
     apps: Array<{
       id: string;
       name: string;
@@ -105,7 +105,7 @@ export default function HomeContent({ data }: HomeContentProps) {
         />
         <Skills skills={skills} activeTag={activeTag} onTagClick={setActiveTag} />
         <Projects projects={filteredProjects} activeTag={activeTag} onTagClick={setActiveTag} />
-        <Clients clients={clients} />
+        <Clients clients={clients.map(c => ({ ...c, url: c.url ?? undefined }))} />
         <CV experience={cv.experience as Parameters<typeof CV>[0]["experience"]} education={cv.education} activeTag={activeTag} />
         <Articles articles={cv.mediumPosts as Parameters<typeof Articles>[0]["articles"]} />
       </main>

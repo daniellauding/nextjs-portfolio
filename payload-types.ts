@@ -6,11 +6,66 @@
  * and re-run `payload generate:types` to regenerate this file.
  */
 
+/**
+ * Supported timezones in IANA format.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "supportedTimezones".
+ */
+export type SupportedTimezones =
+  | 'Pacific/Midway'
+  | 'Pacific/Niue'
+  | 'Pacific/Honolulu'
+  | 'Pacific/Rarotonga'
+  | 'America/Anchorage'
+  | 'Pacific/Gambier'
+  | 'America/Los_Angeles'
+  | 'America/Tijuana'
+  | 'America/Denver'
+  | 'America/Phoenix'
+  | 'America/Chicago'
+  | 'America/Guatemala'
+  | 'America/New_York'
+  | 'America/Bogota'
+  | 'America/Caracas'
+  | 'America/Santiago'
+  | 'America/Buenos_Aires'
+  | 'America/Sao_Paulo'
+  | 'Atlantic/South_Georgia'
+  | 'Atlantic/Azores'
+  | 'Atlantic/Cape_Verde'
+  | 'Europe/London'
+  | 'Europe/Berlin'
+  | 'Africa/Lagos'
+  | 'Europe/Athens'
+  | 'Africa/Cairo'
+  | 'Europe/Moscow'
+  | 'Asia/Riyadh'
+  | 'Asia/Dubai'
+  | 'Asia/Baku'
+  | 'Asia/Karachi'
+  | 'Asia/Tashkent'
+  | 'Asia/Calcutta'
+  | 'Asia/Dhaka'
+  | 'Asia/Almaty'
+  | 'Asia/Jakarta'
+  | 'Asia/Bangkok'
+  | 'Asia/Shanghai'
+  | 'Asia/Singapore'
+  | 'Asia/Tokyo'
+  | 'Asia/Seoul'
+  | 'Australia/Brisbane'
+  | 'Australia/Sydney'
+  | 'Pacific/Guam'
+  | 'Pacific/Noumea'
+  | 'Pacific/Auckland'
+  | 'Pacific/Fiji';
+
 export interface Config {
   auth: {
     users: UserAuthOperations;
   };
-  blocks: Record<string, never>;
+  blocks: {};
   collections: {
     users: User;
     media: Media;
@@ -25,7 +80,7 @@ export interface Config {
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  collectionsJoins: Record<string, never>;
+  collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
@@ -36,15 +91,14 @@ export interface Config {
     experience: ExperienceSelect<false> | ExperienceSelect<true>;
     education: EducationSelect<false> | EducationSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
-    'payload-locked-documents':
-      | PayloadLockedDocumentsSelect<false>
-      | PayloadLockedDocumentsSelect<true>;
+    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
     defaultIDType: number;
   };
+  fallbackLocale: null;
   globals: {
     'personal-info': PersonalInfo;
     'site-settings': SiteSettings;
@@ -62,7 +116,6 @@ export interface Config {
     workflows: unknown;
   };
 }
-
 export interface UserAuthOperations {
   forgotPassword: {
     email: string;
@@ -94,6 +147,14 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
 }
 
 export interface Media {
@@ -149,9 +210,14 @@ export interface Project {
   url?: string | null;
   featured?: boolean | null;
   color?: string | null;
-  image?: number | Media | null;
+  image?: (number | null) | Media;
   imageUrl?: string | null;
-  tags?: Array<{ tag?: string | null; id?: string | null }> | null;
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   password?: string | null;
   details?: {
     client?: string | null;
@@ -162,19 +228,24 @@ export interface Project {
     solution?: string | null;
     impact?: string | null;
     sections?:
-      | Array<{
+      | {
           title: string;
-          content?: unknown;
-          images?: Array<{ image?: number | Media | null; id?: string | null }> | null;
+          content?: Record<string, unknown> | null;
+          images?:
+            | {
+                image?: (number | null) | Media;
+                id?: string | null;
+              }[]
+            | null;
           id?: string | null;
-        }>
+        }[]
       | null;
     testimonial?: {
       quote?: string | null;
       author?: string | null;
       role?: string | null;
     };
-    nextProject?: number | Project | null;
+    nextProject?: (number | null) | Project;
   };
   updatedAt: string;
   createdAt: string;
@@ -184,7 +255,7 @@ export interface Client {
   id: number;
   name: string;
   url?: string | null;
-  logo?: number | Media | null;
+  logo?: (number | null) | Media;
   order?: number | null;
   updatedAt: string;
   createdAt: string;
@@ -194,12 +265,17 @@ export interface App {
   id: number;
   name: string;
   slug: string;
-  icon?: number | Media | null;
+  icon?: (number | null) | Media;
   iconUrl?: string | null;
   description: string;
   appStoreUrl?: string | null;
   playStoreUrl?: string | null;
-  tags?: Array<{ tag?: string | null; id?: string | null }> | null;
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   color?: string | null;
   featured?: boolean | null;
   details?: {
@@ -209,15 +285,27 @@ export interface App {
     rating?: string | null;
     releaseDate?: string | null;
     version?: string | null;
-    overview?: unknown;
-    features?: Array<{ feature?: string | null; id?: string | null }> | null;
-    screenshots?: Array<{ screenshot?: number | Media | null; id?: string | null }> | null;
-    testimonials?: Array<{
-      quote?: string | null;
-      author?: string | null;
-      rating?: number | null;
-      id?: string | null;
-    }> | null;
+    overview?: Record<string, unknown> | null;
+    features?:
+      | {
+          feature?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    screenshots?:
+      | {
+          screenshot?: (number | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
+    testimonials?:
+      | {
+          quote?: string | null;
+          author?: string | null;
+          rating?: number | null;
+          id?: string | null;
+        }[]
+      | null;
   };
   updatedAt: string;
   createdAt: string;
@@ -226,8 +314,8 @@ export interface App {
 export interface Skill {
   id: number;
   name: string;
-  category?: 'design' | 'development' | 'tools' | 'soft-skills' | 'other' | null;
-  proficiency?: 'expert' | 'advanced' | 'intermediate' | 'beginner' | null;
+  category?: ('design' | 'development' | 'tools' | 'soft-skills' | 'other') | null;
+  proficiency?: ('expert' | 'advanced' | 'intermediate' | 'beginner') | null;
   order?: number | null;
   updatedAt: string;
   createdAt: string;
@@ -239,8 +327,13 @@ export interface Experience {
   company: string;
   companyUrl?: string | null;
   period: string;
-  description?: unknown;
-  projects?: Array<{ project?: unknown; id?: string | null }> | null;
+  description?: Record<string, unknown> | null;
+  projects?:
+    | {
+        project?: Record<string, unknown> | null;
+        id?: string | null;
+      }[]
+    | null;
   recommendation?: {
     quote?: string | null;
     author?: string | null;
@@ -258,7 +351,7 @@ export interface Education {
   school: string;
   schoolUrl?: string | null;
   year: string;
-  description?: unknown;
+  description?: Record<string, unknown> | null;
   order?: number | null;
   updatedAt: string;
   createdAt: string;
@@ -277,21 +370,35 @@ export interface PersonalInfo {
   email: string;
   phone?: string | null;
   website?: string | null;
-  bio?: unknown;
-  avatar?: number | Media | null;
-  tools?: Array<{ tool?: string | null; id?: string | null }> | null;
-  roles?: Array<{ role?: string | null; id?: string | null }> | null;
+  bio: Record<string, unknown>;
+  avatar?: (number | null) | Media;
+  tools?:
+    | {
+        tool?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  roles?:
+    | {
+        role?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   experience?: string | null;
-  keyContributions?: Array<{ contribution?: string | null; id?: string | null }> | null;
+  keyContributions?:
+    | {
+        contribution?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   socialLinks?: {
     linkedin?: string | null;
     github?: string | null;
     medium?: string | null;
     twitter?: string | null;
   };
-  updatedAt?: string;
-  createdAt?: string;
-  globalType?: string;
+  updatedAt: string;
+  createdAt: string;
 }
 
 export interface SiteSettings {
@@ -299,8 +406,8 @@ export interface SiteSettings {
   siteName: string;
   siteDescription?: string | null;
   siteKeywords?: string | null;
-  ogImage?: number | Media | null;
-  favicon?: number | Media | null;
+  ogImage?: (number | null) | Media;
+  favicon?: (number | null) | Media;
   analytics?: {
     googleAnalytics?: string | null;
     posthogKey?: string | null;
@@ -310,35 +417,84 @@ export interface SiteSettings {
     enabled?: boolean | null;
     message?: string | null;
   };
-  updatedAt?: string;
-  createdAt?: string;
-  globalType?: string;
-}
-
-// ─── Payload internal types ───────────────────────────────────────────────────
-
-export interface PayloadKv {
-  id: number;
-  key: string;
-  data: unknown;
   updatedAt: string;
   createdAt: string;
 }
 
+export interface PayloadKv {
+  id: number;
+  key: string;
+  data:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+}
+
 export interface PayloadLockedDocument {
   id: number;
-  document?: { relationTo: string; value: number | Record<string, unknown> } | null;
+  document?:
+    | ({
+        relationTo: 'users';
+        value: number | User;
+      } | null)
+    | ({
+        relationTo: 'media';
+        value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: number | Project;
+      } | null)
+    | ({
+        relationTo: 'clients';
+        value: number | Client;
+      } | null)
+    | ({
+        relationTo: 'apps';
+        value: number | App;
+      } | null)
+    | ({
+        relationTo: 'skills';
+        value: number | Skill;
+      } | null)
+    | ({
+        relationTo: 'experience';
+        value: number | Experience;
+      } | null)
+    | ({
+        relationTo: 'education';
+        value: number | Education;
+      } | null);
   globalSlug?: string | null;
-  user: { relationTo: 'users'; value: number | User };
+  user: {
+    relationTo: 'users';
+    value: number | User;
+  };
   updatedAt: string;
   createdAt: string;
 }
 
 export interface PayloadPreference {
   id: number;
-  user: { relationTo: 'users'; value: number | User };
+  user: {
+    relationTo: 'users';
+    value: number | User;
+  };
   key?: string | null;
-  value?: unknown;
+  value?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -351,13 +507,24 @@ export interface PayloadMigration {
   createdAt: string;
 }
 
-// ─── Select types ─────────────────────────────────────────────────────────────
-
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 
 export interface MediaSelect<T extends boolean = true> {
@@ -365,7 +532,48 @@ export interface MediaSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   url?: T;
+  thumbnailURL?: T;
   filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+  sizes?:
+    | T
+    | {
+        thumbnail?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        card?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        tablet?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
 }
 
 export interface ProjectsSelect<T extends boolean = true> {
@@ -380,9 +588,45 @@ export interface ProjectsSelect<T extends boolean = true> {
   color?: T;
   image?: T;
   imageUrl?: T;
-  tags?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
   password?: T;
-  details?: T;
+  details?:
+    | T
+    | {
+        client?: T;
+        duration?: T;
+        team?: T;
+        role?: T;
+        challenge?: T;
+        solution?: T;
+        impact?: T;
+        sections?:
+          | T
+          | {
+              title?: T;
+              content?: T;
+              images?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+        testimonial?:
+          | T
+          | {
+              quote?: T;
+              author?: T;
+              role?: T;
+            };
+        nextProject?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -404,10 +648,45 @@ export interface AppsSelect<T extends boolean = true> {
   description?: T;
   appStoreUrl?: T;
   playStoreUrl?: T;
-  tags?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
   color?: T;
   featured?: T;
-  details?: T;
+  details?:
+    | T
+    | {
+        category?: T;
+        platform?: T;
+        downloads?: T;
+        rating?: T;
+        releaseDate?: T;
+        version?: T;
+        overview?: T;
+        features?:
+          | T
+          | {
+              feature?: T;
+              id?: T;
+            };
+        screenshots?:
+          | T
+          | {
+              screenshot?: T;
+              id?: T;
+            };
+        testimonials?:
+          | T
+          | {
+              quote?: T;
+              author?: T;
+              rating?: T;
+              id?: T;
+            };
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -427,8 +706,20 @@ export interface ExperienceSelect<T extends boolean = true> {
   companyUrl?: T;
   period?: T;
   description?: T;
-  projects?: T;
-  recommendation?: T;
+  projects?:
+    | T
+    | {
+        project?: T;
+        id?: T;
+      };
+  recommendation?:
+    | T
+    | {
+        quote?: T;
+        author?: T;
+        role?: T;
+        date?: T;
+      };
   order?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -459,11 +750,35 @@ export interface PersonalInfoSelect<T extends boolean = true> {
   website?: T;
   bio?: T;
   avatar?: T;
-  tools?: T;
-  roles?: T;
+  tools?:
+    | T
+    | {
+        tool?: T;
+        id?: T;
+      };
+  roles?:
+    | T
+    | {
+        role?: T;
+        id?: T;
+      };
   experience?: T;
-  keyContributions?: T;
-  socialLinks?: T;
+  keyContributions?:
+    | T
+    | {
+        contribution?: T;
+        id?: T;
+      };
+  socialLinks?:
+    | T
+    | {
+        linkedin?: T;
+        github?: T;
+        medium?: T;
+        twitter?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 
 export interface SiteSettingsSelect<T extends boolean = true> {
@@ -472,8 +787,21 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   siteKeywords?: T;
   ogImage?: T;
   favicon?: T;
-  analytics?: T;
-  maintenance?: T;
+  analytics?:
+    | T
+    | {
+        googleAnalytics?: T;
+        posthogKey?: T;
+        posthogHost?: T;
+      };
+  maintenance?:
+    | T
+    | {
+        enabled?: T;
+        message?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 
 export interface PayloadKvSelect<T extends boolean = true> {
@@ -507,6 +835,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 export interface Auth {
   [k: string]: unknown;
 }
+
 
 declare module 'payload' {
   export interface GeneratedTypes extends Config {}

@@ -45,7 +45,7 @@ export default async function ProjectPage({ params }: PageProps) {
     const nextSlug = (project.details as Record<string, unknown>).nextProject as string | null;
     if (nextSlug) {
       const nextDoc = allProjects.find(
-        (p) => (p as Record<string, unknown>).slug === nextSlug
+        (p: unknown) => (p as Record<string, unknown>).slug === nextSlug
       );
       if (nextDoc) {
         nextProjectName = (nextDoc as Record<string, unknown>).name as string;

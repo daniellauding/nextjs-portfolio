@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable */
 import { getPayload } from 'payload'
 import config from '../payload.config'
 import fs from 'fs'

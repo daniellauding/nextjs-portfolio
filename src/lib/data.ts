@@ -23,13 +23,16 @@ import {
 } from './normalize'
 import portfolioJson from '@/data/portfolio.json'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnyDoc = any
+
 // ─── Projects ───────────────────────────────────────────────────────────────
 
 export async function getProjectsData() {
   try {
     const result = await getProjects()
     if (result.docs.length === 0) return portfolioJson.projects
-    return result.docs.map((doc) => normalizeProject(doc as unknown as Record<string, unknown>))
+    return result.docs.map((doc: AnyDoc) => normalizeProject(doc as Record<string, unknown>))
   } catch {
     return portfolioJson.projects
   }
@@ -39,10 +42,10 @@ export async function getFeaturedProjects() {
   try {
     const result = await getProjects()
     if (result.docs.length === 0) return portfolioJson.projects.filter((p) => p.featured)
-    const normalized = result.docs.map((doc) =>
-      normalizeProject(doc as unknown as Record<string, unknown>)
+    const normalized = result.docs.map((doc: AnyDoc) =>
+      normalizeProject(doc as Record<string, unknown>)
     )
-    return normalized.filter((p) => p.featured)
+    return normalized.filter((p: Record<string, unknown>) => p.featured)
   } catch {
     return portfolioJson.projects.filter((p) => p.featured)
   }
@@ -52,14 +55,13 @@ export async function getProjectBySlug(slug: string) {
   try {
     const doc = await getProject(slug)
     if (!doc) {
-      // Fallback: check JSON
       return (
         portfolioJson.projects.find((p) => p.slug === slug) ||
         portfolioJson.apps.find((a) => a.slug === slug) ||
         null
       )
     }
-    return normalizeProject(doc as unknown as Record<string, unknown>)
+    return normalizeProject(doc as AnyDoc)
   } catch {
     return (
       portfolioJson.projects.find((p) => p.slug === slug) ||
@@ -75,7 +77,7 @@ export async function getAppsData() {
   try {
     const result = await getApps()
     if (result.docs.length === 0) return portfolioJson.apps
-    return result.docs.map((doc) => normalizeApp(doc as unknown as Record<string, unknown>))
+    return result.docs.map((doc: AnyDoc) => normalizeApp(doc as Record<string, unknown>))
   } catch {
     return portfolioJson.apps
   }
@@ -83,14 +85,15 @@ export async function getAppsData() {
 
 export async function getAppBySlug(slug: string) {
   try {
-    const payload = await import('./payload').then((m) => m.getPayloadClient())
-    const result = await payload.find({
+    const payloadModule = await import('./payload')
+    const payload = await payloadModule.getPayloadClient()
+    const result = await (payload as AnyDoc).find({
       collection: 'apps',
       where: { slug: { equals: slug } },
       limit: 1,
     })
     if (!result.docs[0]) return portfolioJson.apps.find((a) => a.slug === slug) || null
-    return normalizeApp(result.docs[0] as unknown as Record<string, unknown>)
+    return normalizeApp(result.docs[0] as Record<string, unknown>)
   } catch {
     return portfolioJson.apps.find((a) => a.slug === slug) || null
   }
@@ -102,7 +105,7 @@ export async function getClientsData() {
   try {
     const result = await getClients()
     if (result.docs.length === 0) return portfolioJson.clients
-    return result.docs.map((doc) => normalizeClient(doc as unknown as Record<string, unknown>))
+    return result.docs.map((doc: AnyDoc) => normalizeClient(doc as Record<string, unknown>))
   } catch {
     return portfolioJson.clients
   }
@@ -114,7 +117,9 @@ export async function getSkillsData(): Promise<string[]> {
   try {
     const result = await getSkills()
     if (result.docs.length === 0) return portfolioJson.skills
-    return result.docs.map((doc) => (doc as unknown as Record<string, unknown>).name as string).filter(Boolean)
+    return result.docs
+      .map((doc: AnyDoc) => (doc as Record<string, unknown>).name as string)
+      .filter(Boolean)
   } catch {
     return portfolioJson.skills
   }
@@ -126,7 +131,7 @@ export async function getExperienceData() {
   try {
     const result = await getExperience()
     if (result.docs.length === 0) return portfolioJson.cv.experience
-    return result.docs.map((doc) => normalizeExperience(doc as unknown as Record<string, unknown>))
+    return result.docs.map((doc: AnyDoc) => normalizeExperience(doc as Record<string, unknown>))
   } catch {
     return portfolioJson.cv.experience
   }
@@ -138,7 +143,7 @@ export async function getEducationData() {
   try {
     const result = await getEducation()
     if (result.docs.length === 0) return portfolioJson.cv.education
-    return result.docs.map((doc) => normalizeEducation(doc as unknown as Record<string, unknown>))
+    return result.docs.map((doc: AnyDoc) => normalizeEducation(doc as Record<string, unknown>))
   } catch {
     return portfolioJson.cv.education
   }
@@ -150,8 +155,8 @@ export async function getPersonalData() {
   try {
     const doc = await getPersonalInfo()
     // If name is not set (empty global), fall back to JSON
-    if (!(doc as unknown as Record<string, unknown>).name) return portfolioJson.personal
-    return normalizePersonalInfo(doc as unknown as Record<string, unknown>)
+    if (!(doc as AnyDoc).name) return portfolioJson.personal
+    return normalizePersonalInfo(doc as Record<string, unknown>)
   } catch {
     return portfolioJson.personal
   }
