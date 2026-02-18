@@ -30,10 +30,10 @@ export default function Apps({ apps, enableClickthrough = true }: AppsProps) {
         className="mb-12"
       >
         <h2 className="text-sm font-medium text-[var(--accent)] mb-4">
-          Currently
+          Currently shipping
         </h2>
         <p className="text-xl text-[var(--foreground)]">
-          Personal projects and apps available on the App Store
+          Apps & projects I'm working on
         </p>
       </motion.div>
 

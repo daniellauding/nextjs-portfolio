@@ -293,7 +293,7 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
             transition={{ delay: 0.8, duration: 0.6 }}
             className="mt-16 flex flex-wrap items-center gap-6"
           >
-            <span className="text-sm text-[var(--text-muted)]">Currently</span>
+            <span className="text-sm text-[var(--text-muted)]">I'm working on</span>
             <div className="flex gap-4">
               {apps.map((app, index) => {
                 const Component = app.appStoreUrl ? motion.a : motion.div;
