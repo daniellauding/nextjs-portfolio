@@ -34,7 +34,24 @@ export const Media: CollectionConfig = {
     {
       name: 'alt',
       type: 'text',
-      required: true,
+      required: false,
+      admin: {
+        description: 'Alt text for accessibility. Auto-filled from filename if empty.',
+      },
+      hooks: {
+        beforeValidate: [
+          ({ value, data }) => {
+            // Auto-fill alt from filename if empty
+            if (!value && data?.filename) {
+              return (data.filename as string)
+                .replace(/\.[^/.]+$/, '')   // remove extension
+                .replace(/[-_]/g, ' ')       // dashes/underscores → spaces
+                .replace(/\b\w/g, (c) => c.toUpperCase()) // capitalize words
+            }
+            return value
+          },
+        ],
+      },
     },
   ],
 }
