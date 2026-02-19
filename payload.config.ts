@@ -7,7 +7,6 @@ import type { HandleUpload, HandleDelete, GenerateURL } from '@payloadcms/plugin
 import { payloadAiPlugin } from '@ai-stack/payloadcms'
 import { v2 as cloudinary } from 'cloudinary'
 import type { UploadApiResponse } from 'cloudinary'
-import sharp from 'sharp'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -132,7 +131,6 @@ export default buildConfig({
     // push: true keeps schema in sync on every startup (idempotent)
     push: true,
   }),
-  sharp,
   plugins: [
     payloadAiPlugin({
       collections: {

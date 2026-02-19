@@ -9,7 +9,6 @@ export const Media: CollectionConfig = {
     staticDir: 'media',
     // No imageSizes — Cloudinary handles transformations via URL params
     // e.g. https://res.cloudinary.com/dihhcawgk/image/upload/w_400,h_300,c_fill/daniellauding/filename
-    disableLocalStorage: true,
     mimeTypes: ['image/*'],
   },
   fields: [
