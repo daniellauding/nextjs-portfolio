@@ -723,6 +723,192 @@
         ],
         "nextProject": "vromm-driving-app"
       }
+    },
+    {
+      "id": "project-14",
+      "slug": "energiforsk-energieffektiv-webb",
+      "name": "Energiforsk – Energieffektiv webb",
+      "type": "Frontend Development",
+      "date": "2025",
+      "location": "Stockholm",
+      "url": "https://www.energiforsk.se",
+      "description": "Frontend consultant for Sweden's most energy-efficient website. 75% lighter page loads than previous site.",
+      "tags": [
+        "Next.js",
+        "Frontend",
+        "Storybook",
+        "Sustainable Web",
+        "Headless CMS"
+      ],
+      "image": "/projects/energiforsk.jpg",
+      "color": "#22c55e",
+      "featured": false,
+      "details": {
+        "client": "Energiforsk",
+        "duration": "2025",
+        "team": "Frontend team",
+        "role": "Frontend Development Consultant",
+        "challenge": "Build Sweden's most energy-efficient website with 75% lighter page loads than the previous site.",
+        "solution": "Built with Next.js and headless CMS using code splitting and minification. Implemented Storybook design system components as part of the team creating sustainable web architecture hosted on fossil-free servers.",
+        "impact": "75% reduction in page weight. One of Sweden's most energy-efficient websites.",
+        "sections": [],
+        "nextProject": "gavlegardarna-housing-platform"
+      }
+    },
+    {
+      "id": "project-15",
+      "slug": "gavlegardarna-housing-platform",
+      "name": "Gavlegårdarna – Housing Platform",
+      "type": "Frontend Development",
+      "date": "2025",
+      "location": "Gävle",
+      "url": "https://www.gavlegardarna.se",
+      "description": "Frontend development for Sweden's largest public housing company serving 30,000 residents.",
+      "tags": [
+        "Vue.js",
+        "WordPress",
+        "Frontend",
+        "WCAG",
+        "Housing"
+      ],
+      "image": "/projects/gavlegardarna.jpg",
+      "color": "#3b82f6",
+      "featured": false,
+      "details": {
+        "client": "Gavlegårdarna",
+        "duration": "2025",
+        "team": "Frontend team",
+        "role": "Frontend Developer",
+        "challenge": "Build a modern housing platform for 30,000 residents with apartment search, booking systems, and WCAG AA compliance.",
+        "solution": "Built Vue.js frontend with WordPress backend, featuring apartment search with advanced filtering, booking systems, and accessible user portal.",
+        "impact": "Serving 30,000 residents with modern digital experience meeting WCAG AA accessibility standards.",
+        "sections": [],
+        "nextProject": "edenred-benefits-platform"
+      }
+    },
+    {
+      "id": "project-16",
+      "slug": "edenred-benefits-platform",
+      "name": "Edenred – Benefits Platform",
+      "type": "Frontend Development",
+      "date": "2025",
+      "location": "Stockholm",
+      "url": "https://www.edenred.se",
+      "description": "Frontend development for unified lunch and wellness benefits platform. Migrated from Episerver to WordPress.",
+      "tags": [
+        "Vue.js",
+        "WordPress",
+        "Frontend",
+        "Google APIs",
+        "Benefits"
+      ],
+      "image": "/projects/edenred.jpg",
+      "color": "#f59e0b",
+      "featured": false,
+      "details": {
+        "client": "Edenred",
+        "duration": "2025",
+        "team": "Frontend team",
+        "role": "Frontend Developer",
+        "challenge": "Unify lunch and wellness benefits into one platform, migrating from Episerver to WordPress.",
+        "solution": "Built responsive Vue.js components, integrated Google APIs, and migrated CMS for seamless user experience across desktop and mobile.",
+        "impact": "Unified benefits platform with improved UX across all devices.",
+        "sections": [],
+        "nextProject": "ikea-stimulanspaketresan"
+      }
+    },
+    {
+      "id": "project-17",
+      "slug": "ikea-stimulanspaketresan",
+      "name": "IKEA Stimulanspaketresan",
+      "type": "Frontend Development",
+      "date": "2009",
+      "location": "Stockholm",
+      "url": "",
+      "description": "Frontend development for IKEA's Sweden tour campaign — 10-day caravan journey from Älmhult to Stockholm.",
+      "tags": [
+        "Frontend",
+        "Campaign",
+        "IKEA",
+        "JavaScript",
+        "CSS"
+      ],
+      "image": "/projects/ikea-stimulanspaketresan.jpg",
+      "color": "#0051ba",
+      "featured": false,
+      "details": {
+        "client": "IKEA",
+        "duration": "2009",
+        "team": "Agency team",
+        "role": "Frontend Developer",
+        "challenge": "Build interactive experience following IKEA's 10-day caravan journey across Sweden.",
+        "solution": "Pixel-perfect implementation from Photoshop designs with IE6/7/8 compatibility and cross-browser CSS optimization. Featured behind-the-scenes content and travel diary.",
+        "impact": "High-profile IKEA campaign site reaching millions of Swedish consumers.",
+        "sections": [],
+        "nextProject": "ikea-tv"
+      }
+    },
+    {
+      "id": "project-18",
+      "slug": "ikea-tv",
+      "name": "IKEA.se/tv",
+      "type": "Frontend Development",
+      "date": "2009",
+      "location": "Stockholm",
+      "url": "",
+      "description": "Frontend for IKEA's user-generated content platform — customers sharing interior design tips via videos and images.",
+      "tags": [
+        "Frontend",
+        "UGC",
+        "IKEA",
+        "JavaScript",
+        "Video"
+      ],
+      "image": "/projects/ikea-tv.jpg",
+      "color": "#0051ba",
+      "featured": false,
+      "details": {
+        "client": "IKEA",
+        "duration": "2009",
+        "team": "Agency team",
+        "role": "Frontend Developer",
+        "challenge": "Build a UGC platform for IKEA customers to share interior design tips through videos and images.",
+        "solution": "Implemented video upload, rating system, commenting functionality, responsive video player and social interaction features using JavaScript and CSS.",
+        "impact": "One of the early social/UGC platforms in Sweden for a major retail brand.",
+        "sections": [],
+        "nextProject": "mktwebb-newspaper-platform"
+      }
+    },
+    {
+      "id": "project-19",
+      "slug": "mktwebb-newspaper-platform",
+      "name": "mktwebb – 40 Newspaper Platform",
+      "type": "Frontend Development",
+      "date": "2007",
+      "location": "Stockholm",
+      "url": "",
+      "description": "Interface Developer for Sweden's largest shared platform serving 40+ local newspapers under mktmedia.",
+      "tags": [
+        "Frontend",
+        "CMS",
+        "Polopoly",
+        "Scale",
+        "Newspapers"
+      ],
+      "image": "/projects/mktwebb.jpg",
+      "color": "#6366f1",
+      "featured": false,
+      "details": {
+        "client": "mktmedia",
+        "duration": "2007–2009",
+        "team": "Cross-functional team",
+        "role": "Interface Developer / Frontend Lead",
+        "challenge": "Build scalable frontend architecture for 40+ local newspapers with shared CMS infrastructure.",
+        "solution": "Built frontend on Polopoly CMS with 3000+ lines of CSS and extensive IE6 compatibility. Led JavaScript development and mentored team members.",
+        "impact": "Serving 40+ newspapers with a unified, cost-effective digital publishing platform.",
+        "sections": [],
+        "nextProject": "vromm-driving-app"
+      }
     }
   ],
   "clients": [
