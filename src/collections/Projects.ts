@@ -63,14 +63,18 @@ export const Projects: CollectionConfig = {
       type: 'upload',
       relationTo: 'media',
       required: false,
+      label: 'Featured Image / Cover',
+      admin: {
+        description: 'Used as hero/cover image on the project page and in project grids.',
+      },
     },
     {
       name: 'imageUrl',
       type: 'text',
-      label: 'Image URL (fallback)',
+      label: 'Cover Image URL (fallback)',
       admin: {
         position: 'sidebar',
-        description: 'Used when no uploaded image is available (e.g. /projects/image.jpg)',
+        description: 'Paste an external URL if you\'re not uploading a file (e.g. https://... or /projects/image.jpg)',
       },
     },
     {
