@@ -106,8 +106,8 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI,
     },
-    // push schema in dev only
-    push: process.env.NODE_ENV !== 'production',
+    // push: true keeps schema in sync on every startup (idempotent)
+    push: true,
   }),
   sharp,
   plugins: [
