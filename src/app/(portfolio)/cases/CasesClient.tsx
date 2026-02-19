@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -115,17 +116,27 @@ export default function CasesClient({ projects, socialLinks }: CasesClientProps)
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* Glow */}
-                  <motion.div
-                    className="absolute inset-0 flex items-center justify-center"
-                    animate={{
-                      opacity: hoveredProject === project.id ? 0.6 : 0.25,
-                      scale: hoveredProject === project.id ? 1.1 : 1,
-                    }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <div className="w-24 h-24 rounded-full blur-3xl bg-white" />
-                  </motion.div>
+                  {/* Cover image or glow fallback */}
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  ) : (
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center"
+                      animate={{
+                        opacity: hoveredProject === project.id ? 0.6 : 0.25,
+                        scale: hoveredProject === project.id ? 1.1 : 1,
+                      }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      <div className="w-24 h-24 rounded-full blur-3xl bg-white" />
+                    </motion.div>
+                  )}
 
                   {/* Featured badge */}
                   {project.featured && (
