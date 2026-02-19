@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/providers/Providers";
+import "../globals.css";
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -160,19 +162,21 @@ export default function PortfolioLayout({
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <div
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300`}
-        data-portfolio-layout="true"
-      >
-        <Providers>
-          {children}
-        </Providers>
-      </div>
-    </>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <div
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300`}
+          data-portfolio-layout="true"
+        >
+          <Providers>
+            {children}
+          </Providers>
+        </div>
+      </body>
+    </html>
   );
 }
