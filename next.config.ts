@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Allow Tailscale hostname in dev mode
+  allowedDevOrigins: ['claudebot.taild61ab7.ts.net'],
   images: {
     remotePatterns: [
       {
