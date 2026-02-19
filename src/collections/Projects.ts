@@ -1,4 +1,6 @@
 import type { CollectionConfig } from 'payload'
+import { lexicalEditor, HeadingFeature } from '@payloadcms/richtext-lexical'
+import { PayloadAiPluginLexicalEditorFeature } from '@ai-stack/payloadcms'
 
 export const Projects: CollectionConfig = {
   slug: 'projects',
@@ -196,6 +198,13 @@ export const Projects: CollectionConfig = {
             {
               name: 'content',
               type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => [
+                  ...rootFeatures,
+                  HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+                  PayloadAiPluginLexicalEditorFeature(),
+                ],
+              }),
             },
             {
               name: 'images',
