@@ -5,6 +5,7 @@ import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage'
 import type { HandleUpload, HandleDelete, GenerateURL } from '@payloadcms/plugin-cloud-storage/types'
 import { payloadAiPlugin } from '@ai-stack/payloadcms'
+import { analyticsPlugin } from 'payload-posthog-analytics'
 import { v2 as cloudinary } from 'cloudinary'
 import type { UploadApiResponse } from 'cloudinary'
 import sharp from 'sharp'
@@ -124,6 +125,12 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
+    analyticsPlugin({
+      adminView: {
+        path: '/analytics',
+        label: 'Analytics',
+      },
+    }),
     payloadAiPlugin({
       collections: {
         projects: true,
