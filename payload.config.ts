@@ -36,7 +36,7 @@ cloudinary.config({
 const cloudinaryAdapter = () => () => ({
   name: 'cloudinary-adapter',
 
-  async handleUpload({ file }: Parameters<HandleUpload>[0]) {
+  async handleUpload({ file, data }: Parameters<HandleUpload>[0]) {
     try {
       const uploadResult = await new Promise<UploadApiResponse>((resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
@@ -54,9 +54,15 @@ const cloudinaryAdapter = () => () => ({
         )
         uploadStream.end(file.buffer)
       })
+      // Store Cloudinary URL and public_id back into the document data
       file.filename = uploadResult.public_id
       file.mimeType = uploadResult.format
       file.filesize = uploadResult.bytes
+      // This is the key: set url on the data object so Payload persists it
+      if (data) {
+        data.url = uploadResult.secure_url
+        data.filename = uploadResult.public_id
+      }
     } catch (err) {
       console.error('Cloudinary upload error:', err)
       throw err
@@ -72,7 +78,13 @@ const cloudinaryAdapter = () => () => ({
   },
 
   generateURL: (({ filename }) => {
-    return cloudinary.url(filename as string, { secure: true })
+    const f = filename as string
+    // If already a Cloudinary public_id path (daniellauding/...) use directly
+    // Otherwise construct URL for the filename without extension
+    const publicId = f.includes('/')
+      ? f
+      : `daniellauding/${f.replace(/\.[^/.]+$/, '')}`
+    return cloudinary.url(publicId, { secure: true })
   }) as GenerateURL,
 
   staticHandler: async () => new Response('Not found', { status: 404 }),
