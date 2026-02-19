@@ -51,6 +51,7 @@ interface PortfolioItem {
   color?: string;
   password?: string | null;
   featured?: boolean;
+  gallery?: Array<{ url: string; caption: string }>;
   appStoreUrl?: string | null;
   playStoreUrl?: string | null;
   details?: ProjectDetails;
@@ -293,6 +294,38 @@ export default function ProjectContent({ slug, project, app, nextProjectName }: 
         </div>
       </motion.section>
 
+      {/* Gallery Carousel */}
+      {item.gallery && item.gallery.length > 0 && (
+        <section className="py-12 overflow-hidden">
+          <div className="px-6 md:px-12 mb-6">
+            <h2 className="text-sm text-[var(--text-muted)] uppercase tracking-widest">Gallery</h2>
+          </div>
+          <div className="flex gap-4 overflow-x-auto px-6 md:px-12 pb-4 scrollbar-hide snap-x snap-mandatory">
+            {item.gallery.map((g, i) => (
+              <motion.div
+                key={i}
+                className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw] snap-start"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-[var(--card)]">
+                  <img
+                    src={g.url}
+                    alt={g.caption || `${item.name} screenshot ${i + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {g.caption && (
+                  <p className="text-sm text-[var(--text-muted)] mt-2 px-1">{g.caption}</p>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Content Sections */}
       <div className="px-6 md:px-12 py-16 md:py-24 max-w-6xl mx-auto">
         {details && project && (
@@ -339,13 +372,10 @@ export default function ProjectContent({ slug, project, app, nextProjectName }: 
                 <h2 className="text-2xl font-bold mb-6">{section.title}</h2>
                 <p className="text-[var(--text-muted)] mb-8 leading-relaxed">{section.content}</p>
                 {section.images && section.images.length > 0 && (
-                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                     {section.images.map((image, i) => (
-                      <div
-                        key={i}
-                        className="aspect-video bg-[var(--card)] rounded-xl overflow-hidden"
-                      >
-                        <div className="w-full h-full bg-gradient-to-br from-[var(--accent)]/20 to-[var(--accent)]/5" />
+                      <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[var(--card)]">
+                        <img src={image} alt="" className="w-full h-full object-cover" />
                       </div>
                     ))}
                   </div>

@@ -56,6 +56,18 @@ export function normalizeProject(doc: Record<string, unknown>): Record<string, u
     (heroImageMedia && typeof heroImageMedia === 'object' ? heroImageMedia.url as string : null) ||
     imageUrl
 
+  // gallery: array of uploaded images
+  const galleryItems = (doc.gallery as Array<Record<string, unknown>>) || []
+  const gallery = galleryItems
+    .map((item) => {
+      const img = item.image as Record<string, unknown> | null | undefined
+      return {
+        url: (img && typeof img === 'object' ? img.url as string : null) || '',
+        caption: (item.caption as string) || '',
+      }
+    })
+    .filter((g) => g.url)
+
   return {
     id: String(doc.id),
     slug: doc.slug as string,
@@ -70,6 +82,7 @@ export function normalizeProject(doc: Record<string, unknown>): Record<string, u
       .filter(Boolean),
     image: imageUrl,
     heroImage: heroImageUrl,
+    gallery,
     color: (doc.color as string) || '#000000',
     featured: (doc.featured as boolean) || false,
     password: (doc.password as string) || null,
@@ -84,7 +97,12 @@ export function normalizeProject(doc: Record<string, unknown>): Record<string, u
       sections: sections.map((s) => ({
         title: (s.title as string) || '',
         content: lexicalToText(s.content) || '',
-        images: [],
+        images: ((s.images as Array<Record<string, unknown>>) || [])
+          .map((imgItem) => {
+            const img = imgItem.image as Record<string, unknown> | null | undefined
+            return img && typeof img === 'object' ? img.url as string : null
+          })
+          .filter(Boolean) as string[],
       })),
       testimonial: testimonial
         ? {

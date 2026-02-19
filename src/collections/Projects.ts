@@ -79,6 +79,27 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: 'gallery',
+      type: 'array',
+      label: 'Image Gallery',
+      admin: {
+        description: 'Upload multiple images for this project — shown as a scrollable gallery/carousel on the project page.',
+      },
+      fields: [
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        },
+        {
+          name: 'caption',
+          type: 'text',
+          label: 'Caption (optional)',
+        },
+      ],
+    },
+    {
       name: 'imageUrl',
       type: 'text',
       label: 'Cover Image URL (fallback)',
