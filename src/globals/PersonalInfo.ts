@@ -104,23 +104,16 @@ export const PersonalInfo: GlobalConfig = {
     {
       name: 'socialLinks',
       type: 'group',
+      label: 'Social Links',
       fields: [
-        {
-          name: 'linkedin',
-          type: 'text',
-        },
-        {
-          name: 'github',
-          type: 'text',
-        },
-        {
-          name: 'medium',
-          type: 'text',
-        },
-        {
-          name: 'twitter',
-          type: 'text',
-        },
+        { name: 'linkedin', type: 'text', label: 'LinkedIn URL' },
+        { name: 'github', type: 'text', label: 'GitHub URL' },
+        { name: 'twitter', type: 'text', label: 'Twitter / X URL' },
+        { name: 'dribbble', type: 'text', label: 'Dribbble URL' },
+        { name: 'instagram', type: 'text', label: 'Instagram URL' },
+        { name: 'medium', type: 'text', label: 'Medium URL' },
+        { name: 'spotify', type: 'text', label: 'Spotify URL' },
+        { name: 'airbnb', type: 'text', label: 'Airbnb Profile URL' },
       ],
     },
   ],
