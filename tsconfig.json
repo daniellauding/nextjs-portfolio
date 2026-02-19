@@ -28,6 +28,9 @@
       ],
       "@/payload.config": [
         "./payload.config"
+      ],
+      "@payload-config": [
+        "./payload.config.ts"
       ]
     }
   },
