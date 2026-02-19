@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { trackProjectView, trackClick } from "@/lib/tracking";
 
@@ -64,25 +65,36 @@ export default function Projects({ projects, activeTag, onTagClick }: ProjectsPr
           >
             <motion.div
               className="relative aspect-[4/3] rounded-2xl overflow-hidden"
-              style={{ backgroundColor: project.color }}
+              style={{ backgroundColor: project.color || "#1a1a2e" }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.3 }}
             >
-              <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                initial={{ opacity: 0.3 }}
-                animate={{
-                  opacity: hoveredProject === project.id ? 0.6 : 0.3,
-                  scale: hoveredProject === project.id ? 1.1 : 1,
-                }}
-                transition={{ duration: 0.4 }}
-              >
-                <div
-                  className="w-32 h-32 rounded-full blur-3xl"
-                  style={{ backgroundColor: "white" }}
+              {/* Cover image — fills the card */}
+              {project.image ? (
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
-              </motion.div>
+              ) : (
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center"
+                  initial={{ opacity: 0.3 }}
+                  animate={{
+                    opacity: hoveredProject === project.id ? 0.6 : 0.3,
+                    scale: hoveredProject === project.id ? 1.1 : 1,
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <div
+                    className="w-32 h-32 rounded-full blur-3xl"
+                    style={{ backgroundColor: "white" }}
+                  />
+                </motion.div>
+              )}
 
               <AnimatePresence>
                 {(hoveredProject === project.id ||
