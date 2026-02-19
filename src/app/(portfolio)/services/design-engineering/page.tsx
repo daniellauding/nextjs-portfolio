@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import portfolioData from "../../../data/portfolio.json";
+import portfolioData from "../../../../data/portfolio.json";
 
 const featuredProjects = [
   {
