@@ -7,27 +7,9 @@ export const Media: CollectionConfig = {
   },
   upload: {
     staticDir: 'media',
-    imageSizes: [
-      {
-        name: 'thumbnail',
-        width: 400,
-        height: 300,
-        position: 'centre',
-      },
-      {
-        name: 'card',
-        width: 768,
-        height: 1024,
-        position: 'centre',
-      },
-      {
-        name: 'tablet',
-        width: 1024,
-        height: undefined,
-        position: 'centre',
-      },
-    ],
-    adminThumbnail: 'thumbnail',
+    // No imageSizes — Cloudinary handles transformations via URL params
+    // e.g. https://res.cloudinary.com/dihhcawgk/image/upload/w_400,h_300,c_fill/daniellauding/filename
+    disableLocalStorage: true,
     mimeTypes: ['image/*'],
   },
   fields: [

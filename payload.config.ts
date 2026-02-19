@@ -37,14 +37,25 @@ const cloudinaryAdapter = () => () => ({
   name: 'cloudinary-adapter',
 
   async handleUpload({ file, data }: Parameters<HandleUpload>[0]) {
+    // Skip size variants — we only upload the original, Cloudinary handles resizing via URL
+    if (!file.buffer || file.buffer.length === 0) {
+      console.warn('Cloudinary: empty buffer, skipping upload for', file.filename)
+      return
+    }
+
     try {
+      // Use a safe public_id (no extension, no special chars)
+      const safeFilename = file.filename
+        .replace(/\.[^/.]+$/, '')  // remove extension
+        .replace(/[^a-zA-Z0-9_-]/g, '_')  // sanitize
+      const publicId = `daniellauding/${safeFilename}`
+
       const uploadResult = await new Promise<UploadApiResponse>((resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
           {
             resource_type: 'auto',
-            public_id: `daniellauding/${file.filename.replace(/\.[^/.]+$/, '')}`,
-            overwrite: false,
-            use_filename: true,
+            public_id: publicId,
+            overwrite: true,
           },
           (error, result) => {
             if (error) return reject(error)
@@ -54,15 +65,14 @@ const cloudinaryAdapter = () => () => ({
         )
         uploadStream.end(file.buffer)
       })
-      // Store Cloudinary URL and public_id back into the document data
-      file.filename = uploadResult.public_id
-      file.mimeType = uploadResult.format
-      file.filesize = uploadResult.bytes
-      // This is the key: set url on the data object so Payload persists it
+
+      // Persist Cloudinary data back to the Payload document
       if (data) {
         data.url = uploadResult.secure_url
         data.filename = uploadResult.public_id
       }
+      file.filename = uploadResult.public_id
+      file.filesize = uploadResult.bytes
     } catch (err) {
       console.error('Cloudinary upload error:', err)
       throw err
