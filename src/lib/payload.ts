@@ -25,6 +25,7 @@ export const getProjects = async () => {
     collection: 'projects',
     sort: '-featured',
     limit: 100,
+    depth: 2, // populate image, heroImage, gallery relationships
   })
 }
 
@@ -38,6 +39,7 @@ export const getProject = async (slug: string) => {
       },
     },
     limit: 1,
+    depth: 2,
   })
   return result.docs[0] || null
 }
@@ -61,6 +63,7 @@ export const getHighlightedProjects = async () => {
       },
     },
     limit: 100,
+    depth: 2,
   })
 }
 
