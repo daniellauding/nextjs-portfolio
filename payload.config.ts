@@ -4,6 +4,7 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage'
 import type { HandleUpload, HandleDelete, GenerateURL } from '@payloadcms/plugin-cloud-storage/types'
+import { payloadAiPlugin } from '@ai-stack/payloadcms'
 import { v2 as cloudinary } from 'cloudinary'
 import type { UploadApiResponse } from 'cloudinary'
 import sharp from 'sharp'
@@ -111,6 +112,19 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
+    payloadAiPlugin({
+      collections: {
+        projects: true,
+        media: true,
+        experience: true,
+        clients: true,
+      },
+      globals: {
+        'personal-info': true,
+      },
+      uploadCollectionSlug: 'media',
+      debugging: false,
+    }),
     formBuilderPlugin({
       fields: {
         text: true,
