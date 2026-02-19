@@ -1,0 +1,25 @@
+/**
+ * admin-reset.css
+ * Resets portfolio theme variables that interfere with Payload CMS admin.
+ * Only loaded for /admin routes via (payload)/layout.tsx
+ */
+
+/* Reset CSS custom properties that the portfolio sets */
+:root,
+:root[data-theme] {
+  --background: unset;
+  --background-light: unset;
+  --card: unset;
+  --foreground: unset;
+  --accent: unset;
+  --border: unset;
+}
+
+/* Reset body styles applied by root layout */
+body {
+  background: unset !important;
+  color: unset !important;
+  font-family: unset !important;
+  font-size: unset !important;
+  line-height: unset !important;
+}

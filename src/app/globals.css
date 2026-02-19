@@ -46,7 +46,8 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+/* Scope portfolio styles to portfolio pages only (not Payload admin) */
+body[data-portfolio-layout="true"] {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
