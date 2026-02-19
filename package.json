@@ -10,15 +10,20 @@
     "payload": "payload",
     "generate:types": "payload generate:types",
     "seed": "node scripts/seed.js",
-    "seed:payload": "NODE_ENV=development npx tsx scripts/seed-payload.ts"
+    "seed:payload": "NODE_ENV=development npx tsx scripts/seed-payload.ts",
+    "seed:forms": "NODE_ENV=development npx tsx scripts/seed-forms.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.66.0",
     "@payloadcms/db-sqlite": "^3.66.0",
     "@payloadcms/next": "^3.66.0",
+    "@payloadcms/plugin-cloud-storage": "^3.66.0",
+    "@payloadcms/plugin-form-builder": "^3.66.0",
     "@payloadcms/richtext-lexical": "^3.66.0",
     "@payloadcms/richtext-slate": "^3.66.0",
+    "cloudinary": "^2.9.0",
     "framer-motion": "^12.23.25",
+    "graphql": "^16.12.0",
     "next": "^15.2.3",
     "payload": "^3.66.0",
     "posthog-js": "^1.301.0",

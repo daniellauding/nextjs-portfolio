@@ -71,10 +71,11 @@ export interface Config {
     media: Media;
     projects: Project;
     clients: Client;
-    apps: App;
     skills: Skill;
     experience: Experience;
     education: Education;
+    forms: Form;
+    'form-submissions': FormSubmission;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -86,10 +87,11 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     clients: ClientsSelect<false> | ClientsSelect<true>;
-    apps: AppsSelect<false> | AppsSelect<true>;
     skills: SkillsSelect<false> | SkillsSelect<true>;
     experience: ExperienceSelect<false> | ExperienceSelect<true>;
     education: EducationSelect<false> | EducationSelect<true>;
+    forms: FormsSelect<false> | FormsSelect<true>;
+    'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -101,7 +103,7 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     'personal-info': PersonalInfo;
-    'site-settings': SiteSettings;
+    'site-settings': SiteSetting;
   };
   globalsSelect: {
     'personal-info': PersonalInfoSelect<false> | PersonalInfoSelect<true>;
@@ -134,7 +136,10 @@ export interface UserAuthOperations {
     password: string;
   };
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users".
+ */
 export interface User {
   id: number;
   name?: string | null;
@@ -156,7 +161,10 @@ export interface User {
     | null;
   password?: string | null;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
 export interface Media {
   id: number;
   alt: string;
@@ -198,7 +206,10 @@ export interface Media {
     };
   };
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
 export interface Project {
   id: number;
   name: string;
@@ -211,6 +222,9 @@ export interface Project {
   featured?: boolean | null;
   color?: string | null;
   image?: (number | null) | Media;
+  /**
+   * Used when no uploaded image is available (e.g. /projects/image.jpg)
+   */
   imageUrl?: string | null;
   tags?:
     | {
@@ -218,6 +232,12 @@ export interface Project {
         id?: string | null;
       }[]
     | null;
+  highlight?: boolean | null;
+  highlightUrl?: string | null;
+  highlightLogo?: string | null;
+  /**
+   * Optional password protection for this project
+   */
   password?: string | null;
   details?: {
     client?: string | null;
@@ -230,7 +250,21 @@ export interface Project {
     sections?:
       | {
           title: string;
-          content?: Record<string, unknown> | null;
+          content?: {
+            root: {
+              type: string;
+              children: {
+                type: any;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
           images?:
             | {
                 image?: (number | null) | Media;
@@ -250,7 +284,10 @@ export interface Project {
   updatedAt: string;
   createdAt: string;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients".
+ */
 export interface Client {
   id: number;
   name: string;
@@ -260,57 +297,10 @@ export interface Client {
   updatedAt: string;
   createdAt: string;
 }
-
-export interface App {
-  id: number;
-  name: string;
-  slug: string;
-  icon?: (number | null) | Media;
-  iconUrl?: string | null;
-  description: string;
-  appStoreUrl?: string | null;
-  playStoreUrl?: string | null;
-  tags?:
-    | {
-        tag?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  color?: string | null;
-  featured?: boolean | null;
-  details?: {
-    category?: string | null;
-    platform?: string | null;
-    downloads?: string | null;
-    rating?: string | null;
-    releaseDate?: string | null;
-    version?: string | null;
-    overview?: Record<string, unknown> | null;
-    features?:
-      | {
-          feature?: string | null;
-          id?: string | null;
-        }[]
-      | null;
-    screenshots?:
-      | {
-          screenshot?: (number | null) | Media;
-          id?: string | null;
-        }[]
-      | null;
-    testimonials?:
-      | {
-          quote?: string | null;
-          author?: string | null;
-          rating?: number | null;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  updatedAt: string;
-  createdAt: string;
-}
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "skills".
+ */
 export interface Skill {
   id: number;
   name: string;
@@ -320,17 +310,48 @@ export interface Skill {
   updatedAt: string;
   createdAt: string;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "experience".
+ */
 export interface Experience {
   id: number;
   title: string;
   company: string;
   companyUrl?: string | null;
   period: string;
-  description?: Record<string, unknown> | null;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   projects?:
     | {
-        project?: Record<string, unknown> | null;
+        project?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
         id?: string | null;
       }[]
     | null;
@@ -340,87 +361,237 @@ export interface Experience {
     role?: string | null;
     date?: string | null;
   };
+  /**
+   * Order in which to display (lower numbers appear first)
+   */
   order?: number | null;
   updatedAt: string;
   createdAt: string;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "education".
+ */
 export interface Education {
   id: number;
   degree: string;
   school: string;
   schoolUrl?: string | null;
   year: string;
-  description?: Record<string, unknown> | null;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   order?: number | null;
   updatedAt: string;
   createdAt: string;
 }
-
-export interface PersonalInfo {
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "forms".
+ */
+export interface Form {
   id: number;
-  name: string;
-  firstName: string;
-  lastName: string;
   title: string;
-  subtitle?: string | null;
-  status?: string | null;
-  studio?: string | null;
-  location?: string | null;
-  email: string;
-  phone?: string | null;
-  website?: string | null;
-  bio: Record<string, unknown>;
-  avatar?: (number | null) | Media;
-  tools?:
-    | {
-        tool?: string | null;
-        id?: string | null;
-      }[]
+  fields?:
+    | (
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            required?: boolean | null;
+            defaultValue?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'checkbox';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            required?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'country';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            required?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'email';
+          }
+        | {
+            message?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'message';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            defaultValue?: number | null;
+            required?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'number';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            defaultValue?: string | null;
+            placeholder?: string | null;
+            options?:
+              | {
+                  label: string;
+                  value: string;
+                  id?: string | null;
+                }[]
+              | null;
+            required?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'select';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            required?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'state';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            defaultValue?: string | null;
+            required?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'text';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            width?: number | null;
+            defaultValue?: string | null;
+            required?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'textarea';
+          }
+      )[]
     | null;
-  roles?:
-    | {
-        role?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  experience?: string | null;
-  keyContributions?:
-    | {
-        contribution?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  socialLinks?: {
-    linkedin?: string | null;
-    github?: string | null;
-    medium?: string | null;
-    twitter?: string | null;
+  submitButtonLabel?: string | null;
+  /**
+   * Choose whether to display an on-page message or redirect to a different page after they submit the form.
+   */
+  confirmationType?: ('message' | 'redirect') | null;
+  confirmationMessage?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  redirect?: {
+    url: string;
   };
+  /**
+   * Send custom emails when the form submits. Use comma separated lists to send the same email to multiple recipients. To reference a value from this form, wrap that field's name with double curly brackets, i.e. {{firstName}}. You can use a wildcard {{*}} to output all data and {{*:table}} to format it as an HTML table in the email.
+   */
+  emails?:
+    | {
+        emailTo?: string | null;
+        cc?: string | null;
+        bcc?: string | null;
+        replyTo?: string | null;
+        emailFrom?: string | null;
+        subject: string;
+        /**
+         * Enter the message that should be sent in this email.
+         */
+        message?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
-
-export interface SiteSettings {
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "form-submissions".
+ */
+export interface FormSubmission {
   id: number;
-  siteName: string;
-  siteDescription?: string | null;
-  siteKeywords?: string | null;
-  ogImage?: (number | null) | Media;
-  favicon?: (number | null) | Media;
-  analytics?: {
-    googleAnalytics?: string | null;
-    posthogKey?: string | null;
-    posthogHost?: string | null;
-  };
-  maintenance?: {
-    enabled?: boolean | null;
-    message?: string | null;
-  };
+  form: number | Form;
+  submissionData?:
+    | {
+        field: string;
+        value: string;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-kv".
+ */
 export interface PayloadKv {
   id: number;
   key: string;
@@ -434,7 +605,10 @@ export interface PayloadKv {
     | boolean
     | null;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-locked-documents".
+ */
 export interface PayloadLockedDocument {
   id: number;
   document?:
@@ -455,10 +629,6 @@ export interface PayloadLockedDocument {
         value: number | Client;
       } | null)
     | ({
-        relationTo: 'apps';
-        value: number | App;
-      } | null)
-    | ({
         relationTo: 'skills';
         value: number | Skill;
       } | null)
@@ -469,6 +639,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'education';
         value: number | Education;
+      } | null)
+    | ({
+        relationTo: 'forms';
+        value: number | Form;
+      } | null)
+    | ({
+        relationTo: 'form-submissions';
+        value: number | FormSubmission;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -478,7 +656,10 @@ export interface PayloadLockedDocument {
   updatedAt: string;
   createdAt: string;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-preferences".
+ */
 export interface PayloadPreference {
   id: number;
   user: {
@@ -498,7 +679,10 @@ export interface PayloadPreference {
   updatedAt: string;
   createdAt: string;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-migrations".
+ */
 export interface PayloadMigration {
   id: number;
   name?: string | null;
@@ -506,7 +690,10 @@ export interface PayloadMigration {
   updatedAt: string;
   createdAt: string;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users_select".
+ */
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
   updatedAt?: T;
@@ -526,7 +713,10 @@ export interface UsersSelect<T extends boolean = true> {
         expiresAt?: T;
       };
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media_select".
+ */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   updatedAt?: T;
@@ -575,7 +765,10 @@ export interface MediaSelect<T extends boolean = true> {
             };
       };
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
 export interface ProjectsSelect<T extends boolean = true> {
   name?: T;
   slug?: T;
@@ -594,6 +787,9 @@ export interface ProjectsSelect<T extends boolean = true> {
         tag?: T;
         id?: T;
       };
+  highlight?: T;
+  highlightUrl?: T;
+  highlightLogo?: T;
   password?: T;
   details?:
     | T
@@ -630,7 +826,10 @@ export interface ProjectsSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients_select".
+ */
 export interface ClientsSelect<T extends boolean = true> {
   name?: T;
   url?: T;
@@ -639,58 +838,10 @@ export interface ClientsSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
 }
-
-export interface AppsSelect<T extends boolean = true> {
-  name?: T;
-  slug?: T;
-  icon?: T;
-  iconUrl?: T;
-  description?: T;
-  appStoreUrl?: T;
-  playStoreUrl?: T;
-  tags?:
-    | T
-    | {
-        tag?: T;
-        id?: T;
-      };
-  color?: T;
-  featured?: T;
-  details?:
-    | T
-    | {
-        category?: T;
-        platform?: T;
-        downloads?: T;
-        rating?: T;
-        releaseDate?: T;
-        version?: T;
-        overview?: T;
-        features?:
-          | T
-          | {
-              feature?: T;
-              id?: T;
-            };
-        screenshots?:
-          | T
-          | {
-              screenshot?: T;
-              id?: T;
-            };
-        testimonials?:
-          | T
-          | {
-              quote?: T;
-              author?: T;
-              rating?: T;
-              id?: T;
-            };
-      };
-  updatedAt?: T;
-  createdAt?: T;
-}
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "skills_select".
+ */
 export interface SkillsSelect<T extends boolean = true> {
   name?: T;
   category?: T;
@@ -699,7 +850,10 @@ export interface SkillsSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "experience_select".
+ */
 export interface ExperienceSelect<T extends boolean = true> {
   title?: T;
   company?: T;
@@ -724,7 +878,10 @@ export interface ExperienceSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "education_select".
+ */
 export interface EducationSelect<T extends boolean = true> {
   degree?: T;
   school?: T;
@@ -735,7 +892,287 @@ export interface EducationSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "forms_select".
+ */
+export interface FormsSelect<T extends boolean = true> {
+  title?: T;
+  fields?:
+    | T
+    | {
+        checkbox?:
+          | T
+          | {
+              name?: T;
+              label?: T;
+              width?: T;
+              required?: T;
+              defaultValue?: T;
+              id?: T;
+              blockName?: T;
+            };
+        country?:
+          | T
+          | {
+              name?: T;
+              label?: T;
+              width?: T;
+              required?: T;
+              id?: T;
+              blockName?: T;
+            };
+        email?:
+          | T
+          | {
+              name?: T;
+              label?: T;
+              width?: T;
+              required?: T;
+              id?: T;
+              blockName?: T;
+            };
+        message?:
+          | T
+          | {
+              message?: T;
+              id?: T;
+              blockName?: T;
+            };
+        number?:
+          | T
+          | {
+              name?: T;
+              label?: T;
+              width?: T;
+              defaultValue?: T;
+              required?: T;
+              id?: T;
+              blockName?: T;
+            };
+        select?:
+          | T
+          | {
+              name?: T;
+              label?: T;
+              width?: T;
+              defaultValue?: T;
+              placeholder?: T;
+              options?:
+                | T
+                | {
+                    label?: T;
+                    value?: T;
+                    id?: T;
+                  };
+              required?: T;
+              id?: T;
+              blockName?: T;
+            };
+        state?:
+          | T
+          | {
+              name?: T;
+              label?: T;
+              width?: T;
+              required?: T;
+              id?: T;
+              blockName?: T;
+            };
+        text?:
+          | T
+          | {
+              name?: T;
+              label?: T;
+              width?: T;
+              defaultValue?: T;
+              required?: T;
+              id?: T;
+              blockName?: T;
+            };
+        textarea?:
+          | T
+          | {
+              name?: T;
+              label?: T;
+              width?: T;
+              defaultValue?: T;
+              required?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  submitButtonLabel?: T;
+  confirmationType?: T;
+  confirmationMessage?: T;
+  redirect?:
+    | T
+    | {
+        url?: T;
+      };
+  emails?:
+    | T
+    | {
+        emailTo?: T;
+        cc?: T;
+        bcc?: T;
+        replyTo?: T;
+        emailFrom?: T;
+        subject?: T;
+        message?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "form-submissions_select".
+ */
+export interface FormSubmissionsSelect<T extends boolean = true> {
+  form?: T;
+  submissionData?:
+    | T
+    | {
+        field?: T;
+        value?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-kv_select".
+ */
+export interface PayloadKvSelect<T extends boolean = true> {
+  key?: T;
+  data?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-locked-documents_select".
+ */
+export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
+  document?: T;
+  globalSlug?: T;
+  user?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-preferences_select".
+ */
+export interface PayloadPreferencesSelect<T extends boolean = true> {
+  user?: T;
+  key?: T;
+  value?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-migrations_select".
+ */
+export interface PayloadMigrationsSelect<T extends boolean = true> {
+  name?: T;
+  batch?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "personal-info".
+ */
+export interface PersonalInfo {
+  id: number;
+  name: string;
+  firstName: string;
+  lastName: string;
+  title: string;
+  subtitle?: string | null;
+  status?: string | null;
+  studio?: string | null;
+  location?: string | null;
+  email: string;
+  phone?: string | null;
+  website?: string | null;
+  bio: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  avatar?: (number | null) | Media;
+  tools?:
+    | {
+        tool?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  roles?:
+    | {
+        role?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  experience?: string | null;
+  keyContributions?:
+    | {
+        contribution?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  socialLinks?: {
+    linkedin?: string | null;
+    github?: string | null;
+    twitter?: string | null;
+    dribbble?: string | null;
+    instagram?: string | null;
+    medium?: string | null;
+    spotify?: string | null;
+    airbnb?: string | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: number;
+  siteName: string;
+  siteDescription?: string | null;
+  siteKeywords?: string | null;
+  ogImage?: (number | null) | Media;
+  favicon?: (number | null) | Media;
+  analytics?: {
+    googleAnalytics?: string | null;
+    posthogKey?: string | null;
+    posthogHost?: string | null;
+  };
+  maintenance?: {
+    enabled?: boolean | null;
+    message?: string | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "personal-info_select".
+ */
 export interface PersonalInfoSelect<T extends boolean = true> {
   name?: T;
   firstName?: T;
@@ -774,13 +1211,21 @@ export interface PersonalInfoSelect<T extends boolean = true> {
     | {
         linkedin?: T;
         github?: T;
-        medium?: T;
         twitter?: T;
+        dribbble?: T;
+        instagram?: T;
+        medium?: T;
+        spotify?: T;
+        airbnb?: T;
       };
   updatedAt?: T;
   createdAt?: T;
+  globalType?: T;
 }
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
 export interface SiteSettingsSelect<T extends boolean = true> {
   siteName?: T;
   siteDescription?: T;
@@ -802,36 +1247,12 @@ export interface SiteSettingsSelect<T extends boolean = true> {
       };
   updatedAt?: T;
   createdAt?: T;
+  globalType?: T;
 }
-
-export interface PayloadKvSelect<T extends boolean = true> {
-  key?: T;
-  data?: T;
-}
-
-export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
-  document?: T;
-  globalSlug?: T;
-  user?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-
-export interface PayloadPreferencesSelect<T extends boolean = true> {
-  user?: T;
-  key?: T;
-  value?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-
-export interface PayloadMigrationsSelect<T extends boolean = true> {
-  name?: T;
-  batch?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "auth".
+ */
 export interface Auth {
   [k: string]: unknown;
 }

@@ -67,11 +67,12 @@ interface HomeContentProps {
       mediumPosts: unknown[];
       keyContributions?: string[];
     };
+    socialLinks?: Array<{ name: string; url: string }>;
   };
 }
 
 export default function HomeContent({ data }: HomeContentProps) {
-  const { personal, skills, projects, clients, apps, cv } = data;
+  const { personal, skills, projects, clients, apps, cv, socialLinks } = data;
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
   // Only show featured projects
@@ -110,7 +111,7 @@ export default function HomeContent({ data }: HomeContentProps) {
         <CV experience={cv.experience as Parameters<typeof CV>[0]["experience"]} education={cv.education} activeTag={activeTag} />
         <Articles articles={cv.mediumPosts as Parameters<typeof Articles>[0]["articles"]} />
       </main>
-      <Footer />
+      <Footer socialLinks={socialLinks} />
     </>
   );
 }

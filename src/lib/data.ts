@@ -189,10 +189,35 @@ export async function getPersonalData() {
   }
 }
 
+// ─── Social Links ─────────────────────────────────────────────────────────────
+
+export async function getSocialLinks(): Promise<Array<{ name: string; url: string }>> {
+  try {
+    const doc = await getPersonalInfo()
+    const sl = (doc as AnyDoc)?.socialLinks
+    if (!sl) return []
+    const mapping: Array<{ key: string; name: string }> = [
+      { key: 'linkedin', name: 'LinkedIn' },
+      { key: 'twitter', name: 'Twitter' },
+      { key: 'dribbble', name: 'Dribbble' },
+      { key: 'github', name: 'GitHub' },
+      { key: 'instagram', name: 'Instagram' },
+      { key: 'medium', name: 'Medium' },
+      { key: 'spotify', name: 'Spotify' },
+      { key: 'airbnb', name: 'Airbnb' },
+    ]
+    return mapping
+      .filter(({ key }) => sl[key])
+      .map(({ key, name }) => ({ name, url: sl[key] as string }))
+  } catch {
+    return []
+  }
+}
+
 // ─── Full portfolio data (for homepage) ──────────────────────────────────────
 
 export async function getPortfolioData() {
-  const [personal, skills, projects, clients, highlightedProjects, experience, education] = await Promise.all([
+  const [personal, skills, projects, clients, highlightedProjects, experience, education, socialLinks] = await Promise.all([
     getPersonalData(),
     getSkillsData(),
     getProjectsData(),
@@ -200,6 +225,7 @@ export async function getPortfolioData() {
     getHighlightedProjects(),
     getExperienceData(),
     getEducationData(),
+    getSocialLinks(),
   ])
 
   return {
@@ -208,6 +234,7 @@ export async function getPortfolioData() {
     projects,
     clients,
     apps: highlightedProjects,
+    socialLinks,
     cv: {
       experience,
       education,

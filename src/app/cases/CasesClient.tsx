@@ -22,9 +22,10 @@ interface Project {
 
 interface CasesClientProps {
   projects: Project[];
+  socialLinks?: Array<{ name: string; url: string }>;
 }
 
-export default function CasesClient({ projects }: CasesClientProps) {
+export default function CasesClient({ projects, socialLinks }: CasesClientProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
@@ -192,7 +193,7 @@ export default function CasesClient({ projects }: CasesClientProps) {
           </div>
         )}
       </main>
-      <Footer />
+      <Footer socialLinks={socialLinks} />
     </>
   );
 }

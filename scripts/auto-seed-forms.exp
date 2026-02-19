@@ -1,0 +1,45 @@
+#!/usr/bin/expect -f
+set timeout 120
+spawn bash -c "cd /Users/lume/Work/internal/instinctly/daniellauding && npm run seed:forms"
+
+# Keep pressing Enter for "create table" prompts (first option)
+# And y for the data loss warning
+set max_prompts 30
+set count 0
+
+while {$count < $max_prompts} {
+    expect {
+        "renamed from another table?" {
+            send "\r"
+            incr count
+        }
+        "renamed from another column?" {
+            send "\r"
+            incr count
+        }
+        "Accept warnings and push schema" {
+            send "y\r"
+            incr count
+        }
+        "Contact form created" {
+            puts "\nContact form created successfully!"
+            exit 0
+        }
+        "Contact form already exists" {
+            puts "\nContact form already exists!"
+            exit 0
+        }
+        "Error" {
+            puts "\nError encountered"
+            exit 1
+        }
+        timeout {
+            puts "\nTimeout waiting for prompt"
+            exit 1
+        }
+        eof {
+            puts "\nProcess completed"
+            exit 0
+        }
+    }
+}

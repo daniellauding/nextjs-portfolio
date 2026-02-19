@@ -4,6 +4,14 @@
 
 [build.environment]
   NODE_VERSION = "20.18.0"
+  NODE_ENV = "production"
+
+# These must be added in Netlify dashboard UI (Settings → Environment variables):
+# DATABASE_URI        = postgresql://neondb_owner:...@ep-old-bread-aglglzib-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+# PAYLOAD_SECRET      = b8f2a1c9d4e7f3a6b9c2d5e8f1a4b7c0
+# CLOUDINARY_CLOUD_NAME = dihhcawgk
+# CLOUDINARY_API_KEY  = 243461818672458
+# CLOUDINARY_API_SECRET = utGSw_9FPvnaRDOAj5yC3aXXGcY
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
