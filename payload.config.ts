@@ -141,7 +141,8 @@ export default buildConfig({
         'personal-info': true,
       },
       uploadCollectionSlug: 'media',
-      debugging: false,
+      debugging: true, // shows Instructions collection in admin so we can seed it
+      generatePromptOnInit: true,
     }),
     formBuilderPlugin({
       fields: {
