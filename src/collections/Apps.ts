@@ -1,3 +1,5 @@
+// DEPRECATED: Apps have been merged into the Projects collection.
+// Use `highlight: true` on Projects instead. This file is kept for reference.
 import type { CollectionConfig } from 'payload'
 
 export const Apps: CollectionConfig = {

@@ -41,10 +41,11 @@ interface HomeContentProps {
     clients: Array<{ id: string; name: string; url?: string | null }>;
     apps: Array<{
       id: string;
+      slug: string;
       name: string;
-      icon: string;
       description: string;
-      appStoreUrl: string | null;
+      highlightLogo: string;
+      highlightUrl: string | null;
       tags: string[];
     }>;
     cv: {

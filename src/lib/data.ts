@@ -7,6 +7,7 @@ import {
   getPersonalInfo,
   getProjects,
   getProject,
+  getHighlightedProjects as getHighlightedProjectsPayload,
   getClients,
   getApps,
   getSkills,
@@ -71,7 +72,49 @@ export async function getProjectBySlug(slug: string) {
   }
 }
 
-// ─── Apps ────────────────────────────────────────────────────────────────────
+// ─── Highlighted Projects (replaces Apps) ────────────────────────────────────
+
+export async function getHighlightedProjects() {
+  try {
+    const result = await getHighlightedProjectsPayload()
+    if (result.docs.length === 0) {
+      // Fallback: return apps from JSON as highlight-like objects
+      return portfolioJson.apps.map((app) => ({
+        id: app.id,
+        slug: app.slug,
+        name: app.name,
+        description: app.description,
+        highlightLogo: app.icon,
+        highlightUrl: app.appStoreUrl || null,
+        tags: app.tags || [],
+      }))
+    }
+    return result.docs.map((doc: AnyDoc) => {
+      const p = normalizeProject(doc as Record<string, unknown>) as Record<string, unknown>
+      return {
+        id: p.id,
+        slug: p.slug,
+        name: p.name,
+        description: p.description,
+        highlightLogo: (doc as Record<string, unknown>).highlightLogo || p.image || '',
+        highlightUrl: (doc as Record<string, unknown>).highlightUrl || null,
+        tags: p.tags,
+      }
+    })
+  } catch {
+    return portfolioJson.apps.map((app) => ({
+      id: app.id,
+      slug: app.slug,
+      name: app.name,
+      description: app.description,
+      highlightLogo: app.icon,
+      highlightUrl: app.appStoreUrl || null,
+      tags: app.tags || [],
+    }))
+  }
+}
+
+// ─── Apps (deprecated — use getHighlightedProjects) ─────────────────────────
 
 export async function getAppsData() {
   try {
@@ -80,22 +123,6 @@ export async function getAppsData() {
     return result.docs.map((doc: AnyDoc) => normalizeApp(doc as Record<string, unknown>))
   } catch {
     return portfolioJson.apps
-  }
-}
-
-export async function getAppBySlug(slug: string) {
-  try {
-    const payloadModule = await import('./payload')
-    const payload = await payloadModule.getPayloadClient()
-    const result = await (payload as AnyDoc).find({
-      collection: 'apps',
-      where: { slug: { equals: slug } },
-      limit: 1,
-    })
-    if (!result.docs[0]) return portfolioJson.apps.find((a) => a.slug === slug) || null
-    return normalizeApp(result.docs[0] as Record<string, unknown>)
-  } catch {
-    return portfolioJson.apps.find((a) => a.slug === slug) || null
   }
 }
 
@@ -165,12 +192,12 @@ export async function getPersonalData() {
 // ─── Full portfolio data (for homepage) ──────────────────────────────────────
 
 export async function getPortfolioData() {
-  const [personal, skills, projects, clients, apps, experience, education] = await Promise.all([
+  const [personal, skills, projects, clients, highlightedProjects, experience, education] = await Promise.all([
     getPersonalData(),
     getSkillsData(),
     getProjectsData(),
     getClientsData(),
-    getAppsData(),
+    getHighlightedProjects(),
     getExperienceData(),
     getEducationData(),
   ])
@@ -180,7 +207,7 @@ export async function getPortfolioData() {
     skills,
     projects,
     clients,
-    apps,
+    apps: highlightedProjects,
     cv: {
       experience,
       education,

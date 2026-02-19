@@ -329,33 +329,69 @@ async function seed() {
   }
 
   // ─────────────────────────────────────────────
-  // 8. Seed Apps
+  // 8. Migrate Apps → Projects (highlight)
   // ─────────────────────────────────────────────
   try {
-    const existingApps = await payload.find({ collection: 'apps', limit: 1 })
-    if (existingApps.docs.length > 0) {
-      console.log('⏭  Apps already seeded, skipping')
+    // Check if migration already done by looking for any project with highlight=true
+    const highlightedProjects = await payload.find({
+      collection: 'projects',
+      where: { highlight: { equals: true } },
+      limit: 1,
+    })
+    if (highlightedProjects.docs.length > 0) {
+      console.log('⏭  Apps already migrated to highlighted projects, skipping')
     } else {
       for (const app of portfolioData.apps) {
-        await payload.create({
-          collection: 'apps',
-          data: {
-            name: app.name,
-            slug: app.slug,
-            iconUrl: app.icon || null,
-            description: app.description,
-            appStoreUrl: app.appStoreUrl || null,
-            playStoreUrl: app.playStoreUrl || null,
-            tags: (app.tags || []).map((tag: string) => ({ tag })),
-            color: app.color || '#000000',
-            featured: app.featured || false,
-          },
+        // Check if a project with this slug already exists
+        const existing = await payload.find({
+          collection: 'projects',
+          where: { slug: { equals: app.slug } },
+          limit: 1,
         })
+
+        const highlightUrl = app.appStoreUrl || app.playStoreUrl || null
+        const highlightLogo = app.icon || null
+
+        if (existing.docs.length > 0) {
+          // Update existing project with highlight fields
+          await payload.update({
+            collection: 'projects',
+            id: existing.docs[0].id,
+            data: {
+              highlight: true,
+              highlightUrl,
+              highlightLogo,
+            },
+          })
+          console.log(`  ✅ Updated project "${app.name}" with highlight=true`)
+        } else {
+          // Create a new project entry for this app
+          await payload.create({
+            collection: 'projects',
+            data: {
+              name: app.name,
+              slug: app.slug,
+              type: 'App',
+              description: app.description,
+              date: '',
+              location: '',
+              url: highlightUrl,
+              featured: app.featured || false,
+              color: app.color || '#000000',
+              imageUrl: (app.icon && !app.icon.startsWith('http') && app.icon.length > 2) ? app.icon : null,
+              tags: (app.tags || []).map((tag: string) => ({ tag })),
+              highlight: true,
+              highlightUrl,
+              highlightLogo,
+            },
+          })
+          console.log(`  ✅ Created project "${app.name}" with highlight=true`)
+        }
       }
-      console.log(`✅ Seeded ${portfolioData.apps.length} apps`)
+      console.log(`✅ Migrated ${portfolioData.apps.length} apps into highlighted projects`)
     }
   } catch (err: any) {
-    console.error('❌ Error seeding Apps:', err.message)
+    console.error('❌ Error migrating Apps to Projects:', err.message)
   }
 
   // ─────────────────────────────────────────────

@@ -12,10 +12,11 @@ declare global {
 
 interface App {
   id: string;
+  slug: string;
   name: string;
-  icon: string;
   description: string;
-  appStoreUrl: string | null;
+  highlightLogo: string;
+  highlightUrl: string | null;
   tags: string[];
 }
 
@@ -296,12 +297,16 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
             <span className="text-sm text-[var(--text-muted)]">I'm working on</span>
             <div className="flex gap-4">
               {apps.map((app, index) => {
-                const Component = app.appStoreUrl ? motion.a : motion.div;
-                const linkProps = app.appStoreUrl ? {
-                  href: app.appStoreUrl,
+                const linkHref = app.highlightUrl || `/projects/${app.slug}`;
+                const isExternal = app.highlightUrl && (app.highlightUrl.startsWith('http') || app.highlightUrl.startsWith('//'));
+                const Component = motion.a;
+                const linkProps = isExternal ? {
+                  href: linkHref,
                   target: "_blank",
                   rel: "noopener noreferrer"
-                } : {};
+                } : {
+                  href: linkHref,
+                };
                 
                 return (
                 <Component
@@ -333,19 +338,19 @@ export default function Hero({ firstName, lastName, title, subtitle, status, app
                   }}
                 >
                   <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl overflow-hidden shadow-lg flex items-center justify-center ${
-                    app.name === 'plotta' 
-                      ? 'bg-gradient-to-br from-[var(--accent)] to-[var(--accent-secondary)]' 
+                    app.name === 'plotta'
+                      ? 'bg-gradient-to-br from-[var(--accent)] to-[var(--accent-secondary)]'
                       : 'bg-white'
                   }`}>
-                    {(app.icon.startsWith('/') || app.icon.startsWith('http')) ? (
-                      <img 
-                        src={app.icon} 
+                    {app.highlightLogo && (app.highlightLogo.startsWith('/') || app.highlightLogo.startsWith('http')) ? (
+                      <img
+                        src={app.highlightLogo}
                         alt={app.name}
                         className="w-full h-full object-cover object-center"
                       />
                     ) : (
                       <span className="text-2xl text-[var(--background)] font-medium flex items-center justify-center w-full h-full">
-                        {app.icon}
+                        {app.highlightLogo || app.name.charAt(0)}
                       </span>
                     )}
                   </div>

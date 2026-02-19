@@ -84,6 +84,32 @@ export const Projects: CollectionConfig = {
       ],
     },
     {
+      name: 'highlight',
+      type: 'checkbox',
+      label: 'Lyft upp på startsidan (I\'m working on)',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'highlightUrl',
+      type: 'text',
+      label: 'Override URL (lämna tom för internt /projects/slug)',
+      admin: {
+        position: 'sidebar',
+        condition: (data) => data.highlight,
+      },
+    },
+    {
+      name: 'highlightLogo',
+      type: 'text',
+      label: 'Logo URL för highlight-sektion',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'password',
       type: 'text',
       admin: {

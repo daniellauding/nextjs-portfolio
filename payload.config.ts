@@ -9,7 +9,6 @@ import { Users } from './src/collections/Users'
 import { Media } from './src/collections/Media'
 import { Projects } from './src/collections/Projects'
 import { Clients } from './src/collections/Clients'
-import { Apps } from './src/collections/Apps'
 import { Skills } from './src/collections/Skills'
 import { Experience } from './src/collections/Experience'
 import { Education } from './src/collections/Education'
@@ -31,7 +30,6 @@ export default buildConfig({
     Media,
     Projects,
     Clients,
-    Apps,
     Skills,
     Experience,
     Education,

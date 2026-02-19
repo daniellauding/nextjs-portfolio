@@ -51,6 +51,19 @@ export const getClients = async () => {
   })
 }
 
+export const getHighlightedProjects = async () => {
+  const payload = await getPayloadClient()
+  return await payload.find({
+    collection: 'projects',
+    where: {
+      highlight: {
+        equals: true,
+      },
+    },
+    limit: 100,
+  })
+}
+
 export const getApps = async () => {
   const payload = await getPayloadClient()
   return await payload.find({
