@@ -1,6 +1,5 @@
 import type { NextConfig } from "next";
 import { withPayload } from '@payloadcms/next/withPayload'
-import { getAnalyticsRewrites } from 'payload-posthog-analytics'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -8,9 +7,6 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 const nextConfig: NextConfig = {
-  async rewrites() {
-    return getAnalyticsRewrites()
-  },
   // Payload CMS uses generated types that can conflict with Next.js type checker.
   // tsc --noEmit passes cleanly; we suppress the Next.js incremental type pass here.
   typescript: {
