@@ -65,12 +65,10 @@ const cloudinaryAdapter = () => () => ({
         uploadStream.end(file.buffer)
       })
 
-      // Persist Cloudinary data back to the Payload document
+      // Persist Cloudinary URL — do NOT override filename (Payload validates it has no slashes)
       if (data) {
         data.url = uploadResult.secure_url
-        data.filename = uploadResult.public_id
       }
-      file.filename = uploadResult.public_id
       file.filesize = uploadResult.bytes
     } catch (err) {
       console.error('Cloudinary upload error:', err)
