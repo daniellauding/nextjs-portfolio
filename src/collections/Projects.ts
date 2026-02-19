@@ -63,9 +63,19 @@ export const Projects: CollectionConfig = {
       type: 'upload',
       relationTo: 'media',
       required: false,
-      label: 'Featured Image / Cover',
+      label: 'Cover Image (thumbnail)',
       admin: {
-        description: 'Used as hero/cover image on the project page and in project grids.',
+        description: 'Square/portrait thumbnail shown in project grids and highlights.',
+      },
+    },
+    {
+      name: 'heroImage',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+      label: 'Hero Image (fullwidth banner)',
+      admin: {
+        description: 'Wide/landscape image shown as full-width banner at the top of the project page. Falls back to Cover Image if empty.',
       },
     },
     {

@@ -43,12 +43,18 @@ export function normalizeProject(doc: Record<string, unknown>): Record<string, u
     nextProjectSlug = nextProjectRel
   }
 
-  // image: prefer uploaded media URL, then imageUrl text field, then empty string
+  // cover image: prefer uploaded media URL, then imageUrl text field, then empty string
   const imageMedia = doc.image as Record<string, unknown> | null | undefined
   const imageUrl =
     (imageMedia && typeof imageMedia === 'object' ? imageMedia.url as string : null) ||
     (doc.imageUrl as string | null) ||
     ''
+
+  // hero image: prefer heroImage upload, fallback to cover image
+  const heroImageMedia = doc.heroImage as Record<string, unknown> | null | undefined
+  const heroImageUrl =
+    (heroImageMedia && typeof heroImageMedia === 'object' ? heroImageMedia.url as string : null) ||
+    imageUrl
 
   return {
     id: String(doc.id),
@@ -63,6 +69,7 @@ export function normalizeProject(doc: Record<string, unknown>): Record<string, u
       .map((t) => t.tag as string)
       .filter(Boolean),
     image: imageUrl,
+    heroImage: heroImageUrl,
     color: (doc.color as string) || '#000000',
     featured: (doc.featured as boolean) || false,
     password: (doc.password as string) || null,

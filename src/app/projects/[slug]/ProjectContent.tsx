@@ -46,6 +46,7 @@ interface PortfolioItem {
   description: string;
   tags: string[];
   image?: string;
+  heroImage?: string;
   icon?: string;
   color?: string;
   password?: string | null;
@@ -172,9 +173,16 @@ export default function ProjectContent({ slug, project, app, nextProjectName }: 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className="relative h-[60vh] md:h-[70vh] flex items-end"
-        style={{ backgroundColor: item.color || "#58B99B" }}
+        style={{
+          backgroundColor: item.color || "#58B99B",
+          ...(item.heroImage || item.image ? {
+            backgroundImage: `url(${item.heroImage || item.image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          } : {}),
+        }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
         <div className="relative z-10 w-full px-6 md:px-12 pb-12 md:pb-20">
           <motion.div
