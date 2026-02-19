@@ -1,5 +1,16 @@
 import type { CollectionConfig } from 'payload'
 
+const CLOUDINARY_BASE = 'https://res.cloudinary.com/dihhcawgk/image/upload'
+
+function toCloudinaryUrl(filename: string): string {
+  // If it already looks like a Cloudinary URL, return as-is
+  if (filename.startsWith('http')) return filename
+  // Strip extension, add daniellauding/ prefix if not present
+  const noExt = filename.replace(/\.[^/.]+$/, '').replace(/\s+/g, '_')
+  const publicId = noExt.includes('/') ? noExt : `daniellauding/${noExt}`
+  return `${CLOUDINARY_BASE}/${publicId}`
+}
+
 export const Media: CollectionConfig = {
   slug: 'media',
   access: {
@@ -7,9 +18,26 @@ export const Media: CollectionConfig = {
   },
   upload: {
     staticDir: 'media',
-    // No imageSizes — Cloudinary handles transformations via URL params
-    // e.g. https://res.cloudinary.com/dihhcawgk/image/upload/w_400,h_300,c_fill/daniellauding/filename
+    // No imageSizes — Cloudinary handles on-the-fly transformations via URL params
     mimeTypes: ['image/*'],
+    adminThumbnail: ({ doc }) => {
+      if (doc?.filename) return toCloudinaryUrl(doc.filename as string)
+      return ''
+    },
+  },
+  hooks: {
+    afterRead: [
+      ({ doc }) => {
+        // Override url field to always point to Cloudinary
+        if (doc?.filename && typeof doc.filename === 'string') {
+          const cloudUrl = toCloudinaryUrl(doc.filename)
+          if (!doc.url || !doc.url.includes('cloudinary')) {
+            doc.url = cloudUrl
+          }
+        }
+        return doc
+      },
+    ],
   },
   fields: [
     {
@@ -22,12 +50,11 @@ export const Media: CollectionConfig = {
       hooks: {
         beforeValidate: [
           ({ value, data }) => {
-            // Auto-fill alt from filename if empty
             if (!value && data?.filename) {
               return (data.filename as string)
-                .replace(/\.[^/.]+$/, '')   // remove extension
-                .replace(/[-_]/g, ' ')       // dashes/underscores → spaces
-                .replace(/\b\w/g, (c) => c.toUpperCase()) // capitalize words
+                .replace(/\.[^/.]+$/, '')
+                .replace(/[-_]/g, ' ')
+                .replace(/\b\w/g, (c) => c.toUpperCase())
             }
             return value
           },
