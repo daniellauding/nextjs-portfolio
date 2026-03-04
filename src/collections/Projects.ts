@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { lexicalEditor, HeadingFeature } from '@payloadcms/richtext-lexical'
-import { PayloadAiPluginLexicalEditorFeature } from '@ai-stack/payloadcms'
+// AI Plugin removed
+// import { PayloadAiPluginLexicalEditorFeature } from '@ai-stack/payloadcms'
 
 export const Projects: CollectionConfig = {
   slug: 'projects',
@@ -202,7 +203,7 @@ export const Projects: CollectionConfig = {
                 features: ({ rootFeatures }) => [
                   ...rootFeatures,
                   HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                  PayloadAiPluginLexicalEditorFeature(),
+                  // AI Plugin feature removed
                 ],
               }),
             },

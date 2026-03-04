@@ -14,7 +14,6 @@
     "seed:forms": "NODE_ENV=development npx tsx scripts/seed-forms.ts"
   },
   "dependencies": {
-    "@ai-stack/payloadcms": "^3.2.26",
     "@payloadcms/db-postgres": "^3.66.0",
     "@payloadcms/db-sqlite": "^3.66.0",
     "@payloadcms/next": "^3.66.0",
@@ -28,8 +27,8 @@
     "next": "^15.2.3",
     "payload": "^3.66.0",
     "posthog-js": "^1.301.0",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "sharp": "^0.34.5"
   },
   "devDependencies": {

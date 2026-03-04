@@ -4,21 +4,22 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage'
 import type { HandleUpload, HandleDelete, GenerateURL } from '@payloadcms/plugin-cloud-storage/types'
-import { payloadAiPlugin } from '@ai-stack/payloadcms'
+// AI Plugin removed due to ElevenLabs timeout issues
+// import { payloadAiPlugin } from '@ai-stack/payloadcms'
 import { v2 as cloudinary } from 'cloudinary'
 import type { UploadApiResponse } from 'cloudinary'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-import { Users } from './src/collections/Users'
-import { Media } from './src/collections/Media'
-import { Projects } from './src/collections/Projects'
-import { Clients } from './src/collections/Clients'
-import { Skills } from './src/collections/Skills'
-import { Experience } from './src/collections/Experience'
-import { Education } from './src/collections/Education'
-import { PersonalInfo } from './src/globals/PersonalInfo'
-import { SiteSettings } from './src/globals/SiteSettings'
+import { Users } from './src/collections/Users.ts'
+import { Media } from './src/collections/Media.ts'
+import { Projects } from './src/collections/Projects.ts'
+import { Clients } from './src/collections/Clients.ts'
+import { Skills } from './src/collections/Skills.ts'
+import { Experience } from './src/collections/Experience.ts'
+import { Education } from './src/collections/Education.ts'
+import { PersonalInfo } from './src/globals/PersonalInfo.ts'
+import { SiteSettings } from './src/globals/SiteSettings.ts'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -126,24 +127,25 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI,
     },
-    // push: true keeps schema in sync on every startup (idempotent)
-    push: true,
+    // push: false to stop schema push prompts (AI Plugin removed, schema stable)
+    push: false,
   }),
   plugins: [
-    payloadAiPlugin({
-      collections: {
-        projects: true,
-        media: true,
-        experience: true,
-        clients: true,
-      },
-      globals: {
-        'personal-info': true,
-      },
-      uploadCollectionSlug: 'media',
-      debugging: true, // shows Instructions collection in admin so we can seed it
-      generatePromptOnInit: true,
-    }),
+    // AI Plugin temporarily disabled due to ElevenLabs API timeout issues (adds 17s to every admin load)
+    // payloadAiPlugin({
+    //   collections: {
+    //     projects: true,
+    //     media: true,
+    //     experience: true,
+    //     clients: true,
+    //   },
+    //   globals: {
+    //     'personal-info': true,
+    //   },
+    //   uploadCollectionSlug: 'media',
+    //   debugging: true,
+    //   generatePromptOnInit: false,
+    // }),
     formBuilderPlugin({
       fields: {
         text: true,

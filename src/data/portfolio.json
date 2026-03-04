@@ -133,7 +133,7 @@
         "AI-assisted Development",
         "Cursor"
       ],
-      "image": "/projects/vromm.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/vromm",
       "color": "#3B82F6",
       "featured": true,
       "details": {
@@ -183,7 +183,7 @@
         "Figma",
         "AI Prototyping"
       ],
-      "image": "/projects/qasa.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/qasa",
       "color": "#10B981",
       "featured": true,
       "details": {
@@ -235,7 +235,7 @@
         "Figma",
         "AI Prototyping"
       ],
-      "image": "/projects/asteria.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/asteria",
       "color": "#6366F1",
       "featured": true,
       "details": {
@@ -282,7 +282,7 @@
         "User Research",
         "Music Tech"
       ],
-      "image": "/projects/spotify.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/spotify",
       "color": "#1DB954",
       "featured": true,
       "details": {
@@ -332,7 +332,7 @@
         "Component Libraries",
         "Mobile & Web Design"
       ],
-      "image": "/projects/lansforsakringar.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/lansforsakringar",
       "color": "#005AA0",
       "featured": true,
       "details": {
@@ -385,7 +385,7 @@
         "Design Systems",
         "Figma"
       ],
-      "image": "/projects/foretagskollen.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/foretagskollen",
       "color": "#FF5A00",
       "featured": false,
       "details": {
@@ -434,7 +434,7 @@
         "Banking",
         "Figma"
       ],
-      "image": "/projects/payex.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/payex",
       "color": "#1A3C8F",
       "featured": false,
       "details": {
@@ -477,7 +477,7 @@
         "AI",
         "Figma"
       ],
-      "image": "/projects/xlnaudio.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/xlnaudio",
       "color": "#1A1A2E",
       "featured": false,
       "details": {
@@ -521,7 +521,7 @@
         "Enterprise",
         "Figma"
       ],
-      "image": "/projects/klm.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/klm",
       "color": "#00A1DE",
       "featured": false,
       "details": {
@@ -565,7 +565,7 @@
         "Design Systems",
         "Enterprise"
       ],
-      "image": "/projects/backbase.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/backbase",
       "color": "#FF4A4A",
       "featured": false,
       "details": {
@@ -614,7 +614,7 @@
         "CMS",
         "WordPress"
       ],
-      "image": "/projects/abro.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/abro",
       "color": "#C8A951",
       "featured": false,
       "details": {
@@ -653,7 +653,7 @@
         "SaaS",
         "Frontend Development"
       ],
-      "image": "/projects/steem.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/steem",
       "color": "#2D6A4F",
       "featured": false,
       "details": {
@@ -696,7 +696,7 @@
         "Startup",
         "Marketplace"
       ],
-      "image": "/projects/mrusta.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/mrusta",
       "color": "#F59E0B",
       "featured": false,
       "details": {
@@ -740,7 +740,7 @@
         "Sustainable Web",
         "Headless CMS"
       ],
-      "image": "/projects/energiforsk.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/energiforsk",
       "color": "#22c55e",
       "featured": false,
       "details": {
@@ -771,7 +771,7 @@
         "WCAG",
         "Housing"
       ],
-      "image": "/projects/gavlegardarna.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/gavlegardarna",
       "color": "#3b82f6",
       "featured": false,
       "details": {
@@ -802,7 +802,7 @@
         "Google APIs",
         "Benefits"
       ],
-      "image": "/projects/edenred.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/edenred",
       "color": "#f59e0b",
       "featured": false,
       "details": {
@@ -833,7 +833,7 @@
         "JavaScript",
         "CSS"
       ],
-      "image": "/projects/ikea-stimulanspaketresan.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/ikea-stimulanspaketresan",
       "color": "#0051ba",
       "featured": false,
       "details": {
@@ -864,7 +864,7 @@
         "JavaScript",
         "Video"
       ],
-      "image": "/projects/ikea-tv.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/ikea-tv",
       "color": "#0051ba",
       "featured": false,
       "details": {
@@ -895,7 +895,7 @@
         "Scale",
         "Newspapers"
       ],
-      "image": "/projects/mktwebb.jpg",
+      "image": "https://res.cloudinary.com/dihhcawgk/image/upload/daniellauding/mktwebb",
       "color": "#6366f1",
       "featured": false,
       "details": {
