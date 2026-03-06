@@ -443,12 +443,12 @@
       "id": "app-1",
       "slug": "pejla",
       "name": "Pejla",
-      "icon": "P",
+      "icon": "/apps/pejla-logo.svg",
       "description": "Client reviews, without the noise",
       "appStoreUrl": "https://pejla.io",
       "playStoreUrl": null,
       "tags": ["Web App", "Design", "Reviews", "Collaboration"],
-      "color": "#000000",
+      "color": "#EEEBE8",
       "featured": true
     },
     {
