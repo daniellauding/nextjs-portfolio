@@ -1078,6 +1078,23 @@
     },
     {
       "id": "app-1",
+      "slug": "pejla",
+      "name": "Pejla",
+      "icon": "P",
+      "description": "Client reviews, without the noise",
+      "appStoreUrl": "https://pejla.io",
+      "playStoreUrl": null,
+      "tags": [
+        "Web App",
+        "Design",
+        "Reviews",
+        "Collaboration"
+      ],
+      "color": "#000000",
+      "featured": true
+    },
+    {
+      "id": "app-2",
       "slug": "vromm-app",
       "name": "Vromm",
       "icon": "/apps/app_vromm.png",
@@ -1126,7 +1143,7 @@
       }
     },
     {
-      "id": "app-2",
+      "id": "app-3",
       "slug": "pepparkakshus-battle",
       "name": "Pepparkakshus Battle",
       "icon": "/apps/app_pepparkakshusbattle.png",
@@ -1171,7 +1188,7 @@
       }
     },
     {
-      "id": "app-3",
+      "id": "app-4",
       "slug": "plotta",
       "name": "plotta",
       "icon": "P",
@@ -1201,7 +1218,7 @@
       }
     },
     {
-      "id": "app-4",
+      "id": "app-5",
       "slug": "greeto",
       "name": "Greeto",
       "icon": "/apps/app_greeto.png",
