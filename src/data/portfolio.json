@@ -428,7 +428,31 @@
   ],
   "apps": [
     {
+      "id": "app-0",
+      "slug": "skistar-app",
+      "name": "SkiStar",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6e/41/ca/6e41ca04-2c2a-0071-ae31-8614e251f221/Placeholder.mill/200x200bb-75.webp",
+      "description": "Official SkiStar app for skiing",
+      "appStoreUrl": "https://apps.apple.com/se/app/skistar/id406481077",
+      "playStoreUrl": null,
+      "tags": ["iOS", "Skiing", "Sports", "Travel"],
+      "color": "#0066CC",
+      "featured": true
+    },
+    {
       "id": "app-1",
+      "slug": "pejla",
+      "name": "Pejla",
+      "icon": "P",
+      "description": "Client reviews, without the noise",
+      "appStoreUrl": "https://pejla.io",
+      "playStoreUrl": null,
+      "tags": ["Web App", "Design", "Reviews", "Collaboration"],
+      "color": "#000000",
+      "featured": true
+    },
+    {
+      "id": "app-2",
       "slug": "vromm-app",
       "name": "Vromm",
       "icon": "/apps/app_vromm.png",
@@ -468,7 +492,7 @@
       }
     },
     {
-      "id": "app-2",
+      "id": "app-3",
       "slug": "pepparkakshus-battle",
       "name": "Pepparkakshus Battle",
       "icon": "/apps/app_pepparkakshusbattle.png",
@@ -508,7 +532,7 @@
       }
     },
     {
-      "id": "app-3",
+      "id": "app-4",
       "slug": "plotta",
       "name": "plotta",
       "icon": "P",
@@ -534,7 +558,7 @@
       }
     },
     {
-      "id": "app-4",
+      "id": "app-5",
       "slug": "greeto",
       "name": "Greeto",
       "icon": "/apps/app_greeto.png",
