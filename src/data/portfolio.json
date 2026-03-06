@@ -1063,7 +1063,7 @@
       "id": "app-0",
       "slug": "skistar-app",
       "name": "Skistar",
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6e/41/ca/6e41ca04-2c2a-0071-ae31-8614e251f221/Placeholder.mill/200x200bb-75.webp",
+      "icon": "/apps/app_skistar.png",
       "description": "Official SkiStar app for skiing",
       "appStoreUrl": "https://apps.apple.com/se/app/skistar/id406481077",
       "playStoreUrl": null,
